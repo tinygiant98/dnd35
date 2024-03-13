@@ -1,0 +1,181 @@
+{
+  "__data_type": "UTI ",
+  "AddCost": {
+    "type": "dword",
+    "value": 149
+  },
+  "BaseItem": {
+    "type": "int",
+    "value": 75
+  },
+  "Charges": {
+    "type": "byte",
+    "value": 0
+  },
+  "Comment": {
+    "type": "cexostring",
+    "value": "1650 base cost + (4 caster levels above minimum x 75) = 1950\r\n\r\nSpell Level 1    25 gold per caster level above minimum\r\nSpell Level 2-4 50 gold per caster level above minimum\r\nSpell Level 5-6 75 gold per caster level above minimum\r\nSpell Level 7-8 100 gold per caster level above minimum\r\nSpell Level 9    150 gold per caster level above minimum"
+  },
+  "Cost": {
+    "type": "dword",
+    "value": 3390
+  },
+  "Cursed": {
+    "type": "byte",
+    "value": 0
+  },
+  "DescIdentified": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Spell Level(s): Wizard / Sorcerer 6\nInnate Level: 6\nCaster Level: 15\nSchool: Evocation\nDescriptor(s): Electricity\nComponent(s): Verbal, Somatic\nRange: Long\nArea of Effect / Target: Colossal, 1 Target / Level\nDuration: Instant\nAdditional Counter Spells: \nSave: Reflex 1/2\nSpell Resistance: Yes \n\nA bolt of electricity arcs through the caster's enemies for 1d6 points of electrical damage per caster level, up to a maximum of 20d6 points of damage to the initial target and half that amount to all secondary targets.",
+      "id": 6110
+    }
+  },
+  "Description": {
+    "type": "cexolocstring",
+    "value": {
+      "0": ""
+    }
+  },
+  "Identified": {
+    "type": "byte",
+    "value": 0
+  },
+  "LocalizedName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Chain Lightning (A)",
+      "id": 13618
+    }
+  },
+  "ModelPart1": {
+    "type": "byte",
+    "value": 1
+  },
+  "PaletteID": {
+    "type": "byte",
+    "value": 26
+  },
+  "Plot": {
+    "type": "byte",
+    "value": 0
+  },
+  "PropertiesList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 3
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 1
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 15
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 29
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 0
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 0
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 255
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 63
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 9
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 0
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 0
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 255
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 63
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 10
+        }
+      }
+    ]
+  },
+  "StackSize": {
+    "type": "word",
+    "value": 1
+  },
+  "Stolen": {
+    "type": "byte",
+    "value": 0
+  },
+  "Tag": {
+    "type": "cexostring",
+    "value": "6ChainLightA_WS15"
+  },
+  "TemplateResRef": {
+    "type": "resref",
+    "value": "chainlighta_ws15"
+  },
+  "xModelPart1": {
+    "type": "word",
+    "value": 1
+  }
+}

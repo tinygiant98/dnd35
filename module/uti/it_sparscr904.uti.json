@@ -1,0 +1,181 @@
+{
+  "__data_type": "UTI ",
+  "AddCost": {
+    "type": "dword",
+    "value": 764
+  },
+  "BaseItem": {
+    "type": "int",
+    "value": 75
+  },
+  "Charges": {
+    "type": "byte",
+    "value": 0
+  },
+  "Comment": {
+    "type": "cexostring",
+    "value": "3825 base cost \r\n\r\nSpell Level 1    25 gold per caster level above minimum\r\nSpell Level 2    50 gold per caster level above minimum\r\nSpell Level 3    75 gold per caster level above minimum\r\nSpell Level 4   100 gold per caster level above minimum\r\nSpell Level 5   125 gold per caster level above minimum\r\nSpell Level 6   150 gold per caster level above minimum\r\nSpell Level 7   175 gold per caster level above minimum\r\nSpell Level 8   200 gold per caster level above minimum\r\nSpell Level 9   225 gold per caster level above minimum"
+  },
+  "Cost": {
+    "type": "dword",
+    "value": 6274
+  },
+  "Cursed": {
+    "type": "byte",
+    "value": 0
+  },
+  "DescIdentified": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Spell Level(s): Wizard / Sorcerer 9\nInnate Level: 9\nCaster Level: 17\nSchool: Divination\nDescriptor(s): Death\nComponent(s): Verbal\nRange: Short\nArea of Effect / Target: Large, Single\nDuration: Instant\nAdditional Counter Spells: Death Ward\nSave: None\nSpell Resistance: Yes\n\nThis spell may be cast on a single creature or as an area effect. A targeted creature of up to 100 Hit Points is killed instantly. As an area effect, this spell will kill all creatures with fewer than 20 Hit Points, to a maximum total of 200 Hit Points.",
+      "id": 6225
+    }
+  },
+  "Description": {
+    "type": "cexolocstring",
+    "value": {
+      "0": ""
+    }
+  },
+  "Identified": {
+    "type": "byte",
+    "value": 0
+  },
+  "LocalizedName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Power Word, Kill (A)",
+      "id": 13644
+    }
+  },
+  "ModelPart1": {
+    "type": "byte",
+    "value": 1
+  },
+  "PaletteID": {
+    "type": "byte",
+    "value": 26
+  },
+  "Plot": {
+    "type": "byte",
+    "value": 0
+  },
+  "PropertiesList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 3
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 1
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 15
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 209
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 0
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 0
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 255
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 63
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 9
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 0
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 0
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 255
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 63
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 10
+        }
+      }
+    ]
+  },
+  "StackSize": {
+    "type": "word",
+    "value": 1
+  },
+  "Stolen": {
+    "type": "byte",
+    "value": 0
+  },
+  "Tag": {
+    "type": "cexostring",
+    "value": "9PowerWordKillA_WS"
+  },
+  "TemplateResRef": {
+    "type": "resref",
+    "value": "it_sparscr904"
+  },
+  "xModelPart1": {
+    "type": "word",
+    "value": 1
+  }
+}

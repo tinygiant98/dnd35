@@ -1,0 +1,149 @@
+{
+  "__data_type": "UTI ",
+  "AddCost": {
+    "type": "dword",
+    "value": 190
+  },
+  "BaseItem": {
+    "type": "int",
+    "value": 75
+  },
+  "Charges": {
+    "type": "byte",
+    "value": 0
+  },
+  "Comment": {
+    "type": "cexostring",
+    "value": "150 base cost + (2 caster levels above minimum x 50) = 250\r\n\r\nSpell Level 1    25 gold per caster level above minimum\r\nSpell Level 2    50 gold per caster level above minimum\r\nSpell Level 3    75 gold per caster level above minimum\r\nSpell Level 4   100 gold per caster level above minimum\r\nSpell Level 5   125 gold per caster level above minimum\r\nSpell Level 6   150 gold per caster level above minimum\r\nSpell Level 7   175 gold per caster level above minimum\r\nSpell Level 8   200 gold per caster level above minimum\r\nSpell Level 9   225 gold per caster level above minimum"
+  },
+  "Cost": {
+    "type": "dword",
+    "value": 298
+  },
+  "Cursed": {
+    "type": "byte",
+    "value": 0
+  },
+  "DescIdentified": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Spell Level(s): Bard 2\nInnate Level: 2\nCaster Level: 6\nSchool: Conjuration\nDescriptor(s): \nComponent(s): Verbal, Somatic\nRange: Touch\nArea of Effect / Target: Single\nDuration: Instant\nAdditional Counter Spells: Ghoul Touch\nSave: Will 1/2\nSpell Resistance: \n\nThe target creature is healed for 2d8 points of damage, +1 point per caster level (to a maximum of +10). Healing spells have a reverse effect on undead, harming instead of healing them. A successful touch attack must first be made when this spell is used against undead.",
+      "id": 6105
+    }
+  },
+  "Description": {
+    "type": "cexolocstring",
+    "value": {
+      "0": ""
+    }
+  },
+  "Identified": {
+    "type": "byte",
+    "value": 0
+  },
+  "LocalizedName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Cure Moderate Wounds(A)"
+    }
+  },
+  "ModelPart1": {
+    "type": "byte",
+    "value": 0
+  },
+  "PaletteID": {
+    "type": "byte",
+    "value": 26
+  },
+  "Plot": {
+    "type": "byte",
+    "value": 0
+  },
+  "PropertiesList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 3
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 1
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 15
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 70
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 0
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 0
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 63
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 1
+        }
+      }
+    ]
+  },
+  "StackSize": {
+    "type": "word",
+    "value": 1
+  },
+  "Stolen": {
+    "type": "byte",
+    "value": 0
+  },
+  "Tag": {
+    "type": "cexostring",
+    "value": "2CureModerateWoundsA_B6"
+  },
+  "TemplateResRef": {
+    "type": "resref",
+    "value": "sy_it_spdvscr205"
+  },
+  "xModelPart1": {
+    "type": "word",
+    "value": 0
+  }
+}

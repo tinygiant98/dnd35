@@ -1,0 +1,18 @@
+/////////////////////////////////////////////////////////
+//
+//  Oxen Trade Routes (OTR) by Festyx
+//
+//  Name:  otr_ta_payoff_y
+//
+//  Desc:  Determines the response of the trader upon
+//         drop off attempt
+//
+//  Author: David Bobeck 16Sep03
+//
+/////////////////////////////////////////////////////////
+int StartingConditional()
+{
+  object oPC = GetPCSpeaker();
+  return (GetLocalInt(oPC, "OtrSuccessfulDropOff") == TRUE);
+}
+

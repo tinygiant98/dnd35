@@ -1,0 +1,149 @@
+{
+  "__data_type": "UTI ",
+  "AddCost": {
+    "type": "dword",
+    "value": 375
+  },
+  "BaseItem": {
+    "type": "int",
+    "value": 75
+  },
+  "Charges": {
+    "type": "byte",
+    "value": 0
+  },
+  "Comment": {
+    "type": "cexostring",
+    "value": "375 base cost + (12 caster levels above minimum x 75) = 1275\r\n\r\nSpell Level 1    25 gold per caster level above minimum\r\nSpell Level 2    50 gold per caster level above minimum\r\nSpell Level 3    75 gold per caster level above minimum\r\nSpell Level 4   100 gold per caster level above minimum\r\nSpell Level 5   125 gold per caster level above minimum\r\nSpell Level 6   150 gold per caster level above minimum\r\nSpell Level 7   175 gold per caster level above minimum\r\nSpell Level 8   200 gold per caster level above minimum\r\nSpell Level 9   225 gold per caster level above minimum"
+  },
+  "Cost": {
+    "type": "dword",
+    "value": 1996
+  },
+  "Cursed": {
+    "type": "byte",
+    "value": 0
+  },
+  "DescIdentified": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Spell Level(s): Cleric 3\nInnate Level: 3\nCaster Level: 15\nSchool: Necromancy\nDescriptor(s): Evil\nComponent(s): Verbal, Somatic\nRange: Short\nArea of Effect / Target: Point\nDuration: Instant\nAdditional Counter Spells: Sunbeam\nSave: None\nSpell Resistance: No\n\nAnimate Dead summons forth an undead minion. The type of undead summoned is dependent upon the caster level:\nLevels 1 to 8: Zombie\nLevels 9 to 12: Skeletal warrior\nLevel 13 or more: Skeletal knight",
+      "id": 6098
+    }
+  },
+  "Description": {
+    "type": "cexolocstring",
+    "value": {
+      "0": ""
+    }
+  },
+  "Identified": {
+    "type": "byte",
+    "value": 0
+  },
+  "LocalizedName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "Animate Dead (D)"
+    }
+  },
+  "ModelPart1": {
+    "type": "byte",
+    "value": 0
+  },
+  "PaletteID": {
+    "type": "byte",
+    "value": 26
+  },
+  "Plot": {
+    "type": "byte",
+    "value": 0
+  },
+  "PropertiesList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 3
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 1
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 15
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 4
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ChanceAppear": {
+          "type": "byte",
+          "value": 100
+        },
+        "CostTable": {
+          "type": "byte",
+          "value": 0
+        },
+        "CostValue": {
+          "type": "word",
+          "value": 0
+        },
+        "Param1": {
+          "type": "byte",
+          "value": 255
+        },
+        "Param1Value": {
+          "type": "byte",
+          "value": 0
+        },
+        "PropertyName": {
+          "type": "word",
+          "value": 63
+        },
+        "Subtype": {
+          "type": "word",
+          "value": 2
+        }
+      }
+    ]
+  },
+  "StackSize": {
+    "type": "word",
+    "value": 1
+  },
+  "Stolen": {
+    "type": "byte",
+    "value": 0
+  },
+  "Tag": {
+    "type": "cexostring",
+    "value": "3AnimateDeadD_C15"
+  },
+  "TemplateResRef": {
+    "type": "resref",
+    "value": "animatedeadd_c15"
+  },
+  "xModelPart1": {
+    "type": "word",
+    "value": 0
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "__data_type": "UTC ",
+  "Appearance_Type": {
+    "type": "word",
+    "value": 298
+  },
+  "BodyBag": {
+    "type": "byte",
+    "value": 0
+  },
+  "Cha": {
+    "type": "byte",
+    "value": 10
+  },
+  "ChallengeRating": {
+    "type": "float",
+    "value": 0.25
+  },
+  "ClassList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 2,
+        "Class": {
+          "type": "int",
+          "value": 25
+        },
+        "ClassLevel": {
+          "type": "short",
+          "value": 1
+        }
+      }
+    ]
+  },
+  "Comment": {
+    "type": "cexostring",
+    "value": "This is the non dispellable effect.\r\n\r\nUse one of the following FX numbers as this creature's tag.   As an example,\r\nif you wanted a shimmer on the floor effect in your map you would give this \r\ncreature a tag of 0  (that's a zero folks)\r\n\r\nIf you want an Area FX, put an \"a\" before the Area Effect number, as listed below. Example: to create a red fog, give a tag of \"a3\"\r\n\r\nIf you wish to apply the effect on a different location than this creature's, create a waypoint there and tag it: \"FXWP_\" + the tag of the creature. This is expecially useful to create effects on \"non-walkable\" locations. Visual FX work fine with this, but Area FX seem to be \"cut\" around non-walkable locations Play with it. Example: to create green plants on a table, give the FX Maker a tag of \"2\", put a waypoint on the table (or wherever you want), and give it a tag of \"FXWP_2\".\r\n\r\nFX Number       Description\r\n\r\n0               shimmer on floor\r\n1               blob of sheer darkness\r\n2               green plant on floor\r\n3               green intricate glowy circle\r\n4               sphere with wiggly texture\r\n7               3d spherical purple and white whirly flying dots\r\n8               white and blue twirling cone\r\n9               slight blue shimmer on floor\r\n10              purple shimmer on floor\r\n11              sound but no graphic\r\n12              sound but no graphic\r\n13              cloud of blue and purple dots and eyeballs\r\n14              sound but no graphic\r\n15              sound but no graphic\r\n16              dancing blue dots in cylindrical formation\r\n17              3d spider web formations\r\n73              plays sound but not graphic\r\n82              field of white dots and white dancing cylinders\r\n138             circular lightning effect on floor\r\n147             circle of fire\r\n153             faint blue light\r\n154             faint xxxx light\r\n155                         \"\r\n156                         \"\r\n157                         \"\r\n158                         \"\r\n159                         \"\r\n160                         \"\r\n161                         \"\r\n162                         \"\r\n163                         \"\r\n164                         \"\r\n165                         \"\r\n166                         \"\r\n167                         \"\r\n168                         \"\r\n169                         \"\r\n170                         \"\r\n171                         \"\r\n172                         \"\r\n173                         \"\r\n174                         \"\r\n175                         \"\r\n176                         \"\r\n177                         \"\r\n178                         \"\r\n179                         \"\r\n180                         \"\r\n208              blue and white floaty dots\r\n209              cylindrical blue, purple, & white rings that dance\r\n210              plays sound but not graphic\r\n211                         \"\r\n212                         \"\r\n213                         \"\r\n214                         \"\r\n215                         \"\r\n216                         \"\r\n218              flaming flying skulls\r\n 220              faint sphere - slightly pink\r\n224              ascending gold and white dots\r\n225              ascending gold dots\r\n226              ascending gold streaks\r\n227              ascending red dots\r\n228              ascending red streaks\r\n229              multi-colored floaty eyeballs\r\n230              big spider webs on floor\r\n232              red and white glow on floor\r\n248              area darker & somewhat green\r\n249              3d rings of spherical runes\r\n267              big circle of dots in various colors\r\n268                       \"\r\n269                       \"\r\n270                       \"\r\n271                       \"\r\n272                       \"\r\n291                       \"\r\n277              floaty music notes & song\r\n303              flag model in colors\r\n304                       \"\r\n305                       \"\r\n306                       \"\r\n346              dark thrashing tentacles\r\n\r\nEffectAreaOfEffect function Constant:            Tag:       Description:\r\nAOE_PER_FOGACID                                       a0         bright green fog\r\nAOE_PER_FOGFIRE                                       a1         fire fog\r\nAOE_PER_FOGSTINK                                    a2         dark green fog\r\nAOE_PER_FOGKILL                                       a3          red fog\r\nAOE_PER_FOGMIND                                     a4          blue fog\r\nAOE_PER_WALLFIRE                                    a5          flames from ground\r\nAOE_PER_WALLWIND                                  a6          no visible effect\r\nAOE_PER_WALLBLADE                                a7          spikes from ground\r\nAOE_PER_WEB                                              a8         flat webs on ground\r\nAOE_PER_ENTANGLE                                   a9         green tentacles\r\nAOE_PER_DARKNESS                                 a11         complete darkness\r\nAOE_MOB_CIRCEVIL                                    a12      small circle of pink dots\r\nAOE_MOB_CIRCGOOD                                 a13      small circle of yellow dots\r\nAOE_MOB_CIRCLAW                                    a14        no visible effect\r\nAOE_MOB_CIRCCHAOS                                a15        no visible effect\r\nAOE_MOB_FEAR                                           a16      small circle of green dots\r\nAOE_MOB_BLINDING                                    a17     small circle of pink dots\r\nAOE_MOB_UNEARTHLY                              a18      small circle of green dots\r\nAOE_MOB_MENACE                                     a19     small circle of pink dots\r\nAOE_MOB_UNNATURAL                              a20     small circle of green dots\r\nAOE_MOB_STUN                                           a21     small circle of white dots\r\nAOE_MOB_PROTECTION                              a22    small circle of yellow dots\r\nAOE_MOB_FIRE                                              a23   small circle of orange dots\r\nAOE_MOB_FROST                                          a24    small circle light blue dots\r\nAOE_MOB_ELECTRICAL                                a25    small circle light blue dots\r\nAOE_PER_FOGGHOUL                                  a26      small area green fog\r\nAOE_MOB_TYRANT_FOG                              a27     medium area green fog\r\nAOE_PER_STORM                                         a28     green rain\r\nAOE_PER_INVIS_SPHERE                            a29     no visible effect\r\nAOE_MOB_SILENCE                                      a30     small circle of white dots\r\nAOE_PER_DELAY_BLAST_FIREBALL          a31     yellow sparkles\r\nAOE_PER_GREASE                                       a32     black mist\r\nAOE_PER_CREEPING_DOOM                      a33     lots of bugs\r\nAOE_PER_EVARDS_BLACK_TENTACLES   a34    black tentacles\r\nAOE_MOB_INVISIBILITY_PURGE                 a35    no visible effect\r\nAOE_MOB_DRAGON_FEAR                          a36    big circle of green dots"
+  },
+  "Con": {
+    "type": "byte",
+    "value": 10
+  },
+  "Conversation": {
+    "type": "resref",
+    "value": ""
+  },
+  "CRAdjust": {
+    "type": "int",
+    "value": 0
+  },
+  "CurrentHitPoints": {
+    "type": "short",
+    "value": 4
+  },
+  "DecayTime": {
+    "type": "dword",
+    "value": 0
+  },
+  "Deity": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "Description": {
+    "type": "cexolocstring",
+    "value": {}
+  },
+  "Dex": {
+    "type": "byte",
+    "value": 10
+  },
+  "Disarmable": {
+    "type": "byte",
+    "value": 0
+  },
+  "Equip_ItemList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 16384,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpsp001"
+        }
+      },
+      {
+        "__struct_id": 32768,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewpb001"
+        }
+      },
+      {
+        "__struct_id": 65536,
+        "EquippedRes": {
+          "type": "resref",
+          "value": "nw_it_crewps001"
+        }
+      }
+    ]
+  },
+  "FactionID": {
+    "type": "word",
+    "value": 65535
+  },
+  "FeatList": {
+    "type": "list",
+    "value": []
+  },
+  "FirstName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "FX Maker ND"
+    }
+  },
+  "fortbonus": {
+    "type": "short",
+    "value": 0
+  },
+  "Gender": {
+    "type": "byte",
+    "value": 0
+  },
+  "GoodEvil": {
+    "type": "byte",
+    "value": 50
+  },
+  "HitPoints": {
+    "type": "short",
+    "value": 4
+  },
+  "Int": {
+    "type": "byte",
+    "value": 10
+  },
+  "Interruptable": {
+    "type": "byte",
+    "value": 1
+  },
+  "IsImmortal": {
+    "type": "byte",
+    "value": 0
+  },
+  "IsPC": {
+    "type": "byte",
+    "value": 0
+  },
+  "LastName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": ""
+    }
+  },
+  "LawfulChaotic": {
+    "type": "byte",
+    "value": 50
+  },
+  "Lootable": {
+    "type": "byte",
+    "value": 0
+  },
+  "MaxHitPoints": {
+    "type": "short",
+    "value": 4
+  },
+  "NaturalAC": {
+    "type": "byte",
+    "value": 0
+  },
+  "NoPermDeath": {
+    "type": "byte",
+    "value": 0
+  },
+  "PaletteID": {
+    "type": "byte",
+    "value": 0
+  },
+  "PerceptionRange": {
+    "type": "byte",
+    "value": 8
+  },
+  "Phenotype": {
+    "type": "int",
+    "value": 0
+  },
+  "Plot": {
+    "type": "byte",
+    "value": 0
+  },
+  "PortraitId": {
+    "type": "word",
+    "value": 129
+  },
+  "Race": {
+    "type": "byte",
+    "value": 23
+  },
+  "refbonus": {
+    "type": "short",
+    "value": 0
+  },
+  "ScriptAttacked": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptDamaged": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptDeath": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptDialogue": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptDisturbed": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptEndRound": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptHeartbeat": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptOnBlocked": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptOnNotice": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptRested": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptSpawn": {
+    "type": "resref",
+    "value": "new_make_fxnd"
+  },
+  "ScriptSpellAt": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptUserDefine": {
+    "type": "resref",
+    "value": ""
+  },
+  "SkillList": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      },
+      {
+        "__struct_id": 0,
+        "Rank": {
+          "type": "byte",
+          "value": 0
+        }
+      }
+    ]
+  },
+  "SoundSetFile": {
+    "type": "word",
+    "value": 246
+  },
+  "SpecAbilityList": {
+    "type": "list",
+    "value": []
+  },
+  "StartingPackage": {
+    "type": "byte",
+    "value": 0
+  },
+  "Str": {
+    "type": "byte",
+    "value": 10
+  },
+  "Subrace": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "Tag": {
+    "type": "cexostring",
+    "value": "REPLACETAGWITHFXNUMBER"
+  },
+  "Tail_New": {
+    "type": "dword",
+    "value": 0
+  },
+  "TemplateList": {
+    "type": "list",
+    "value": []
+  },
+  "TemplateResRef": {
+    "type": "resref",
+    "value": "replacetagwit001"
+  },
+  "WalkRate": {
+    "type": "int",
+    "value": 7
+  },
+  "willbonus": {
+    "type": "short",
+    "value": 0
+  },
+  "Wings_New": {
+    "type": "dword",
+    "value": 0
+  },
+  "Wis": {
+    "type": "byte",
+    "value": 10
+  }
+}

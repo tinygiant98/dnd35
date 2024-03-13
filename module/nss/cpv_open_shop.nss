@@ -1,0 +1,17 @@
+/////////////////////////////////////////////////////////
+//
+//  Craftable Natural Resources (CNR) by Festyx
+//
+//  Name:  cpv_open_shop
+//
+//  Desc:  
+//
+//  Author: David Bobeck 21Aug03
+//
+/////////////////////////////////////////////////////////
+#include "cpv_vendor_utils"
+
+void main()
+{
+  CpvOpenShop(OBJECT_SELF);
+}

@@ -1,0 +1,121 @@
+{
+  "__data_type": "UTT ",
+  "AutoRemoveKey": {
+    "type": "byte",
+    "value": 0
+  },
+  "Comment": {
+    "type": "cexostring",
+    "value": "This trigger handles fire and forget fx.  It uses a target invisible placeable called target_FNF_fx.    You must place a target_FNF_fx placeable near the trigger or it won't work!  \r\n\r\nScroll down the list with your arrow keys - there are more than 150 fire and forget (ephemeral) effects listed here.\r\n\r\n\r\nFX Number       Description\r\n\r\nf18              big cloud of white sparkles\r\nf19              blue-white magic spiral\r\nf20              purple-blue magic spiral\r\nf21              cloudy white starburst\r\nf22              fireball explosion\r\nf23              giant ring of fire\r\nf24              smaller ring of fire converges\r\nf28              meteor shower\r\nf29              big green design - birds sing\r\nf30              lightning and arcane symbol\r\nf31              purple spiral dots with white\r\nf32              3 rocks pop up with firey center\r\nf33              explosive white-grey cloud\r\nf34              purple symbol with spiral white things\r\nf35              white symbol with flames and purple stuff\r\nf36              white plasma condensate\r\nf37              great yellow sunbeam\r\nf38              big clocks\r\nf39              ghost woman pops out of ground and screams\r\nf40              3 headed thing comes out of ground\r\nf41              big yellow thing with rune strips\r\nf42              columnar cylindrical strips\r\nf43              small green cloud (clipped on ground)\r\nf44              smaller green cloud (ok on ground)\r\nf46              small spinny circle\r\nf47              small sparkly things\r\nf48              very small sparkle\r\nf49              small white hemispheres with dots\r\nf50              glowy white ascension death\r\nf51              dark blob of bugs\r\nf52              light blue sparkly cloud\r\nf54              stream of fire from above\r\nf55              white spiral downward\r\nf56              small white hemispheres\r\nf57              small dark cloud with lightning\r\nf60              flame effect the size of a PC\r\nf61              tiny flash explosion with smoke\r\nf62              blue explosion with freezy fx\r\nf63              small white explosion with freezy\r\nf65              small blue star contracts\r\nf66              yellow white and blue lines\r\nf67              blue-n-white spiral cylinders\r\nf68              white ball drips down to floor\r\nf69              small blue-n-white cylinders\r\nf70              big blue shaft of light\r\nf71              white spindle-star contracts\r\nf72              spikey spindle star contracts\r\nf74              big bolt of lightning\r\nf75              small white spikey\r\nf76              small white cloud blast\r\nf77              bigger white cloud blast\r\nf78               \"\r\nf79               \"\r\nf80               \"\r\nf81              red ball and gas\r\nf83              green gas and squishy sound\r\nf84               \"\r\nf85              green rays and clouds\r\nf86              blue ring wave - fast\r\nf87              red     \"\r\nf88               \"\r\nf89               \"\r\nf90              skeleton arises from white cloud\r\nf91              red contracting black aura\r\nf92              colorful confetti sparkles\r\nf93              white contracting circles\r\nf94              sleepy floaty Zzz's\r\nf95              purple contracting round star\r\nf96              rapidly contracting white rings\r\nf97              sparkly white ball\r\nf98              explosive sun ball\r\nf99              pillar of light\r\nf106             blinky red dot\r\nf107             bigger \"\r\nf108             bigger still \"\r\nf109             small red dot\r\nf110               \"    xxx  \"\r\nf111               \"\r\nf112             dot\r\nf113              \"\r\nf114              \"\r\nf115              \"\r\nf116              \"\r\nf117              \"\r\nf118             tiny spark\r\nf121             small body chunk spew\r\nf122             med \"\r\nf123             small green chunk spew\r\nf124             med \"\r\nf125             small yellow chunk spew\r\nf126             med \"\r\nf139             small colorful upward spiral\r\nf140             small purple cloud\r\nf141             small spiral with some dots\r\nf146             purple flowy cylinder\r\nf149             blue particle cloud that flows\r\nf150             spikes of white light from ground\r\nf152             fire turns to green\r\nf183             concussive blast with waves\r\nf184             yellow shaft of light\r\nf185             red and purple shaft goes up\r\nf186             med red circle and shaft up\r\nf187             big red circle and shaft up\r\nf188             golden circle and shaft up\r\nf189             med.  \"\r\nf190             big   \"\r\nf191             fast white ring outward\r\nf192              \"\r\nf193              \"\r\nf194             4 green blobs upward\r\nf195             4 red blobs upward\r\nf196             4 white blobs upward\r\nf197             4 electrical blobs\r\nf198             4 xxx         \"\r\nf199             4 \"\r\nf200             4 \"\r\nf201             4 \"\r\nf202             4 \"\r\nf203             4 \"\r\nf204             4 \"\r\nf217             white blob strained upwards\r\nf219             3 rocks from ground, light in middle\r\nf221             4 whispy white blobs\r\nf222             blob disintegrates to particles\r\nf223             yellow and blue circling spiral\r\nf231             great blue icycles from above\r\nf234             screen bump, purple dot\r\nf235             big red chunk spew\r\nf236             dusty bone spew\r\nf237             small electrical spark\r\nf238             med   \"\r\nf239             big   \"\r\nf241             bog with firey spewers\r\nf246             red light shaft from above\r\nf250             small puff of smoke\r\nf251             globe of white symbols\r\nf252             small blue dot flows up\r\nf253             spikes from the ground\r\nf254             blue grid enclosure\r\nf255          purple dot flows upward\r\nf256          green dot flows upward\r\nf257          green explosion and gas\r\nf258          xxx explosion and gas\r\nf259           \"\r\nf260           \"\r\nf261          black smoke upwards\r\nf262          blue explosion and gas\r\nf263          puff of grey smoke\r\nf264          fast blue expand ring out\r\nf265           \"   xxx\r\nf266           \"   xxx\r\nf278          big expanding blue ring\r\nf279          expanding ring\r\nf280          small fire effect\r\nf281          small ice effect\r\nf282           \"     xxx \"\r\nf283           \"\r\nf284           \"\r\nf285         expanding ring\r\nf286         screen shakes around(earthquake)\r\nf287         screen bumps once\r\nf288         small red dot\r\nf289         small yellow dot\r\nf290         exploding large white ring out\r\n"
+  },
+  "Cursor": {
+    "type": "byte",
+    "value": 0
+  },
+  "DisarmDC": {
+    "type": "byte",
+    "value": 10
+  },
+  "Faction": {
+    "type": "dword",
+    "value": 1
+  },
+  "HighlightHeight": {
+    "type": "float",
+    "value": 3.0
+  },
+  "KeyName": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "LinkedTo": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "LinkedToFlags": {
+    "type": "byte",
+    "value": 0
+  },
+  "LoadScreenID": {
+    "type": "word",
+    "value": 0
+  },
+  "LocalizedName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "FNF FX Maker"
+    }
+  },
+  "OnClick": {
+    "type": "resref",
+    "value": ""
+  },
+  "OnDisarm": {
+    "type": "resref",
+    "value": ""
+  },
+  "OnTrapTriggered": {
+    "type": "resref",
+    "value": ""
+  },
+  "PaletteID": {
+    "type": "byte",
+    "value": 6
+  },
+  "PortraitId": {
+    "type": "word",
+    "value": 0
+  },
+  "ScriptHeartbeat": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptOnEnter": {
+    "type": "resref",
+    "value": "new_make_fx"
+  },
+  "ScriptOnExit": {
+    "type": "resref",
+    "value": ""
+  },
+  "ScriptUserDefine": {
+    "type": "resref",
+    "value": ""
+  },
+  "Tag": {
+    "type": "cexostring",
+    "value": "ReplaceTAGwithFXNumber"
+  },
+  "TemplateResRef": {
+    "type": "resref",
+    "value": "easyfx3"
+  },
+  "TrapDetectable": {
+    "type": "byte",
+    "value": 1
+  },
+  "TrapDetectDC": {
+    "type": "byte",
+    "value": 10
+  },
+  "TrapDisarmable": {
+    "type": "byte",
+    "value": 1
+  },
+  "TrapFlag": {
+    "type": "byte",
+    "value": 0
+  },
+  "TrapOneShot": {
+    "type": "byte",
+    "value": 1
+  },
+  "TrapType": {
+    "type": "byte",
+    "value": 0
+  },
+  "Type": {
+    "type": "int",
+    "value": 0
+  }
+}

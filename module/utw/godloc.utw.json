@@ -1,0 +1,51 @@
+{
+  "__data_type": "UTW ",
+  "Appearance": {
+    "type": "byte",
+    "value": 1
+  },
+  "Comment": {
+    "type": "cexostring",
+    "value": "26th January, 2006\r\n\r\nThe GodLoc Marker is used if the God System is in use.\r\nIf the player has a valid deity and are saved at the time of death they will appear at the GodLoc marker.\r\nIt's recommended you place this in your temple.\r\n\r\nThe default chance that a player will be raised by their god if they have one by  is 5% +1% per 4 levels of the character."
+  },
+  "Description": {
+    "type": "cexolocstring",
+    "value": {
+      "0": ""
+    }
+  },
+  "HasMapNote": {
+    "type": "byte",
+    "value": 0
+  },
+  "LinkedTo": {
+    "type": "cexostring",
+    "value": ""
+  },
+  "LocalizedName": {
+    "type": "cexolocstring",
+    "value": {
+      "0": "GodLoc"
+    }
+  },
+  "MapNote": {
+    "type": "cexolocstring",
+    "value": {}
+  },
+  "MapNoteEnabled": {
+    "type": "byte",
+    "value": 0
+  },
+  "PaletteID": {
+    "type": "byte",
+    "value": 5
+  },
+  "Tag": {
+    "type": "cexostring",
+    "value": "GodLoc"
+  },
+  "TemplateResRef": {
+    "type": "resref",
+    "value": "godloc"
+  }
+}
