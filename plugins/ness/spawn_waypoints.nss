@@ -44,14 +44,15 @@ void CreateNESSWaypoints()
     while (GetIsObjectValid(oArea))
     {
         
-        int chance = Random(100);
-        int loot_table = Random(3);
-        int how_many = Random(5);
+        
         
         int i;
 
         for (i = 0; i < how_many; i++)
         {
+            int chance = Random(100);
+           int loot_table = Random(3);
+        int how_many = Random(5);
             locl = GetRandomLocationfromArea(oArea);
             NESS_wpname = GenerateNESSWaypointDataforGroup(chance, loot_table);
             owp = CreateObject(OBJECT_TYPE_WAYPOINT,"nw_waypoint001",locl,FALSE,"scaled_kobolds");
@@ -61,6 +62,7 @@ void CreateNESSWaypoints()
                 + NESS_wpname + " tag:" + " scaled_forest");
                 SetName(owp, NESS_wpname);
                 SetTag(owp,"scaled_forest");
+                PrintString(ObjectToString(owp));
                 
             } else {
                 PrintString("[NESS] Waypoint could not be created at : " + GetName(oArea));
