@@ -1,8 +1,4 @@
-//::///////////////////////////////////////////////
-//:: Death Script
-//:: NW_O0_DEATH.NSS
-//:: Copyright (c) 2001 Bioware Corp.
-//:://////////////////////////////////////////////
+
 /*
     This script handles the default behavior
     that occurs when a player dies.
@@ -13,10 +9,6 @@
     handle dismounts when PC dies while mounted.
 
 */
-//:://////////////////////////////////////////////
-//:: Created By: Brent Knowles
-//:: Created On: November 6, 2001
-//:://////////////////////////////////////////////
 
 #include "x3_inc_horse"
 #include "zep_inc_phenos"
@@ -251,5 +243,4 @@ void main()
     DelayCommand(2.5, PopUpGUIPanel(oPlayer,GUI_PANEL_PLAYER_DEATH));
 
 }
-///////////////////////////////////////////////////////////////[ MAIN ]/////////
 

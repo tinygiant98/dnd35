@@ -1,7 +1,3 @@
-// Script: zep_on_activate
-// by Barry_1066
-// Feb. 12 2008 for CEP/DLA horse systems
-// Integrates BOTH old and Tag based systems
 
 #include "x3_inc_horse"
 #include "zep_inc_phenos"
@@ -1718,12 +1714,6 @@ void main()
     }/* end else (valid owyrmling) */
       return;
     }
-/////////////////////END DLA CREATURE Mount WIDGETS////////////////////
-     //X2 Tag based system code
-
-    //ExecuteScript(sItemTag, OBJECT_SELF);
-
-     //object oItem = GetItemActivated();
 
      // * Generic Item Script Execution Code
      // * If MODULE_SWITCH_EXECUTE_TAGBASED_SCRIPTS is set to TRUE on the module,
@@ -1740,6 +1730,3 @@ void main()
         }
      }
 }
-
-
-

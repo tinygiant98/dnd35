@@ -1,7 +1,4 @@
-// script: horse_mount
-// by Barry_1066
-// 02/10/2008
-// Included so DMs can mount CEP horses/ponies
+
 #include "zep_inc_phenos"
 #include "x3_inc_horse"
 void main()

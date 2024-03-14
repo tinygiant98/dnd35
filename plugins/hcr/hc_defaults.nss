@@ -154,7 +154,7 @@ int LOOTSYSTEM = 0;
 int REZPENALTY = 0;
 
 // Setting LIMBO to 0 will stop moving players to Fugue on death.
-int LIMBO = 1;
+int LIMBO = 0;
 
 // Setting DYINGSTRIP to 0 will stop stripping players of inventory on dying
 int DYINGSTRIP = 0;

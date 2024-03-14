@@ -613,7 +613,7 @@ string s1st_PCGetVarName(object oPC)
   int nCharName = GetStringLength(sCharName);
   string sLetter;
 
-  for (i=0;i<nCharName;i++)  //Search through each letter of the name. Add only if it's legal. => Ricerca attraverso ogni lettera del nome. Aggiunga soltanto se è legale.
+  for (i=0;i<nCharName;i++)  //Search through each letter of the name. Add only if it's legal. => Ricerca attraverso ogni lettera del nome. Aggiunga soltanto se ï¿½ legale.
    {
      sLetter = GetStringUpperCase(GetSubString(sCharName, i, 1));
      if (FindSubString(sGood, sLetter) !=-1 ) {sVarName = sVarName + sLetter;}
@@ -643,7 +643,7 @@ string s1st_PCGetVarNameShort(object oPC)
   int nCharName = GetStringLength(sCharName);
   string sLetter;
 
-  for (i=0;i<nCharName;i++)  //Search through each letter of the name. Add only if it's legal. => Ricerca attraverso ogni lettera del nome. Aggiunga soltanto se è legale.
+  for (i=0;i<nCharName;i++)  //Search through each letter of the name. Add only if it's legal. => Ricerca attraverso ogni lettera del nome. Aggiunga soltanto se ï¿½ legale.
    {
      sLetter = GetStringUpperCase(GetSubString(sCharName, i, 1));
      if (FindSubString(sGood, sLetter) !=-1 ) {sVarName = sVarName + sLetter;}
@@ -703,9 +703,9 @@ int n1st_GetAnimalReactionToPC(object oPC, object oAnimal)
   An nPCReaction value of 1 means the horse will not respond. This value is saved for any cruelty the PC inflicts on it and it is not used as an initial reaction
   Likewise a value of 10 means the horse truly loves the PC, which is also reserved for acts of kindness.
 
-  Un valore di 1 significa che il cavallo non risponderà. Questo valore è conservato per tutta
-  la crudeltà che il pc infligge su esso e non è usato come reazione iniziale. Inoltre un valore di 10 mezzi
-  il cavallo allineare ama il pc, che inoltre è riservato agli atti di bontà.
+  Un valore di 1 significa che il cavallo non risponderï¿½. Questo valore ï¿½ conservato per tutta
+  la crudeltï¿½ che il pc infligge su esso e non ï¿½ usato come reazione iniziale. Inoltre un valore di 10 mezzi
+  il cavallo allineare ama il pc, che inoltre ï¿½ riservato agli atti di bontï¿½.
 */
 }
 
@@ -2393,12 +2393,4 @@ void x1st_Effect_RemoveType(object oObject, int nEffect_Type)
 
 
 //void main(){}
-
-/*
-    PrintString("+================================================+");
-    PrintString("+==========   Builders' Compendium     ==========+");
-    PrintString("+===                                          ===+");
-    PrintString("+===   A 1st Order of Role-Players' Creation  ===+");
-    PrintString("+==========      www.1stOrder.net      ==========+");
-    PrintString("+================================================+");
 

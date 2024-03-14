@@ -1,8 +1,3 @@
-// script: horse_mount
-// by Barry_1066
-// 02/10/2008
-// Variable PONY_ID string resref (resref of the horse to be spawned)
-// This variable is placed on the horse/pony blueprint.
 #include "zep_inc_phenos"
 #include "x3_inc_horse"
 void main()
