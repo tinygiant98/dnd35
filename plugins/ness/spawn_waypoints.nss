@@ -33,12 +33,25 @@ location GetRandomLocationfromArea(object oArea) {
 
     return lLoc;
 }
+// Created by TinyGiant 03/14/2024
+// Thanks a lot!!
+object CreateNamedWaypoint(location l, string sName)
+{
+    json jWP = TemplateToJson("nw_waypoint001", RESTYPE_UTW);
+    json jNames = JsonPointer(jWP, "/LocalizedName");
+    json jValues = JsonPointer(jNames, "/value");
+    
+    int n; for (n; n <= PLAYER_LANGUAGE_POLISH; n++)
+        jValues = JsonObjectSet(jValues, IntToString(n), JsonString(sName));
+    jValues = JsonObjectDel(jValues, "id");
+    return JsonToObject(JsonObjectSet(jWP, "LocalizedName", JsonObjectSet(jNames, "value", jValues)), l);
+}
 
 
 void CreateNESSWaypoints()
 {
     object oArea = GetFirstArea();
-    object owp ;
+    object oWP ;
     string NESS_wpname;
     location locl ;
     int chance;
@@ -55,18 +68,18 @@ void CreateNESSWaypoints()
             loot_table = Random(3);
             locl = GetRandomLocationfromArea(oArea);
             NESS_wpname = GenerateNESSWaypointDataforGroup(chance, loot_table);
-            owp = CreateObject(OBJECT_TYPE_WAYPOINT,"nw_waypoint001",locl,FALSE,"scaled_kobolds");
-            if (GetIsObjectValid(owp)) 
+            oWP = CreateNamedWaypoint(locl, GenerateNESSWaypointDataforGroup(chance, loot_table));
+            if (GetIsObjectValid(oWP)) 
             {
-                PrintString("[NESS] Waypoint created at: " + GetName(oArea) + " Name: "
+                
+                Debug("Waypoint created at: " + GetName(oArea) + " Name: "
                 + NESS_wpname + " tag:" + " scaled_forest");
-                SetName(owp, NESS_wpname);
-                SetTag(owp,"scaled_forest");
-                PrintString(ObjectToString(owp));
+                SetTag(oWP,"scaled_forest");
+                Debug(ObjectToString(oWP));
                 
             } else {
-                PrintString("[NESS] Waypoint could not be created at : " + GetName(oArea));
-                PrintString(ObjectToString(owp));
+                CriticalError("Waypoint could not be created at : " + GetName(oArea));
+                CriticalError(ObjectToString(oWP));
             }
         }       
         oArea = GetNextArea();
