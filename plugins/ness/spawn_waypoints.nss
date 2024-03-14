@@ -47,6 +47,43 @@ object CreateNamedWaypoint(location l, string sName)
     return JsonToObject(JsonObjectSet(jWP, "LocalizedName", JsonObjectSet(jNames, "value", jValues)), l);
 }
 
+// this will match a group using tileset
+// https://nwnlexicon.com/index.php/Tileset_resref
+string ChooseGroupbyTile(object oArea) 
+{
+  // Determine the tileset used to create the area being entered.
+    string sTilesetResref = GetTilesetResRef(oArea);
+    string group = "scaled_commoners";
+
+    // If the area was created using the Rural Winter or Frozen Wastes tilesets...
+    if((sTilesetResref == TILESET_RESREF_RURAL_WINTER) || (sTilesetResref == TILESET_RESREF_FROZEN_WASTES) || sTilesetResref == TILESET_RESREF_FOREST) {
+        switch(Random(4) + 1) {
+             case 1: group = "scaled_forest"; break;
+             case 2: group = "scaled_outdoor"; break;
+             case 3: group = "scaled_plants"; break;
+             case 4: group = "scaled_elfs"; break;
+        }
+       
+    } 
+
+    if((sTilesetResref == TILESET_RESREF_RUINS) || (sTilesetResref == TILESET_RESREF_FROZEN_WASTES) || sTilesetResref == TILESET_RESREF_DESERT) {
+        switch(Random(4) + 1) {
+             case 1: group = "scaled_crypt"; break;
+             case 2: group = "scaled_outdoor"; break;
+             case 3: group = "scaled_trolls"; break;
+             case 4: group = "scaled_giants"; break;
+             case 5: group = "scaled_mercs"; break;
+        }
+      
+    } 
+ if((sTilesetResref == TILESET_RESREF_CITY_INTERIOR_2) ||  (sTilesetResref == TILESET_RESREF_CASTLE_INTERIOR_2) || (sTilesetResref == TILESET_RESREF_FORT_INTERIOR) ) {       
+       group = "scaled_commoners";
+    } 
+
+    return group;
+}
+
+
 
 void CreateNESSWaypoints()
 {
@@ -56,7 +93,7 @@ void CreateNESSWaypoints()
     location locl ;
     int chance;
     int loot_table;
-
+    string group_name;
     while (GetIsObjectValid(oArea))
     {
          
@@ -69,12 +106,13 @@ void CreateNESSWaypoints()
             locl = GetRandomLocationfromArea(oArea);
             NESS_wpname = GenerateNESSWaypointDataforGroup(chance, loot_table);
             oWP = CreateNamedWaypoint(locl, GenerateNESSWaypointDataforGroup(chance, loot_table));
+            group_name = ChooseGroupbyTile(oArea);
             if (GetIsObjectValid(oWP)) 
             {
                 
-                Debug("Waypoint created at: " + GetName(oArea) + " Name: "
-                + NESS_wpname + " tag:" + " scaled_forest");
-                SetTag(oWP,"scaled_forest");
+                Notice("Waypoint created at: " + GetName(oArea) + " Name: "
+                + NESS_wpname + " tag:" + group_name);
+                SetTag(oWP,group_name);
                 Debug(ObjectToString(oWP));
                 
             } else {

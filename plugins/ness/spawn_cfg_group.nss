@@ -700,6 +700,14 @@ string GetTemplateByCR(int nCR, string sGroupType)
 
       }
   }
+  else if (sGroupType == "commoners") {
+	switch(Random(4) + 1) {
+		case 1: sRetTemplate = "commoner001"; break;
+		case 2: sRetTemplate = "commoner002"; break;
+		case 3: sRetTemplate = "commoner003"; break;
+		case 4: sRetTemplate = "commoner004"; break;
+	}
+  }
   else if (sGroupType == "plants") {
     switch (nCR)
       {
