@@ -41,18 +41,18 @@ void CreateNESSWaypoints()
     object owp ;
     string NESS_wpname;
     location locl ;
+    int chance;
+    int loot_table;
+
     while (GetIsObjectValid(oArea))
     {
-        
-        
-        
+         
         int i;
-
+        int how_many = Random(5);
         for (i = 0; i < how_many; i++)
         {
-            int chance = Random(100);
-           int loot_table = Random(3);
-        int how_many = Random(5);
+            chance = Random(100);
+            loot_table = Random(3);
             locl = GetRandomLocationfromArea(oArea);
             NESS_wpname = GenerateNESSWaypointDataforGroup(chance, loot_table);
             owp = CreateObject(OBJECT_TYPE_WAYPOINT,"nw_waypoint001",locl,FALSE,"scaled_kobolds");
