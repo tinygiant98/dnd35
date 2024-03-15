@@ -156,10 +156,6 @@ void main()
 {
     object oPC = GetEnteringObject();
     ExecuteScript("x3_mod_def_enter", oPC);
-    // Add CNR event
-    ExecuteScript("cnr_module_oce", OBJECT_SELF);
-    ExecuteScript("otr_module_oce", OBJECT_SELF);
-
     if (!preEvent())
         return;
 

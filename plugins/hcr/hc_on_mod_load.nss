@@ -15,9 +15,6 @@
 //::////////////////////////////////////////////////////////////////////////////
 void main()
 {
-    //Add CNR event
-    ExecuteScript("cnr_module_oml", OBJECT_SELF);
-    ExecuteScript("otr_module_oml", OBJECT_SELF);
     if (!preEvent())
         return;
 

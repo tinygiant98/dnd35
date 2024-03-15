@@ -48,9 +48,6 @@
 object oOther;
 void main()
 {
-    // Add CNR event
-    ExecuteScript("cnr_module_onact", OBJECT_SELF);
-
     if(!preEvent()) return;
     object oItem=GetItemActivated();
     object oUser=GetItemActivator();

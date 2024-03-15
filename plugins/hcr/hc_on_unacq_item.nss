@@ -25,10 +25,6 @@ void Uniditem(object oItem, object oPC)
 //::////////////////////////////////////////////////////////////////////////////
 void main()
 {
-    // Add CNR event
-    ExecuteScript("cnr_module_oui", OBJECT_SELF);
-    // Oxen Trade Routes
-    ExecuteScript("otr_module_oui", OBJECT_SELF);
     if (!preEvent())
         return;
 
