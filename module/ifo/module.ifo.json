@@ -32,13 +32,6 @@
         "__struct_id": 6,
         "Area_Name": {
           "type": "resref",
-          "value": "area001"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
           "value": "area004"
         }
       },
@@ -61,20 +54,6 @@
         "Area_Name": {
           "type": "resref",
           "value": "blistfootinn1"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "bosque"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "bosque001"
         }
       },
       {
@@ -523,27 +502,6 @@
         "Area_Name": {
           "type": "resref",
           "value": "nelvaren"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "northernroad"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "northernroad001"
-        }
-      },
-      {
-        "__struct_id": 6,
-        "Area_Name": {
-          "type": "resref",
-          "value": "northernroad002"
         }
       },
       {

@@ -774,11 +774,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": "BritWoods_to_Britain"
+          "value": "WP_exit2brythhin"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 1
+          "value": 2
         },
         "LoadScreenID": {
           "type": "word",
@@ -795,7 +795,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
-            "0": "Door",
+            "0": "exit2ruinedcity",
             "id": 5349
           }
         },
@@ -873,7 +873,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "CityArea_WestExit"
+          "value": "exit2ruined"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -1646,11 +1646,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "cintoras2brythain"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",

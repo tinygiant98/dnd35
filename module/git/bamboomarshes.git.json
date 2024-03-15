@@ -779,11 +779,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "dragonsouth2bamboo"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -865,7 +865,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -877,7 +877,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "RuralExit"
+          "value": "Bamboo2dragonsouth"
         },
         "TemplateResRef": {
           "type": "resref",

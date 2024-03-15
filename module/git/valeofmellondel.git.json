@@ -124,11 +124,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "exit2mellon"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -145,6 +145,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "exit2crypt",
             "id": 5349
           }
         },
@@ -210,7 +211,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -222,7 +223,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "JeweledDoor"
+          "value": "exit2crypt"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -341,11 +342,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "forsaken2mellon"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -362,6 +363,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "mellon2forsaken",
             "id": 5349
           }
         },
@@ -427,7 +429,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -439,7 +441,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "ForestExit"
+          "value": "exit2forsaken"
         },
         "TemplateResRef": {
           "type": "resref",

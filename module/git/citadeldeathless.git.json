@@ -122,11 +122,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "cintoras2deathless"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -143,6 +143,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "deathless2cintoras",
             "id": 5349
           }
         },
@@ -208,7 +209,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -220,7 +221,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "RuralExit"
+          "value": "deathless2cintoras"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -4058,11 +4059,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "darkthorne2citadeldeath"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -4079,6 +4080,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "citadel2darkthorne",
             "id": 5349
           }
         },
@@ -4144,7 +4146,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -4156,7 +4158,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "RuralExit"
+          "value": "citadel2darkthorne"
         },
         "TemplateResRef": {
           "type": "resref",

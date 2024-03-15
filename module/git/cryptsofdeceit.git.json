@@ -124,11 +124,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "exit2crypt"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -210,7 +210,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -222,7 +222,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "TNO_wd_door"
+          "value": "exit2mellon"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -1211,11 +1211,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "exit2cryptdeceipt"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -1232,6 +1232,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "exit2",
             "id": 5349
           }
         },
@@ -1309,7 +1310,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "FancyDoor"
+          "value": "exit2"
         },
         "TemplateResRef": {
           "type": "resref",

@@ -96,8 +96,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -313,8 +313,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -530,8 +530,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -747,8 +747,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -964,8 +964,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -990,11 +990,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "dusty2lamni"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -1011,6 +1011,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "Lanmorilyn2dusty",
             "id": 5349
           }
         },
@@ -1076,7 +1077,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -1088,7 +1089,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "Barn2Door"
+          "value": "Lanmorilyn2dusty"
         },
         "TemplateResRef": {
           "type": "resref",

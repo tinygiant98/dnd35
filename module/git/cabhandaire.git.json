@@ -122,11 +122,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "dusty2cabhan"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -143,6 +143,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "todustyCabhan",
             "id": 5349
           }
         },
@@ -220,7 +221,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "CaveExit"
+          "value": "cabhan2dusty"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -1429,11 +1430,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "WP_villahermosa2cabhandaire"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 2
         },
         "LoadScreenID": {
           "type": "word",
@@ -1450,6 +1451,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "toVillaHermosa",
             "id": 5349
           }
         },
@@ -1527,7 +1529,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "RuralExit"
+          "value": "cabhan2villahermosa"
         },
         "TemplateResRef": {
           "type": "resref",

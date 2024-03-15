@@ -122,11 +122,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "WP_khaltax2serpent"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 2
         },
         "LoadScreenID": {
           "type": "word",
@@ -143,6 +143,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "Haciakhaltax",
             "id": 5349
           }
         },
@@ -208,7 +209,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -220,7 +221,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "CaveExit"
+          "value": "Serpent2khaltax"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -339,11 +340,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "WP_BarbarianFortressexit"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 2
         },
         "LoadScreenID": {
           "type": "word",
@@ -360,6 +361,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "Serpent2barbarian",
             "id": 5349
           }
         },
@@ -425,7 +427,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -437,7 +439,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "CaveExit"
+          "value": "serpent2barbarian"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -556,11 +558,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "primeval2serpent"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -577,6 +579,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "serpent2primeval",
             "id": 5349
           }
         },
@@ -642,7 +645,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -654,7 +657,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "RuralExit"
+          "value": "serpent2primeval"
         },
         "TemplateResRef": {
           "type": "resref",

@@ -122,11 +122,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "exit2forsaken"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -143,6 +143,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "exit2mellondel",
             "id": 5349
           }
         },
@@ -220,7 +221,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "ForestExit"
+          "value": "forsaken2mellon"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -339,11 +340,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "cintoras2brythain"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -360,6 +361,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "exit2cintoras",
             "id": 5349
           }
         },
@@ -425,7 +427,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -437,7 +439,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "Wall1Gate"
+          "value": "exit2cintoras"
         },
         "TemplateResRef": {
           "type": "resref",

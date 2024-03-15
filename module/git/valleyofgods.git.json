@@ -994,11 +994,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "Arak2Valleygods"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -1092,7 +1092,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "JeweledDoor"
+          "value": "toarakfromvalley"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -1430,11 +1430,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "WP_Immerseatovalley"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 2
         },
         "LoadScreenID": {
           "type": "word",
@@ -1451,6 +1451,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "toImmersea",
             "id": 5349
           }
         },
@@ -1516,7 +1517,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -1528,7 +1529,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "WallDoor"
+          "value": "valleytoimmersea"
         },
         "TemplateResRef": {
           "type": "resref",

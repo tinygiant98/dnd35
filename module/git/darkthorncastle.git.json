@@ -122,11 +122,11 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": ""
+          "value": "citadel2darkthorne"
         },
         "LinkedToFlags": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "LoadScreenID": {
           "type": "word",
@@ -143,6 +143,7 @@
         "LocName": {
           "type": "cexolocstring",
           "value": {
+            "0": "tocitadelofdeath",
             "id": 5349
           }
         },
@@ -208,7 +209,7 @@
         },
         "Plot": {
           "type": "byte",
-          "value": 0
+          "value": 1
         },
         "PortraitId": {
           "type": "word",
@@ -220,7 +221,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "MineExit"
+          "value": "darkthorne2citadeldeath"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -48347,7 +48348,7 @@
         "__struct_id": 9,
         "AnimationState": {
           "type": "byte",
-          "value": 2
+          "value": 1
         },
         "Appearance": {
           "type": "dword",
@@ -48359,7 +48360,7 @@
         },
         "Bearing": {
           "type": "float",
-          "value": -0.0
+          "value": 3.117
         },
         "BodyBag": {
           "type": "byte",
@@ -48380,6 +48381,7 @@
         "Description": {
           "type": "cexolocstring",
           "value": {
+            "0": "A metal door.",
             "id": 16813641
           }
         },
@@ -48511,11 +48513,11 @@
         },
         "Static": {
           "type": "byte",
-          "value": 1
+          "value": 0
         },
         "Tag": {
           "type": "cexostring",
-          "value": "ZEP_DOORS004"
+          "value": "darkcastleenter"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -83353,10 +83355,289 @@
   },
   "TriggerList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "AutoRemoveKey": {
+          "type": "byte",
+          "value": 0
+        },
+        "Cursor": {
+          "type": "byte",
+          "value": 1
+        },
+        "DisarmDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Faction": {
+          "type": "dword",
+          "value": 1
+        },
+        "Geometry": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": -4.0003
+              },
+              "PointY": {
+                "type": "float",
+                "value": 3.1945
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 5.025
+              }
+            },
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": -3.9818
+              },
+              "PointY": {
+                "type": "float",
+                "value": -0.06950000000000001
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 5.025
+              }
+            },
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": 0.0
+              },
+              "PointY": {
+                "type": "float",
+                "value": 0.0
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 5.025
+              }
+            },
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": 0.0432
+              },
+              "PointY": {
+                "type": "float",
+                "value": 0.1356
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 5.025
+              }
+            },
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": -0.371
+              },
+              "PointY": {
+                "type": "float",
+                "value": 3.1862
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 5.025
+              }
+            }
+          ]
+        },
+        "HighlightHeight": {
+          "type": "float",
+          "value": 0.0
+        },
+        "KeyName": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "LinkedTo": {
+          "type": "cexostring",
+          "value": "WP_Southpath2Darkthorne"
+        },
+        "LinkedToFlags": {
+          "type": "byte",
+          "value": 2
+        },
+        "LoadScreenID": {
+          "type": "word",
+          "value": 0
+        },
+        "LocalizedName": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "Hacia South Path",
+            "id": 14760
+          }
+        },
+        "OnClick": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDisarm": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnTrapTriggered": {
+          "type": "resref",
+          "value": ""
+        },
+        "PortraitId": {
+          "type": "word",
+          "value": 0
+        },
+        "ScriptHeartbeat": {
+          "type": "resref",
+          "value": ""
+        },
+        "ScriptOnEnter": {
+          "type": "resref",
+          "value": ""
+        },
+        "ScriptOnExit": {
+          "type": "resref",
+          "value": ""
+        },
+        "ScriptUserDefine": {
+          "type": "resref",
+          "value": ""
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "Darkthorne2Southpat"
+        },
+        "TemplateResRef": {
+          "type": "resref",
+          "value": "newtransition"
+        },
+        "TrapDetectable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapDetectDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapDisarmable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapFlag": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapOneShot": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapType": {
+          "type": "byte",
+          "value": 0
+        },
+        "Type": {
+          "type": "int",
+          "value": 1
+        },
+        "XOrientation": {
+          "type": "float",
+          "value": 0.0
+        },
+        "XPosition": {
+          "type": "float",
+          "value": 67.0915
+        },
+        "YOrientation": {
+          "type": "float",
+          "value": 0.0
+        },
+        "YPosition": {
+          "type": "float",
+          "value": 0.3616
+        },
+        "ZOrientation": {
+          "type": "float",
+          "value": 0.0
+        },
+        "ZPosition": {
+          "type": "float",
+          "value": 0.0
+        }
+      }
+    ]
   },
   "WaypointList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 5,
+        "Appearance": {
+          "type": "byte",
+          "value": 1
+        },
+        "Description": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "HasMapNote": {
+          "type": "byte",
+          "value": 0
+        },
+        "LinkedTo": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "LocalizedName": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "MapNote": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "MapNoteEnabled": {
+          "type": "byte",
+          "value": 0
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "WP_Darkthorne2Southpat"
+        },
+        "TemplateResRef": {
+          "type": "resref",
+          "value": ""
+        },
+        "XOrientation": {
+          "type": "float",
+          "value": 0.0
+        },
+        "XPosition": {
+          "type": "float",
+          "value": 65.1129
+        },
+        "YOrientation": {
+          "type": "float",
+          "value": 1.0
+        },
+        "YPosition": {
+          "type": "float",
+          "value": 1.9241
+        },
+        "ZPosition": {
+          "type": "float",
+          "value": 5.025
+        }
+      }
+    ]
   }
 }

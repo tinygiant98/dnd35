@@ -98,8 +98,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -317,8 +317,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -536,8 +536,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -755,8 +755,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -974,8 +974,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -1193,8 +1193,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -1410,8 +1410,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -1627,8 +1627,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -1846,8 +1846,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -2063,8 +2063,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -2282,8 +2282,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -2501,8 +2501,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -2718,8 +2718,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -2935,8 +2935,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -3152,8 +3152,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -3369,8 +3369,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -3588,8 +3588,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -3807,8 +3807,8 @@
           "type": "byte",
           "value": 16
         },
-        "GenericType": {
-          "type": "byte",
+        "GenericType_New": {
+          "type": "dword",
           "value": 0
         },
         "Hardness": {
@@ -106956,7 +106956,226 @@
   },
   "TriggerList": {
     "type": "list",
-    "value": []
+    "value": [
+      {
+        "__struct_id": 1,
+        "AutoRemoveKey": {
+          "type": "byte",
+          "value": 0
+        },
+        "Cursor": {
+          "type": "byte",
+          "value": 1
+        },
+        "DisarmDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "Faction": {
+          "type": "dword",
+          "value": 1
+        },
+        "Geometry": {
+          "type": "list",
+          "value": [
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": -0.082
+              },
+              "PointY": {
+                "type": "float",
+                "value": -0.164
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 0.028
+              }
+            },
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": 0.246
+              },
+              "PointY": {
+                "type": "float",
+                "value": -3.1987
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 0.028
+              }
+            },
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": 7.7097
+              },
+              "PointY": {
+                "type": "float",
+                "value": -3.1987
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 0.028
+              }
+            },
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": 7.7097
+              },
+              "PointY": {
+                "type": "float",
+                "value": 0.0
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 0.028
+              }
+            },
+            {
+              "__struct_id": 3,
+              "PointX": {
+                "type": "float",
+                "value": 0.0
+              },
+              "PointY": {
+                "type": "float",
+                "value": 0.0
+              },
+              "PointZ": {
+                "type": "float",
+                "value": 0.028
+              }
+            }
+          ]
+        },
+        "HighlightHeight": {
+          "type": "float",
+          "value": 0.0
+        },
+        "KeyName": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "LinkedTo": {
+          "type": "cexostring",
+          "value": "cabhan2villahermosa"
+        },
+        "LinkedToFlags": {
+          "type": "byte",
+          "value": 1
+        },
+        "LoadScreenID": {
+          "type": "word",
+          "value": 0
+        },
+        "LocalizedName": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "Hacia Cabhan Daire",
+            "id": 14760
+          }
+        },
+        "OnClick": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnDisarm": {
+          "type": "resref",
+          "value": ""
+        },
+        "OnTrapTriggered": {
+          "type": "resref",
+          "value": ""
+        },
+        "PortraitId": {
+          "type": "word",
+          "value": 0
+        },
+        "ScriptHeartbeat": {
+          "type": "resref",
+          "value": ""
+        },
+        "ScriptOnEnter": {
+          "type": "resref",
+          "value": ""
+        },
+        "ScriptOnExit": {
+          "type": "resref",
+          "value": ""
+        },
+        "ScriptUserDefine": {
+          "type": "resref",
+          "value": ""
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "villahermosa2cabhandaire"
+        },
+        "TemplateResRef": {
+          "type": "resref",
+          "value": "newtransition"
+        },
+        "TrapDetectable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapDetectDC": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapDisarmable": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapFlag": {
+          "type": "byte",
+          "value": 0
+        },
+        "TrapOneShot": {
+          "type": "byte",
+          "value": 1
+        },
+        "TrapType": {
+          "type": "byte",
+          "value": 0
+        },
+        "Type": {
+          "type": "int",
+          "value": 1
+        },
+        "XOrientation": {
+          "type": "float",
+          "value": 0.0
+        },
+        "XPosition": {
+          "type": "float",
+          "value": 91.22410000000001
+        },
+        "YOrientation": {
+          "type": "float",
+          "value": 0.0
+        },
+        "YPosition": {
+          "type": "float",
+          "value": 159.3849
+        },
+        "ZOrientation": {
+          "type": "float",
+          "value": 0.0
+        },
+        "ZPosition": {
+          "type": "float",
+          "value": 0.0
+        }
+      }
+    ]
   },
   "WaypointList": {
     "type": "list",
@@ -107407,6 +107626,65 @@
         "ZPosition": {
           "type": "float",
           "value": 0.01
+        }
+      },
+      {
+        "__struct_id": 5,
+        "Appearance": {
+          "type": "byte",
+          "value": 1
+        },
+        "Description": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "HasMapNote": {
+          "type": "byte",
+          "value": 0
+        },
+        "LinkedTo": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "LocalizedName": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "MapNote": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "MapNoteEnabled": {
+          "type": "byte",
+          "value": 0
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "WP_villahermosa2cabhandaire"
+        },
+        "TemplateResRef": {
+          "type": "resref",
+          "value": ""
+        },
+        "XOrientation": {
+          "type": "float",
+          "value": 0.0
+        },
+        "XPosition": {
+          "type": "float",
+          "value": 95.03789999999999
+        },
+        "YOrientation": {
+          "type": "float",
+          "value": 1.0
+        },
+        "YPosition": {
+          "type": "float",
+          "value": 157.7855
+        },
+        "ZPosition": {
+          "type": "float",
+          "value": 0.028
         }
       }
     ]
