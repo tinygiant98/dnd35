@@ -88,12 +88,13 @@ string GetTemplateByCR(int nCR, string sGroupType)
       switch (nCR)
 	{
 	case 1:
-	  switch(d4(1))
+	  switch(Random(5) + 1)
 	    {
 	    case 1:
 	    case 2: sRetTemplate = "NW_SKELETON"; break;
 	    case 3: sRetTemplate = "NW_ZOMBIE01"; break;
 	    case 4: sRetTemplate = "NW_ZOMBIE02"; break;
+	    case 5: sRetTemplate = "NW_ZOMBIE02"; break;
 	    }
 	  break;
 	case 2:
@@ -102,11 +103,27 @@ string GetTemplateByCR(int nCR, string sGroupType)
 	case 3:
 	  sRetTemplate = "NW_SHADOW";
 	  break;
+	case 4:
+	  sRetTemplate = "zep_ghostf_003";
+	  break;
+    case 5: 
+		sRetTemplate = "zep_flvampf_001";
+		 break;
 	default:
 	  sRetTemplate = "";
 	  break;
 	}
-    } else if (sGroupType == "forest") {
+    } 
+else if (sGroupType == "blood") {
+
+	  switch(d2(1)) 
+	  {
+		case 1: sRetTemplate = "zep_ghostf_012"; break; 
+		case 2: sRetTemplate = "zep_ghostf_017"; break; 
+	    case 3:sRetTemplate = "zep_ghostf_003"; break;
+	  }
+
+}	else if (sGroupType == "forest") {
     switch (nCR) {
     case 1:
       switch (getroll(35)) {
