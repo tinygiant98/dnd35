@@ -133,6 +133,7 @@ string ChooseGroupbyTile(object oArea)
     if ((FindSubString(aname, "crypt") != -1) || 
         (FindSubString(aname, "tomb") != -1) || 
         (FindSubString(aname, "dark") != -1)  || 
+         (FindSubString(aname, "tumba") != -1)  ||
         (FindSubString(aname, "blood") != -1) || 
         (FindSubString(aname, "death") != -1) ||
         (FindSubString(aname, "chapel") != -1)

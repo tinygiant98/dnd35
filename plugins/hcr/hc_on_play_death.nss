@@ -43,7 +43,6 @@ void main()
     object oItem;
     effect eEffect;
     string sDB="X3SADDLEBAG"+GetTag(GetModule());
-    ExecuteScript("otr_module_opd", OBJECT_SELF);
 
     if (GetStringLength(GetLocalString(GetModule(),"X3_SADDLEBAG_DATABASE"))>0) sDB=GetLocalString(GetModule(),"X3_SADDLEBAG_DATABASE");
     if (HorseGetIsMounted(oPlayer))

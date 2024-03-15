@@ -11,7 +11,7 @@
 //::////////////////////////////////////////////////////////////////////////////
 void main()
 {
-ExecuteScript("otr_module_ocl", OBJECT_SELF);
+
     if (!preEvent())
         return;
 
