@@ -81,8 +81,8 @@ string ChooseGroupbyTile(object oArea)
       (FindSubString(aname, "marsh") != -1) ) {
     switch(Random(8) + 1) {
     case 1: group = "scaled_forest"; break;
-    case 2: group = "scaled_outdoor"; break;
-    case 3: group = "scaled_plants"; break;
+    case 2: group = "scaled_kobold"; break;
+    case 3: group = "scaled_tree"; break;
     case 4: group = "scaled_elfs"; break;
     case 5: group = "scaled_trolls"; break;
     case 6: group = "scaled_kobolds"; break;
@@ -98,8 +98,8 @@ string ChooseGroupbyTile(object oArea)
       (FindSubString(aname, "town") != -1))
     {
       switch(Random(2) + 1) {
-       case 1: group = "scaled_commoners";break;
-       case 2: group = "pg_guard";break;
+      case 1: group = "scaled_commoners";break;
+      case 2: group = "pg_guard";break;
       }
       return group;
     }    
@@ -154,9 +154,9 @@ string ChooseGroupbyTile(object oArea)
       (FindSubString(aname, "chapel") != -1)
       ) {
     switch(Random(6) + 1) {
-    case 1: group = "scaled_crypt"; break;
-    case 2: group = "scaled_blood"; break;
-    case 3: group = "scaled_drows"; break;
+    case 1: group = "scaled_ghost"; break;
+    case 2: group = "scaled_vampire"; break;
+    case 3: group = "scaled_skeleton"; break;
     case 4: group = "scaled_outdoor"; break;
     case 5: group = "scaled_vampires"; break;
     case 6: group = "scaled_nomuertos"; break;
