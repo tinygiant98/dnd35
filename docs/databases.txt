@@ -1,0 +1,35 @@
+drop table Environments;
+ -- Environments Table
+CREATE TABLE IF NOT EXISTS Environments (
+    EnvironmentID INTEGER PRIMARY KEY,
+    Name TEXT
+	
+);
+ 
+ CREATE TABLE IF NOT EXISTS Encounters (
+    EncounterID INTEGER PRIMARY KEY,
+    CreatureID INTEGER,
+    EnvironmentID INTEGER,
+    FOREIGN KEY (CreatureID) REFERENCES creatures(id),
+    FOREIGN KEY (EnvironmentID) REFERENCES Environments(EnvironmentID)
+);
+ -- Adding environments 
+ delete from Environments;
+ INSERT INTO Environments values 
+ (NULL, "CAVES"),
+ (NULL, "FOREST"), 
+ (NULL, "CITY_EXTERIOR"), 
+ (NULL,"CITY_INTERIOR"), 
+ (NULL, "CRYPT"),
+(NULL, "DESERT"),
+(NULL, "DUNGEON"),
+(NULL, "SNOW"),
+(NULL, "SEWERS"),
+(NULL, "UNDERDARK"),
+(NULL, "RUINS"),
+(NULL, "HAUNTED")
+ 	 ;
+ 
+ select * from Environments;
+-- select * from tilesets;
+--select id, FirstName, TemplateResRef,ChallengeRating from creatures where FirstName like '%Worg%' and _FactionName = 'Hostile' ;
