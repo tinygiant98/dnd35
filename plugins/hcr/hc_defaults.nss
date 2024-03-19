@@ -68,7 +68,7 @@ int MULTICHAR = 0;
 string LOGINMESSAGE = "Bienvenido, recuerda divertirte";
 
 // Set to 0 to allow folks to come back to life after a server reset.
-int DEATHOVERREBOOT = 1;
+int DEATHOVERREBOOT = 0;
 
 // If 0, will use normal summoning duration, if 1 will cause creature to last 1
 // round (6 sec) per HitDice (level) of the summoner. You can set it to higher
@@ -154,7 +154,7 @@ int LOOTSYSTEM = 0;
 int REZPENALTY = 0;
 
 // Setting LIMBO to 0 will stop moving players to Fugue on death.
-int LIMBO = 1;
+int LIMBO = 0;
 
 // Setting DYINGSTRIP to 0 will stop stripping players of inventory on dying
 int DYINGSTRIP = 0;
@@ -167,7 +167,7 @@ int INVSTRIP = 0;
 int RESTSYSTEM = 1;
 
 // Setting RESTINSHIFTS to 1 will make parties have to rest in shifts
-int RESTINSHIFTS = 1; //New 18th May, 2005 - SE
+int RESTINSHIFTS = 0; //New 18th May, 2005 - SE
 
 // Controls how long between rests if RESTSYSTEM is used.
 int RESTBREAK = 16;

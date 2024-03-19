@@ -27,7 +27,7 @@ string GenerateNESSWaypointDataforGroup(int chance, int loot_table)
   string rs = paddzero(chance);
   int max = Random(5) + 1;
   int luck = Random(100) + 1;
-  if (luck < 20) {
+  if (luck < 10) {
       max = Random(10)  + 1;
   }
 
@@ -50,8 +50,8 @@ location GetRandomLocationfromArea(object oArea) {
   float fAngle = IntToFloat(Random(360));
   location lLoc;
 
-  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.05f;
-  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.05f;
+  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.15f;
+  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.15f;
 
   lLoc = Location(oArea, Vector(fRandX, fRandY, 0.0f), fAngle);
 
@@ -162,7 +162,6 @@ void CreateNESSWaypoints()
   string group_name;
   while (GetIsObjectValid(oArea))
     {
-         
       int i;
       int how_many = fix_chances(Random(5) + 1, 5 ) ;
       for (i = 0; i < how_many; i++)
