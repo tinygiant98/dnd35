@@ -25,7 +25,12 @@ string GenerateNESSWaypointDataforGroup(int chance, int loot_table)
 {
   string lt = paddzero(loot_table);
   string rs = paddzero(chance);
-  int max = Random(8) + 1;
+  int max = Random(5) + 1;
+  int luck = Random(100) + 1;
+  if (luck < 20) {
+      max = Random(10)  + 1;
+  }
+
   string min = paddzero(Random(max) + 1);
   string smax = paddzero(max);
   // SN05M03 = 5 spawns but spawn between 3 and 5  
@@ -97,7 +102,7 @@ string ChooseGroupbyTile(object oArea)
       (FindSubString(aname, "way") != -1))
     {
       // This should be road
-      return "FOREST";
+      return "CITY_EXTERIOR";
     }
 
   if ( (FindSubString(aname, "peak") != -1) ||
@@ -129,9 +134,8 @@ string ChooseGroupbyTile(object oArea)
   if((sTilesetResref == TILESET_RESREF_RURAL_WINTER) ||
      (sTilesetResref == TILESET_RESREF_FROZEN_WASTES)
      ) {
-    return "SNOW";
+    return "FOREST";
   }
-
 
   if((sTilesetResref == TILESET_RESREF_RUINS)){
     return "RUINS";
@@ -160,7 +164,7 @@ void CreateNESSWaypoints()
     {
          
       int i;
-      int how_many = fix_chances(Random(10) + 1, 5 ) ;
+      int how_many = fix_chances(Random(5) + 1, 5 ) ;
       for (i = 0; i < how_many; i++)
         {
           chance = fix_chances(Random(100), 20);

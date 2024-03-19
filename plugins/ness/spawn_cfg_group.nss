@@ -34,17 +34,24 @@ string GetCreatureFromEncounterTable(int nMinimumCR = 1, string environment = "F
 
 string GetCreatureFromEncounterTable(int nMinimumCR = 1, string environment = "FOREST")
 {
-
+  int min, max = 0;
+  if (nMinimumCR <= 5) {
+    min = 0;
+    max = 5;
+  } else {
+    min = nMinimumCR - 5;
+    max = nMinimumCR + 5;
+  }
   string s = "SELECT TemplateResRef FROM Encounters " +
-    " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL <= @cr " +
+    " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL >= @min and Encounters.LVL <= @max " +
     " JOIN Environments ON Encounters.EnvironmentID = Environments.EnvironmentID " +
     " WHERE Environments.Name = @environment ORDER BY RANDOM() LIMIT 1;";
 
   sqlquery q = SqlPrepareQueryCampaign("dnd35", s);
-  SqlBindInt(q, "@cr", nMinimumCR);
+  SqlBindInt(q, "@min", min);
+  SqlBindInt(q, "@max", max);
   SqlBindString(q, "@environment", environment);
   return SqlStep(q) ? SqlGetString(q, 0) : "";
-
 }
 
 string GetTemplateByCR(int nCR, string sGroupType)
