@@ -1,35 +1,44 @@
-drop table Environments;
+PRAGMA foreign_keys = OFF;
+drop table if exists  Environments;
+drop table if exists Encounters;
+PRAGMA foreign_keys = ON;
+
  -- Environments Table
 CREATE TABLE IF NOT EXISTS Environments (
     EnvironmentID INTEGER PRIMARY KEY,
-    Name TEXT
-	
+    Name TEXT	CHECK( Name  IN  ("FOREST",
+	                                                                   "CAVES",
+																	   "CITY_EXTERIOR",
+																	   "CITY_INTERIOR",
+																	   "CRYPT",
+																	   "DESERT",
+																	   "SEWER",
+																	   "SNOW",
+																	   "DUNGEON",
+																	   "UNDERDARK",
+																	   "RUINS",
+																	   "HAUNTED") )
 );
- 
+
+ -- Adding environments
+ INSERT INTO Environments ( Name ) values
+ ("CAVES"), ( "FOREST") ,("RUINS"), ("HAUNTED"),("CITY_EXTERIOR"), ("CITY_INTERIOR"),
+ ("DUNGEON"),("CRYPT"), ("DESERT"), ("SNOW"), ("UNDERDARK"), ("SEWER");
+select * from Environments;
+
  CREATE TABLE IF NOT EXISTS Encounters (
     EncounterID INTEGER PRIMARY KEY,
+	LVL INTEGER,
     CreatureID INTEGER,
     EnvironmentID INTEGER,
     FOREIGN KEY (CreatureID) REFERENCES creatures(id),
     FOREIGN KEY (EnvironmentID) REFERENCES Environments(EnvironmentID)
 );
- -- Adding environments 
- delete from Environments;
- INSERT INTO Environments values 
- (NULL, "CAVES"),
- (NULL, "FOREST"), 
- (NULL, "CITY_EXTERIOR"), 
- (NULL,"CITY_INTERIOR"), 
- (NULL, "CRYPT"),
-(NULL, "DESERT"),
-(NULL, "DUNGEON"),
-(NULL, "SNOW"),
-(NULL, "SEWERS"),
-(NULL, "UNDERDARK"),
-(NULL, "RUINS"),
-(NULL, "HAUNTED")
- 	 ;
- 
- select * from Environments;
--- select * from tilesets;
---select id, FirstName, TemplateResRef,ChallengeRating from creatures where FirstName like '%Worg%' and _FactionName = 'Hostile' ;
+
+
+SELECT 
+ CreatureID, TemplateResRef, ChallengeRating
+FROM Encounters
+JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL < 10
+JOIN Environments ON Encounters.EnvironmentID = Environments.EnvironmentID
+WHERE Environments.Name = 'FOREST' order by random();

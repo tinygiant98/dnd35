@@ -79,25 +79,7 @@ string ChooseGroupbyTile(object oArea)
   // First try to deduce what to spawn by looking at the name of the area
   if ((FindSubString(aname, "forest") != -1) ||
       (FindSubString(aname, "marsh") != -1) ) {
-    switch(Random(16) + 1) {
-    case 1: group = "scaled_forest"; break;
-    case 2: group = "scaled_kobold"; break;
-    case 3: group = "scaled_tree"; break;
-    case 4: group = "scaled_elf"; break;
-    case 5: group = "scaled_orc"; break;
-    case 6: group = "scaled_bear"; break;
-    case 7: group = "scaled_kobold"; break;
-    case 8: group = "scaled_troll"; break;
-    case 9: group = "forest"; break;
-    case 10: group = "troll"; break;
-    case 11: group = "rabbit"; break;
-    case 12: group = "frog"; break;
-    case 13: group = "scaled_wolf"; break;
-    case 14: group = "wolf"; break;
-    case 15: group = "scaled_goblin"; break;
-    case 16: group = "goblin"; break;
-    }
-    return group;
+    return "FOREST";
   }
 
   if ((FindSubString(aname, "city") != -1) ||
@@ -105,12 +87,8 @@ string ChooseGroupbyTile(object oArea)
       (FindSubString(aname, "castle") != -1) ||
       (FindSubString(aname, "town") != -1))
     {
-      switch(Random(2) + 1) {
-      case 1: group = "scaled_commoner";break;
-      case 2: group = "commoner";break;
-      }
-      return group;
-    }    
+      return "CITY_INTERIOR";
+    }
 
   if ((FindSubString(aname, "road") != -1) ||
       (FindSubString(aname, "path") != -1) ||
@@ -118,18 +96,9 @@ string ChooseGroupbyTile(object oArea)
       (FindSubString(aname, "vale") != -1) ||
       (FindSubString(aname, "way") != -1))
     {
-      switch(Random(7) + 1)
-        {
-        case 1: group = "scaled_mercs"; break;
-        case 2: group = "scaled_elfs"; break;
-        case 3: group = "scaled_wolf"; break;
-        case 4: group = "scaled_goblin"; break;
-        case 5: group = "scaled_outdoor"; break;
-        case 6: group = "goblin"; break;
-        case 7: group = "cr_militia"; break;
-        }
-      return group;
-    } 
+      // This should be road
+      return "FOREST";
+    }
 
   if ( (FindSubString(aname, "peak") != -1) ||
        (FindSubString(aname, "grounds") != -1) ||
@@ -139,20 +108,7 @@ string ChooseGroupbyTile(object oArea)
        (FindSubString(aname, "cavern") != -1) ||
        (FindSubString(aname, "valley") != -1))
     {
-      switch(Random(9) + 1)
-        {
-        case 1: group = "scaled_ogre"; break;
-        case 2: group = "scaled_drow"; break;
-        case 3: group = "scaled_rxvar"; break;
-        case 4: group = "scaled_giant"; break;
-        case 5: group = "scaled_merce"; break;
-        case 6: group = "scaled_kobold"; break;
-        case 7: group = "kobold"; break;
-        case 8: group = "scaled_goblin"; break;
-        case 9: group = "goblin"; break;
-        default: group = "goblin"; break;
-        }
-      return group;
+      return "CAVES";
     }    
 
   if ((FindSubString(aname, "crypt") != -1) ||
@@ -164,17 +120,7 @@ string ChooseGroupbyTile(object oArea)
       (FindSubString(aname, "death") != -1) ||
       (FindSubString(aname, "chapel") != -1)
       ) {
-    switch(Random(7) + 1) {
-    case 1: group = "scaled_ghost"; break;
-    case 2: group = "scaled_vampire"; break;
-    case 3: group = "scaled_skeleton"; break;
-    case 4: group = "scaled_outdoor"; break;
-    case 5: group = "scaled_vampires"; break;
-    case 6: group = "scaled_nomuertos"; break;
-    case 7: group = "scaled_dead"; break;
-    case 8: group = "dead"; break;
-    }
-    return group;
+    return "CRYPT";
   }
 
   // Then just check tiles
@@ -183,31 +129,18 @@ string ChooseGroupbyTile(object oArea)
   if((sTilesetResref == TILESET_RESREF_RURAL_WINTER) ||
      (sTilesetResref == TILESET_RESREF_FROZEN_WASTES)
      ) {
-    switch(Random(5) + 1) {
-    case 1: group = "scaled_forest"; break;
-    case 2: group = "scaled_outdoor"; break;
-    case 3: group = "scaled_plants"; break;
-    case 4: group = "scaled_elfs"; break;
-    case 5: group = "scaled_goblins_chantas"; break;
-    }
+    return "SNOW";
   }
 
+
   if((sTilesetResref == TILESET_RESREF_RUINS)){
-    switch(Random(6) + 1) {
-    case 1: group = "scaled_crypt"; break;
-    case 2: group = "scaled_outdoor"; break;
-    case 3: group = "scaled_trolls"; break;
-    case 4: group = "scaled_giants"; break;
-    case 5: group = "scaled_mercs"; break;
-    case 6: group = "scaled_blood"; break;
-    case 7: group = "scaled_vampires"; break;
-    }
+    return "RUINS";
   }
 
   if((sTilesetResref == TILESET_RESREF_CITY_INTERIOR_2) ||
      (sTilesetResref == TILESET_RESREF_CASTLE_INTERIOR_2) ||
      (sTilesetResref == TILESET_RESREF_FORT_INTERIOR) ) {
-    group = "commoner";
+    return  "CITY_INTERIOR";
   }
 
   return group;

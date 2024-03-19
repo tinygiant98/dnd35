@@ -28,23 +28,29 @@ void DeactivateSpawnsByTag(string sSpawnTag);
 void DeactivateAllSpawns();
 void DespawnChildren(object oSpawn);
 void DespawnChildrenByTag(object oSpawn, string sSpawnTag);
-string GetCreatureFromDatabase(int nMinimumCR = 1, string sLikeName = "zep_craniumrat");
+string GetCreatureFromEncounterTable(int nMinimumCR = 1, string environment = "FOREST");
 //
 //
 
-string GetCreatureFromDatabase(int nMinimumCR = 1, string sLikeName = "zep_craniumrat")
+string GetCreatureFromEncounterTable(int nMinimumCR = 1, string environment = "FOREST")
 {
-    string s = "SELECT TemplateResRef FROM creatures WHERE ChallengeRating <= @cr AND FirstName LIKE @name ORDER BY RANDOM() LIMIT 1;";
-    sqlquery q = SqlPrepareQueryCampaign("dnd35", s);
-    SqlBindInt(q, "@cr", nMinimumCR);
-    SqlBindString(q, "@name", "%" + sLikeName + "%");
-    return SqlStep(q) ? SqlGetString(q, 0) : "";
+
+  string s = "SELECT TemplateResRef FROM Encounters " +
+    " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL <= @cr " +
+    " JOIN Environments ON Encounters.EnvironmentID = Environments.EnvironmentID " +
+    " WHERE Environments.Name = @environment ORDER BY RANDOM() LIMIT 1;";
+
+  sqlquery q = SqlPrepareQueryCampaign("dnd35", s);
+  SqlBindInt(q, "@cr", nMinimumCR);
+  SqlBindString(q, "@environment", environment);
+  return SqlStep(q) ? SqlGetString(q, 0) : "";
+
 }
 
 string GetTemplateByCR(int nCR, string sGroupType)
 {
   string sRetTemplate;
-  sRetTemplate = GetCreatureFromDatabase(nCR, sGroupType);
+  sRetTemplate = GetCreatureFromEncounterTable(nCR, sGroupType);
   return sRetTemplate;
 }
 
@@ -216,7 +222,7 @@ string SpawnGroup(object oSpawn, string sTemplate)
       {
         nAveragePCLevel = nTotalPCLevel / nTotalPCs;
       }
-    sRetTemplate = GetCreatureFromDatabase(nAveragePCLevel, sTemplate);
+    sRetTemplate = GetCreatureFromEncounterTable(nAveragePCLevel, sTemplate);
   }
 
   return sRetTemplate;
