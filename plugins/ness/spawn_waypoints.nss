@@ -163,7 +163,7 @@ void CreateNESSWaypoints()
   while (GetIsObjectValid(oArea))
     {
       int i;
-      int how_many = fix_chances(Random(5) + 1, 5 ) ;
+      int how_many = fix_chances(Random(5) + 1, 3 ) ;
       for (i = 0; i < how_many; i++)
         {
           chance = fix_chances(Random(100), 20);

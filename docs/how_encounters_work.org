@@ -21,6 +21,7 @@ Today only these environments are valid:
          - SEWERS
 
 Environments live in the following table
+
 #+begin_src sql
  PRAGMA foreign_keys = OFF;
 drop table if exists  Environments;
@@ -239,3 +240,12 @@ select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '% an
 
 select * from Environments;
 #+end_src
+
+
+How to create the same Dnd encounter table that we see
+
+| id | encounter_tablename | table_id |
+|  1 | forest_goblins      |        1 |
+
+
+| id | creature | quantity | encounter_table_id|

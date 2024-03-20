@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/carlosneira/Documents/Neverwinter Nights/database/dnd35.sqlite3" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="5957"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,10:mainEncounters"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">PRAGMA foreign_keys = OFF;
+drop table if exists  Environments;
+drop table if exists Encounters; 
+PRAGMA foreign_keys = ON;
+
+ -- Environments Table
+CREATE TABLE IF NOT EXISTS Environments (
+    EnvironmentID INTEGER PRIMARY KEY,
+    Name TEXT	CHECK( Name  IN  ('FOREST',
+	                                                                   'CAVES',
+																	   'CITY_EXTERIOR',
+																	   'CITY_INTERIOR',
+																	   'CRYPT', 
+																	   'DESERT',
+																	   'SEWER',
+																	   'FROZEN',
+																	   'DUNGEON', 
+																	   'UNDERDARK', 
+																	   'RUINS', 
+																	   'HAUNTED') )
+);
+
+ -- Adding environments 
+ INSERT INTO Environments ( Name ) values 
+ ('CAVES'), ( 'FOREST') ,('RUINS'), ('HAUNTED'),('CITY_EXTERIOR'), ('CITY_INTERIOR'),
+ ('DUNGEON'),('CRYPT'), ('DESERT'), ('FROZEN'), ('UNDERDARK'), ('SEWER');
+select * from Environments;
+ 
+ CREATE TABLE IF NOT EXISTS Encounters (
+    EncounterID INTEGER PRIMARY KEY, 
+    LVL INTEGER,
+   CreatureID INTEGER,
+   EnvironmentID INTEGER,
+    FOREIGN KEY (CreatureID) REFERENCES creatures(id),
+    FOREIGN KEY (EnvironmentID) REFERENCES Environments(EnvironmentID)
+);
+ 
+ 
+ 
+
+SELECT 
+ TemplateResRef, ChallengeRating
+FROM Encounters
+JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL &gt;= 0 and Encounters.LVL &lt;=5
+JOIN Environments ON Encounters.EnvironmentID = Environments.EnvironmentID
+WHERE Environments.Name = 'FOREST' order by random() limit 1;
+	</sql><sql name="SQL 2">-- wolves
+--insert into Encounters 
+--select   NULL, ChallengeRating, id, 2  from creatures where FirstName like '%wolf%';
+
+-- bears 
+insert into Encounters 
+select   NULL, ChallengeRating, id, 2  from creatures where FirstName like '%bear%';
+-- spiders
+insert into Encounters 
+select NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%spider%';
+
+-- goblins
+insert into Encounters 
+select NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%goblin%';
+
+-- orc
+insert into Encounters 
+select NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%orc%';
+-- gnoll
+insert into Encounters 
+select NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%gnoll%';
+
+--treant  
+insert into Encounters 
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%treant%';
+
+-- satyr
+insert into Encounters 
+select NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%satyr%';
+
+-- pixie 
+insert into Encounters 
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%pixie%' and _FactionName = 'Hostile';
+-- Nymph 
+insert into Encounters
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%nymph%' and _FactionName = 'Hostile';
+
+
+insert into Encounters
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%boar%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%hill%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%green dragon Adult' 
+                            and _FactionName = 'Hostile';
+
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%worg%' 
+                            and _FactionName = 'Hostile';
+							
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%beetle%' 
+                            and _FactionName = 'Hostile';
+
+							
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%leech%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%Rat' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%frog%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%badger%' 
+                            and _FactionName = 'Hostile';
+
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%eagle%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%scorpion%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%hawk%' 
+                            and _FactionName = 'Hostile';
+
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%lizard%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%crab%' 
+                            and _FactionName = 'Hostile';
+							
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '%wasp%' 
+                            and _FactionName = 'Hostile';
+							
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 2 from creatures where FirstName like '% ant%' 
+                            and _FactionName = 'Hostile';
+
+-- Crypt
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%skeleton%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%zombie%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%ghoul%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%ghost%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%wraith%' 
+                            and _FactionName = 'Hostile';
+	
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%wraith%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%shadow%' 
+                            and _FactionName = 'Hostile';
+							
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%chest%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%vamp%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%skeletal%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%lich%' 
+                            and _FactionName = 'Hostile';
+							
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%dead%' 
+                            and _FactionName = 'Hostile';
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%slime%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%will%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%knight%' 
+                            and _FactionName = 'Hostile';
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%hag%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%bone%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%death%' 
+                            and _FactionName = 'Hostile';
+							
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 8 from creatures where FirstName like '%coffin%' 
+                            and _FactionName = 'Hostile';
+
+							
+
+--- city_exterior/road 
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 5 from creatures where FirstName like '%goblin%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 5 from creatures where FirstName like '%wolf%' 
+                            and _FactionName = 'Hostile';
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 5 from creatures where FirstName like '%orc%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 5 from creatures where FirstName like '%noble%' 
+                            and _FactionName = 'Hostile';
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 5 from creatures where FirstName like '%dog%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 5  from creatures where FirstName like '%cat%' 
+                            and _FactionName = 'Hostile';
+
+							
+select  FirstName, NULL,  ChallengeRating, id , 5 from creatures where FirstName like '%cat%' 
+                            and _FactionName = 'Hostile';
+
+ -- CAVES
+ 
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%bat%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%kobold%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%goblin%' 
+                            and _FactionName = 'Hostile';
+							
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%spider%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%cave%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%elf%' 
+                            and _FactionName = 'Hostile';
+							
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%ant%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%ooze%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%cyclops%' 
+                            and _FactionName = 'Hostile';
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%golem%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%beholder%' 
+                            and _FactionName = 'Hostile';
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%djinn%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%fey%' 
+                            and _FactionName = 'Hostile';
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%elemental%' 
+                            and _FactionName = 'Hostile';
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%succubus%' 
+                            and _FactionName = 'Hostile';
+
+insert into Encounters 							
+select  NULL,  ChallengeRating, id , 1  from creatures where FirstName like '%demon%' 
+                            and _FactionName = 'Hostile';
+							
+							
+select  FirstName, NULL,  ChallengeRating, id , 1 from creatures where FirstName like '%demon%' 
+                            and _FactionName = 'Hostile';
+ 
+ 
+select * from Environments;							</sql><current_tab id="0"/></tab_sql></sqlb_project>
