@@ -43,7 +43,7 @@ int AUTOTRANS = 1;
 
 // Set PWEXP to 1 to use the Persistent World Exp system. This was taken out in
 // v3.1.0 - If you want to use PWEXP then use the "dnd_inc_exp" script.
-int PWEXP = 1;
+int PWEXP = 0;
 
 // If you want items to become unidentified when dropped on the ground you must
 // set UNIDONDROP below to 1.
@@ -215,7 +215,7 @@ int HUNGERSYSTEM = 1;
 int FATIGUESYSTEM = 1;
 
 // Setting HCREXP to 0 uses the normal BW experience system.
-int HCREXP = 1;
+int HCREXP = 0;
 
 // Set the base exp used for all creature kills, 300 is the DMG default per CR
 // adjuseted to 10% default. Adjust as needed to match your campaign speed.

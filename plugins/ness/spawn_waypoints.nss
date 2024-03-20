@@ -71,29 +71,41 @@ object CreateNamedWaypoint(location l, string sName)
   jValues = JsonObjectDel(jValues, "id");
   return JsonToObject(JsonObjectSet(jWP, "LocalizedName", JsonObjectSet(jNames, "value", jValues)), l);
 }
-
-// this will match a group using tileset
-// https://nwnlexicon.com/index.php/Tileset_resref
-string ChooseGroupbyTile(object oArea) 
+/*
+  1|CAVES
+  2|FOREST
+  3|RUINS
+  4|HAUNTED
+  5|CITY_EXTERIOR
+  6|CITY_INTERIOR
+  7|DUNGEON
+  8|CRYPT
+  9|DESERT
+  10|FROZEN
+  11|UNDERDARK
+  12|SEWER
+ */
+string Area2Environment(object oArea)
 {
-  // Determine the tileset used to create the area being entered.
-  // current groups : rxvars, ogres, planars, drows, elfs, shapechangers, 
-  string sTilesetResref = GetTilesetResRef(oArea);
-  string aname = GetStringLowerCase(GetName(oArea));
-  string group = "scaled_commoners";
 
+  string aname = GetStringLowerCase(GetName(oArea));
+  string sTilesetResref = GetTilesetResRef(oArea);
   // First try to deduce what to spawn by looking at the name of the area
   if ((FindSubString(aname, "forest") != -1) ||
       (FindSubString(aname, "marsh") != -1) ) {
     return "FOREST";
   }
-
   if ((FindSubString(aname, "city") != -1) ||
       (FindSubString(aname, "keep") != -1) ||
       (FindSubString(aname, "castle") != -1) ||
       (FindSubString(aname, "town") != -1))
     {
       return "CITY_INTERIOR";
+    }
+  if ((FindSubString(aname, "sewer") != -1) ||
+      (FindSubString(aname, "pipes") != -1))
+    {
+      return "SEWER";
     }
 
   if ((FindSubString(aname, "road") != -1) ||
@@ -102,10 +114,8 @@ string ChooseGroupbyTile(object oArea)
       (FindSubString(aname, "vale") != -1) ||
       (FindSubString(aname, "way") != -1))
     {
-      // This should be road
       return "CITY_EXTERIOR";
     }
-
   if ( (FindSubString(aname, "peak") != -1) ||
        (FindSubString(aname, "grounds") != -1) ||
        (FindSubString(aname, "mountain") != -1) ||
@@ -115,8 +125,7 @@ string ChooseGroupbyTile(object oArea)
        (FindSubString(aname, "valley") != -1))
     {
       return "CAVES";
-    }    
-
+    }
   if ((FindSubString(aname, "crypt") != -1) ||
       (FindSubString(aname, "tomb") != -1) ||
       (FindSubString(aname, "dark") != -1)  ||
@@ -133,7 +142,7 @@ string ChooseGroupbyTile(object oArea)
   if((sTilesetResref == TILESET_RESREF_RURAL_WINTER) ||
      (sTilesetResref == TILESET_RESREF_FROZEN_WASTES)
      ) {
-    return "FOREST";
+    return "CAVES";
   }
 
   if((sTilesetResref == TILESET_RESREF_RUINS)){
@@ -145,8 +154,17 @@ string ChooseGroupbyTile(object oArea)
      (sTilesetResref == TILESET_RESREF_FORT_INTERIOR) ) {
     return  "CITY_INTERIOR";
   }
+    return "CITY_INTERIOR";
+  }
 
-  return group;
+// this will match a group using tileset
+// https://nwnlexicon.com/index.php/Tileset_resref
+string ChooseGroupbyTile(object oArea) 
+{
+  string sTilesetResref = GetTilesetResRef(oArea);
+  string aname = GetStringLowerCase(GetName(oArea));
+
+  return  Area2Environment(oArea);
 }
 
 
@@ -160,18 +178,19 @@ void CreateNESSWaypoints()
   int loot_table;
   string group_name;
   int i;
-  int AreaX;
+  int iAreaX;
   int how_many;
   while (GetIsObjectValid(oArea))
     {
       iAreaX = GetAreaSize(AREA_WIDTH, oArea);
       if (iAreaX < 10) {
         how_many = d2(1);
-      } else if (iAreaX => 10 and iAreaX <=  16 )  {
+      } else if (iAreaX >= 10 && iAreaX <=  16 )  {
         how_many = d2(1) + d2(1);
       } else {
         how_many = d6(1);
       }
+
       for (i = 0; i < how_many; i++)
         {
           chance = fix_chances(Random(100), 20);
