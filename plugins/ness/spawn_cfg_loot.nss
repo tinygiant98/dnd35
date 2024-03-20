@@ -146,18 +146,10 @@ void LootTable(object oSpawn, object oSpawned, int nLootTable)
     {
       CleanInventory(oSpawned);
       int dice = d100(1);
-      if (dice <= 10)
-        {
-
-          sTemplate = "comida004";
-          nStack = 1;
-          oItem = CreateItemOnObject(sTemplate, oSpawned, nStack);
-        }
 
       if (dice >10 && dice <= 70){
-        nStack = Random(10) + 1;
-        oItem = CreateItemOnObject("monedadecobre", oSpawned, nStack);
-
+        nStack = Random(50) + 1;
+        oItem = CreateItemOnObject("nw_it_gold001", oSpawned, nStack);
       }
 
       if(dice > 70) {
@@ -262,12 +254,9 @@ void LootTable(object oSpawn, object oSpawned, int nLootTable)
       CleanInventory(oSpawned);
       int dice = d100(1);
       if (dice <= 80){
-
         // Add our Items: Gold for Example
-        nStack = Random(10) + 1;
-        // oItem = CreateItemOnObject("nw_it_gold001", oSpawned, nStack);
-        oItem = CreateItemOnObject("monedadeplata", oSpawned, nStack);
-
+        nStack = Random(100) + 1;
+        oItem = CreateItemOnObject("nw_it_gold001", oSpawned, nStack);
       }
       if(dice > 80) {
         object oStore = OBJECT_INVALID;
@@ -343,7 +332,7 @@ void LootTable(object oSpawn, object oSpawned, int nLootTable)
                 else
                   // -- Check if the item is Gold, and creates more in Stack
                   //    small amount generated : gold placement should maybe be handled in some other way.
-                  if( GetStringLowerCase( sTemplate ) == "monedadeplata" )
+                  if( GetStringLowerCase( sTemplate ) == "nw_it_gold001" )
                     nStack = Random( 30 ) + 5;
                   else
                     if( nStack < 1 )
@@ -376,8 +365,7 @@ void LootTable(object oSpawn, object oSpawned, int nLootTable)
 
         // Add our Items: Gold for Example
         nStack = Random(5) + 1;
-        // oItem = CreateItemOnObject("nw_it_gold001", oSpawned, nStack);
-        oItem = CreateItemOnObject("monedadebronce", oSpawned, nStack);
+        oItem = CreateItemOnObject("nw_it_gold001", oSpawned, nStack);
 
       }
       if(dice >= 90) {
@@ -454,7 +442,7 @@ void LootTable(object oSpawn, object oSpawned, int nLootTable)
                 else
                   // -- Check if the item is Gold, and creates more in Stack
                   //    small amount generated : gold placement should maybe be handled in some other way.
-                  if( GetStringLowerCase( sTemplate ) == "monedadebronce" )
+                  if( GetStringLowerCase( sTemplate ) ==  "nw_it_gold001" )
                     nStack = Random( 30 ) + 5;
                   else
                     if( nStack < 1 )
@@ -487,8 +475,8 @@ void LootTable(object oSpawn, object oSpawned, int nLootTable)
       if (dice <= 90){
 
         // Add our Items: Gold for Example
-        nStack = Random(5) + 1;
-        oItem = CreateItemOnObject("monedadebronce", oSpawned, nStack);
+        nStack = Random(100) + 1;
+        oItem = CreateItemOnObject("nw_it_gold001", oSpawned, nStack);
 
       }
       if(dice >= 90) {
@@ -565,7 +553,7 @@ void LootTable(object oSpawn, object oSpawned, int nLootTable)
                 else
                   // -- Check if the item is Gold, and creates more in Stack
                   //    small amount generated : gold placement should maybe be handled in some other way.
-                  if( GetStringLowerCase( sTemplate ) == "monedadebronce" )
+                  if( GetStringLowerCase( sTemplate ) == "nw_it_gold001" )
                     nStack = Random( 30 ) + 5;
                   else
                     if( nStack < 1 )
@@ -665,7 +653,7 @@ void LootTable(object oSpawn, object oSpawned, int nLootTable)
               else
                 // -- Check if the item is Gold, and creates more in Stack
                 //    small amount generated : gold placement should maybe be handled in some other way.
-                if( GetStringLowerCase( sTemplate ) == "monedacobre" )
+                if( GetStringLowerCase( sTemplate ) == "nw_it_gold001" )
                   nStack = Random( 30 ) + 5;
                 else
                   if( nStack < 1 )
@@ -693,9 +681,8 @@ void LootTable(object oSpawn, object oSpawned, int nLootTable)
       if (d100(1) < 80){
 
         // Add our Items: Gold for Example
-        nStack = Random(5) + 1;
-        // oItem = CreateItemOnObject("nw_it_gold001", oSpawned, nStack);
-        oItem = CreateItemOnObject("monedadeplata", oSpawned, nStack);
+        nStack = Random(500) + 1;
+        oItem = CreateItemOnObject("nw_it_gold001", oSpawned, nStack);
 
       }
       if(d100(1) >= 80) {

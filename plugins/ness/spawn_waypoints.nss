@@ -26,9 +26,10 @@ string GenerateNESSWaypointDataforGroup(int chance, int loot_table)
   string lt = paddzero(loot_table);
   string rs = paddzero(chance);
   int max = Random(5) + 1;
+
   int luck = Random(100) + 1;
   if (luck < 10) {
-      max = Random(10)  + 1;
+    max = Random(10)  + 1;
   }
 
   string min = paddzero(Random(max) + 1);
@@ -129,8 +130,6 @@ string ChooseGroupbyTile(object oArea)
   }
 
   // Then just check tiles
-
-  // If the area was created using the Rural Winter or Frozen Wastes tilesets...
   if((sTilesetResref == TILESET_RESREF_RURAL_WINTER) ||
      (sTilesetResref == TILESET_RESREF_FROZEN_WASTES)
      ) {
@@ -160,17 +159,26 @@ void CreateNESSWaypoints()
   int chance;
   int loot_table;
   string group_name;
+  int i;
+  int AreaX;
+  int how_many;
   while (GetIsObjectValid(oArea))
     {
-      int i;
-      int how_many = fix_chances(Random(5) + 1, 3 ) ;
+      iAreaX = GetAreaSize(AREA_WIDTH, oArea);
+      if (iAreaX < 10) {
+        how_many = d2(1);
+      } else if (iAreaX => 10 and iAreaX <=  16 )  {
+        how_many = d2(1) + d2(1);
+      } else {
+        how_many = d6(1);
+      }
       for (i = 0; i < how_many; i++)
         {
           chance = fix_chances(Random(100), 20);
           loot_table = Random(4);
           locl = GetRandomLocationfromArea(oArea);
           NESS_wpname = GenerateNESSWaypointDataforGroup(chance, loot_table);
-          oWP = CreateNamedWaypoint(locl, GenerateNESSWaypointDataforGroup(chance, loot_table));
+          oWP = CreateNamedWaypoint(locl, NESS_wpname);
           group_name = ChooseGroupbyTile(oArea);
           if (GetIsObjectValid(oWP))
             {
