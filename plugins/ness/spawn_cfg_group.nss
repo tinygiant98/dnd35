@@ -28,59 +28,59 @@ string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST
 {
   int min, max = 0;
   switch (pclvl) {
-    case 1:
-    case 2:
-    case 3:
-           min = 1;
-           max = 3;
-           break;
-    case 4:
-    case 5:
-    case 6:
-           min = 1;
-           max = 6;
-           break;
-    case 7:
-    case 8:
-    case 9:
-           min = 1;
-           max = 8;
-           break;
-    case 10:
-    case 11:
-    case 12:
-           min = 2;
-           max = 10;
-           break;
+  case 1:
+  case 2:
+  case 3:
+    min = 1;
+    max = 3;
+    break;
+  case 4:
+  case 5:
+  case 6:
+    min = 1;
+    max = 6;
+    break;
+  case 7:
+  case 8:
+  case 9:
+    min = 1;
+    max = 8;
+    break;
+  case 10:
+  case 11:
+  case 12:
+    min = 2;
+    max = 10;
+    break;
 
-    case 13:
-    case 14:
-    case 15:
-           min = 3;
-           max = 12;
-           break;
-    case 16:
-    case 17:
-    case 18:
-           min = 4;
-           max = 14;
-           break;
+  case 13:
+  case 14:
+  case 15:
+    min = 3;
+    max = 12;
+    break;
+  case 16:
+  case 17:
+  case 18:
+    min = 4;
+    max = 14;
+    break;
 
-    case 19:
-    case 20:
-           min = 5;
-           max = 16;
-           break;
-    case 21:
-    case 22:
-    case 23:
-           min = 6;
-           max = 18;
-           break;
-    default:
-           min = d10(1);
-           max = d20(1) + d20(1);
-          break;
+  case 19:
+  case 20:
+    min = 5;
+    max = 16;
+    break;
+  case 21:
+  case 22:
+  case 23:
+    min = 6;
+    max = 18;
+    break;
+  default:
+    min = d10(1);
+    max = d20(1) + d20(1);
+    break;
   }
 
   string s = "SELECT TemplateResRef FROM Encounters " +

@@ -167,7 +167,6 @@ string ChooseGroupbyTile(object oArea)
   return  Area2Environment(oArea);
 }
 
-
 void CreateNESSWaypoints()
 {
   object oArea = GetFirstArea();

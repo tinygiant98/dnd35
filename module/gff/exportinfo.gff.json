@@ -1,0 +1,95 @@
+{
+  "__data_type": "GFF ",
+  "Comments": {
+    "type": "cexostring",
+    "value": "PWFXP - XP Distribution Script by Knat v2..0\n\nimports two scripts...\n\nsee readme for installation notes. open pwfxp_def and pwfxp for detailed informations.\n\n"
+  },
+  "Dependencies": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "ResRef": {
+          "type": "resref",
+          "value": "pwfxp"
+        },
+        "ResType": {
+          "type": "int",
+          "value": 2010
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ResRef": {
+          "type": "resref",
+          "value": "pwfxp"
+        },
+        "ResType": {
+          "type": "int",
+          "value": 2009
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ResRef": {
+          "type": "resref",
+          "value": "pwfxp_def"
+        },
+        "ResType": {
+          "type": "int",
+          "value": 2009
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ResRef": {
+          "type": "resref",
+          "value": "pwfxp_def"
+        },
+        "ResType": {
+          "type": "int",
+          "value": 2010
+        }
+      }
+    ]
+  },
+  "Expansion_Pack": {
+    "type": "word",
+    "value": 3
+  },
+  "Missing": {
+    "type": "list",
+    "value": []
+  },
+  "Mod_MinGameVer": {
+    "type": "cexostring",
+    "value": "1.62"
+  },
+  "Top": {
+    "type": "list",
+    "value": [
+      {
+        "__struct_id": 0,
+        "ResRef": {
+          "type": "resref",
+          "value": "pwfxp"
+        },
+        "ResType": {
+          "type": "int",
+          "value": 2009
+        }
+      },
+      {
+        "__struct_id": 0,
+        "ResRef": {
+          "type": "resref",
+          "value": "pwfxp_def"
+        },
+        "ResType": {
+          "type": "int",
+          "value": 2009
+        }
+      }
+    ]
+  }
+}
