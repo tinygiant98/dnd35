@@ -52,6 +52,9 @@ void OnLibraryLoad()
 
         RegisterEventScript(oPlugin, CHAT_PREFIX + "!hcr", "hcr_OnPlayerChat");
     }
+
+    int n = 0;
+    RegisterLibraryscript("hcr_OnPlayerChat", n++);
 }
 
 void OnLibraryScript(string sScript, int nEntry)
