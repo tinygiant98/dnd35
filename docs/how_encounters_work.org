@@ -22,16 +22,6 @@ Today only these environments are valid:
 
 Environments live in the following table
 
-#+begin_src emacs-lisp
-(let ((sql-database "~/Projects/nwn/dnd35/database/dnd35.sqlite3"))
-  (sqlite-select sql-database "select * from creatures limit 2;" ))
-
-#+end_src
-
-#+RESULTS:
-: #<buffer *SQL: SQLite*>
-
-
 #+begin_src sql
  PRAGMA foreign_keys = OFF;
 drop table if exists  Environments;

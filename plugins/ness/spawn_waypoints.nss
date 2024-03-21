@@ -25,15 +25,17 @@ string GenerateNESSWaypointDataforGroup(int chance, int loot_table)
 {
   string lt = paddzero(loot_table);
   string rs = paddzero(chance);
-  int max = Random(5) + 1;
+  string smin, smax;
+  int max = d6(1);
 
-  int luck = Random(100) + 1;
+  int luck = d100(1);
   if (luck < 10) {
-    max = Random(10)  + 1;
+    max = d8(1) ;
   }
 
-  string min = paddzero(Random(max) + 1);
-  string smax = paddzero(max);
+  smax = paddzero(max);
+  smin = paddzero(Random(max/2) + 1);
+
   // SN05M03 = 5 spawns but spawn between 3 and 5  
   // SA05M03 spawn between 3 and 5 all at once
   // The parameter on the SD flag is a delay in minutes from the time the creature would 
@@ -41,7 +43,7 @@ string GenerateNESSWaypointDataforGroup(int chance, int loot_table)
   // The optional Mm subflag will set a minimum delay in minutes, in which case the n
   //parameter sets a maximum delay before respawning and the respawn will occur randomly
   //between minimum m minutes and maximum n minutes
-  string wpname = "SP_SN" + smax + "_SA"+ smax +"M"+ min +"_SD10M05_PC03_SG_" + "LT" + lt + "_RS" + rs + "_RW";
+  string wpname = "SP_SN" + smax + "_SA"+ smax +"M"+ smin +"_SD10M05_PC03_SG_" + "LT" + lt + "_RS" + rs + "_RW";
   return wpname;
 }
 
@@ -51,8 +53,8 @@ location GetRandomLocationfromArea(object oArea) {
   float fAngle = IntToFloat(Random(360));
   location lLoc;
 
-  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.15f;
-  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.15f;
+  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.25f;
+  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.25f;
 
   lLoc = Location(oArea, Vector(fRandX, fRandY, 0.0f), fAngle);
 
@@ -187,7 +189,7 @@ void CreateNESSWaypoints()
       } else if (iAreaX >= 10 && iAreaX <=  16 )  {
         how_many = d2(1) + d2(1);
       } else {
-        how_many = d6(1);
+        how_many = d8(1);
       }
 
       for (i = 0; i < how_many; i++)

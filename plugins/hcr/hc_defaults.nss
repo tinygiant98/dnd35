@@ -124,7 +124,7 @@ int WANDERSYSTEM = 1;
 int DEATHSYSTEM = 1;
 
 // Setting BLEEDSYSTEM to 0 will remove the bleed to death system.
-int BLEEDSYSTEM = 1;
+int BLEEDSYSTEM = 0;
 
     // controls the time between each bleed check a PC must makes each while in
     // the DYING state. Reducing the number will accelerate the possibility of
@@ -154,7 +154,7 @@ int LOOTSYSTEM = 0;
 int REZPENALTY = 0;
 
 // Setting LIMBO to 0 will stop moving players to Fugue on death.
-int LIMBO = 0;
+int LIMBO = 1;
 
 // Setting DYINGSTRIP to 0 will stop stripping players of inventory on dying
 int DYINGSTRIP = 0;
