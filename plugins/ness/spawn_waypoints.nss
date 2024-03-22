@@ -44,10 +44,10 @@ string GenerateNESSWaypointDataforGroup(int chance, int loot_table, string type)
   smax = paddzero(max);
   smin = paddzero(Random(max/2) + 1);
 
- if (type != NESS_PLACEABLE) {
-   wpname = "SP_SN" + smax + "_SA"+ smax +"M"+ smin +"_SD10M05_PC03_SG_" + "LT" + lt + "_RS" + rs + "_RW";
+  if (type != NESS_PLACEABLE) {
+    wpname = "SP_SN" + smax + "_SA"+ smax +"M"+ smin +"_SD10M05_PC03_SG_" + "LT" + lt + "_RS" + rs + "_RW";
   } else {
-   wpname = "SP_PL";
+    wpname = "SP_PL";
   }
   return wpname;
 }
@@ -58,8 +58,8 @@ location GetRandomLocationfromArea(object oArea) {
   float fAngle = IntToFloat(Random(360));
   location lLoc;
 
-  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.45f;
-  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.45f;
+  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.55f;
+  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.55f;
 
   lLoc = Location(oArea, Vector(fRandX, fRandY, 0.0f), fAngle);
 
@@ -91,7 +91,7 @@ object CreateNamedWaypoint(location l, string sName)
   10|FROZEN
   11|UNDERDARK
   12|SEWER
- */
+*/
 string Area2Environment(object oArea)
 {
 
@@ -99,7 +99,7 @@ string Area2Environment(object oArea)
   string sTilesetResref = GetTilesetResRef(oArea);
 
   if ((FindSubString(aname, "cavern") != -1)) {
-        return "CAVES";
+    return "CAVES";
   }
 
   // First try to deduce what to spawn by looking at the name of the area
@@ -124,7 +124,6 @@ string Area2Environment(object oArea)
   if ((FindSubString(aname, "road") != -1) ||
       (FindSubString(aname, "path") != -1) ||
       (FindSubString(aname, "grounds") != -1) ||
-      (FindSubString(aname, "vale") != -1) ||
       (FindSubString(aname, "way") != -1))
     {
       return "CITY_EXTERIOR";
@@ -134,6 +133,7 @@ string Area2Environment(object oArea)
        (FindSubString(aname, "mountain") != -1) ||
        (FindSubString(aname, "underdark") != -1) ||
        (FindSubString(aname, "dusty") != -1) ||
+       (FindSubString(aname, "vale") != -1) ||
        (FindSubString(aname, "cavern") != -1) ||
        (FindSubString(aname, "valley") != -1))
     {
@@ -167,8 +167,8 @@ string Area2Environment(object oArea)
      (sTilesetResref == TILESET_RESREF_FORT_INTERIOR) ) {
     return  "CITY_INTERIOR";
   }
-    return "CITY_INTERIOR";
-  }
+  return "CITY_INTERIOR";
+}
 
 // this will match a group using tileset
 // https://nwnlexicon.com/index.php/Tileset_resref
@@ -183,19 +183,19 @@ string ChooseResourcebyTile(object oArea) {
   int luck = d100(1);
 
   if (env == "CAVES" || env == "CITY_EXTERIOR") {
-      if (luck > 60 ) {
+    if (luck > 60 ) {
       resource = "minable";
-      } else {
+    } else {
       resource = "deposit";
-      }
+    }
   }
 
   if (env == "FOREST" ) {
-      if (luck > 60 ) {
-     resource = "choppable";
-     } else {
-        resource = "plant";
-      }
+    if (luck > 60 ) {
+      resource = "choppable";
+    } else {
+      resource = "plant";
+    }
   }
 
   string s = "select TemplateResRef from placeables" +
@@ -207,7 +207,7 @@ string ChooseResourcebyTile(object oArea) {
   return SqlStep(q) ? SqlGetString(q, 0) : "";
 }
 
-void CreateNESSWaypoints()
+void CreateNESSWaypoints(string type)
 {
   object oArea = GetFirstArea();
   object oWP ;
@@ -220,30 +220,31 @@ void CreateNESSWaypoints()
   int iAreaX;
   int how_many;
   int luck;
-  string type = NESS_GROUP;
 
   while (GetIsObjectValid(oArea))
     {
       iAreaX = GetAreaSize(AREA_WIDTH, oArea);
 
-      if (iAreaX <= 16) {
-        how_many = d2(1);
+      if (type == NESS_PLACEABLE){
+        group_name = ChooseResourcebyTile(oArea);
+        if (iAreaX <= 16) {
+          how_many = d4(1);
+        } else {
+          how_many = d6(1);
+        }
       } else {
-        how_many = d4(1);
+        if (iAreaX <= 16) {
+          how_many = d4(1);
+        } else {
+          how_many = d6(1);
+        }
+        group_name = ChooseGroupbyTile(oArea);
       }
 
       for (i = 0; i < how_many; i++)
         {
-          luck  = Random(100) + 1;
-          if (luck >=  70) {
-            type = NESS_PLACEABLE;
-            group_name = ChooseResourcebyTile(oArea);
-          } else {
-            type = NESS_GROUP;
-            chance = fix_chances(luck, 30);
-            loot_table = Random(4);
-            group_name = ChooseGroupbyTile(oArea);
-          }
+          chance = fix_chances(luck, 30);
+          loot_table = Random(4);
 
           locl = GetRandomLocationfromArea(oArea);
           NESS_wpname = GenerateNESSWaypointDataforGroup(chance, loot_table, type);
@@ -263,4 +264,9 @@ void CreateNESSWaypoints()
         }       
       oArea = GetNextArea();
     }
+}
+
+void PopulateWorld() {
+  CreateNESSWaypoints(NESS_PLACEABLE);
+  CreateNESSWaypoints(NESS_GROUP);
 }

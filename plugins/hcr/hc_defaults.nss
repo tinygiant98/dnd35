@@ -121,7 +121,7 @@ int WANDERSYSTEM = 1;
 
 // Setting DEATHSYSTEM to 0 will allow respawn and quit and return to get around
 // being dead or dying. (Removes death amulets) this overrides lootsystem and limbo.
-int DEATHSYSTEM = 0;
+int DEATHSYSTEM = 1;
 
 // Setting BLEEDSYSTEM to 0 will remove the bleed to death system.
 int BLEEDSYSTEM = 0;

@@ -6,7 +6,7 @@
 
 void ness_OnModuleLoad()
 {
-   CreateNESSWaypoints();
+   PopulateWorld();
 }
 
 
