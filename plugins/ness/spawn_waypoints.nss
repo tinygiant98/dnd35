@@ -94,7 +94,6 @@ object CreateNamedWaypoint(location l, string sName)
 */
 string Area2Environment(object oArea)
 {
-
   string aname = GetStringLowerCase(GetName(oArea));
   string sTilesetResref = GetTilesetResRef(oArea);
 
@@ -172,7 +171,106 @@ string Area2Environment(object oArea)
 
 // this will match a group using tileset
 // https://nwnlexicon.com/index.php/Tileset_resref
-string ChooseGroupbyTile(object oArea) 
+//  Now we have a list of areas if we use the
+//  Name
+/* ------------------------------------------------------ */
+/* King's Forest - Arabel - High Horn Gate                */
+/* King's Forest - Arabel - Calantar's Gate               */
+/* Arak'haret                                             */
+/* Vieja Tumba                                            */
+/* King's Forest - Aunkspear                              */
+/* Bamboo Marshes                                         */
+/* King's Forest - Blisterfoot Inn                        */
+/* Brythain                                               */
+/* Buccaneer's Beacon                                     */
+/* Buccaneer's Isle                                       */
+/* Cabhan Daire                                           */
+/* Caer Manann                                            */
+/* King's Forest - Calantar's Way North                   */
+/* King's Forest - Calantar's Way South                   */
+/* The Captain's Daughter                                 */
+/* Celestial City                                         */
+/* Cinsti'oras                                            */
+/* Citadel of the Deathless                               */
+/* city_adventure1                                        */
+/* Duke's Watch Sewers                                    */
+/* Crag Cove                                              */
+/* Crypts of Deceit                                       */
+/* <c~!!>DARKTHORNE CASTLE</c>                            */
+/* East Isles Trading Company                             */
+/* King's Forest - Espar                                  */
+/* Evenglari Castle Grounds                               */
+/* Evenglari Chapel                                       */
+/* Evenglari Keep - Level 1                               */
+/* Evenglari Keep - Level 2                               */
+/* Evenglari Keep - Level 3                               */
+/* Evenglari Keep - Level 4                               */
+/* Evenglari Keep - Level 5                               */
+/* Forsaken Crags                                         */
+/* Barbarian Fortress of Kharnath                         */
+/* Fugue Plane                                            */
+/* King's Forest - Gray Oaks                              */
+/* Caer Manann Temple                                     */
+/* King's Forest - Eveningstar - High Pasture             */
+/* King's Forest - High Road West                         */
+/* King's Forest - Hilp                                   */
+/* Villa Hermosa                                          */
+/* Hobbiton - The Hill                                    */
+/* King's Forest - Calantar's Way - South of Immersea     */
+/* King's Forest - Immersea                               */
+/* King's Forest - Immersea - Redstone Castle             */
+/* King's Forest - North of Immersea                      */
+/* King's Forest - Blisterfoot Trail                      */
+/* King's Forest - High Road East                         */
+/* King's Forest - South Path                             */
+/* King's Forest - The Way of the Dragon - North          */
+/* King's Forest - The Way of the Dragon - South          */
+/* The King's Ransom                                      */
+/* Lanmorilyn Vale                                        */
+/* King's Forest - Dhedluk                                */
+/* King's Forest - Eveningstar                            */
+/* King's Forest - Eveningstar - Dusty Cavern             */
+/* King's Forest - Starwater Road North                   */
+/* King's Forest - Eveningstar - Starwater Gorge          */
+/* King's Forest - Eveningstar - Haunted Forest           */
+/* King's Forest - Starwater Road South                   */
+/* King's Forest - Knightswood                            */
+/* King's Forest - Mouth o' Gargoyles                     */
+/* Mama Marta's Voodoo Shop                               */
+/* Masonic Temple                                         */
+/* Minas Morgul                                           */
+/* Minas Tirith - Center                                  */
+/* Minas Tirith - Citadel                                 */
+/* Khal Tax - North                                       */
+/* Khal Tax - South                                       */
+/* Khal Tax - Upper City                                  */
+/* Nelvaren                                               */
+/* Old Pirate Cave                                        */
+/* Onimura Island                                         */
+/* Our Lady of the Sea                                    */
+/* Pirates' Guild Hall                                    */
+/* Plains of Blood                                        */
+/* King's Forest - Plungepool                             */
+/* Primeval Forest                                        */
+/* Queen's Palace                                         */
+/* King's Forest - The Ranger's Way                       */
+/* King's Forest - Eveningstar - Rivior's Keep Courtyard  */
+/* Ruined City of Vardeness                               */
+/* Ruined Pirate Fort                                     */
+/* Serpent's Peak                                         */
+/* Smythe's Smithy                                        */
+/* Swashbuckler's Stash                                   */
+/* Tol Miril                                              */
+/* TreasureVault                                          */
+/* King's Forest - Tyrluk                                 */
+/* Vale of Mellondel                                      */
+/* Valley of the Gods                                     */
+/* King's Forest - Waymoot                                */
+/* King's Forest - The Way of the Dragon South of Waymoot */
+/* Wild Wood                                              */
+/* Ynys Faladel  */
+
+ string ChooseGroupbyTile(object oArea) 
 {
   return  Area2Environment(oArea);
 }
@@ -187,6 +285,29 @@ string ChooseResourcebyTile(object oArea) {
       resource = "minable";
     } else {
       resource = "deposit";
+    }
+  }
+
+  if (env == "CITY_INTERIOR") {
+    switch (d6(1)) {
+      case 1 :
+    resource = "bench";
+    break;
+    case 2:
+    resource = "desk";
+    break;
+    case 3:
+    resource = "station";
+    break;
+    case 4:
+    resource = "brew";
+    break;
+    case 5:
+    resource = "farmer";
+    break;
+    case 6:
+    resource = "water";
+    break;
     }
   }
 
