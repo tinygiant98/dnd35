@@ -3,6 +3,8 @@
 // decisioning so they should be somewhat balanced.
 // Maybe a good idea is to create groups by type of terrain and create wps based on that.
 
+const string NESS_GROUP = "SG";
+const string NESS_PLACEABLE = "PL";
 
 string paddzero(int n) {
   string val = IntToString(n);
@@ -21,29 +23,32 @@ int fix_chances(int n, int min_chance)
 
 
 // Will create a NESS tag using arguments.
-string GenerateNESSWaypointDataforGroup(int chance, int loot_table) 
+string GenerateNESSWaypointDataforGroup(int chance, int loot_table, string type)
 {
+  string wpname ;
   string lt = paddzero(loot_table);
   string rs = paddzero(chance);
   string smin, smax;
-  int max = d6(1);
 
+  int max = d4(2);
   int luck = d100(1);
+
   if (luck < 10) {
-    max = d8(1) ;
+    lt =  paddzero(d4(1));
+  } else if (luck > 70) {
+    lt = paddzero(Random(3) + 1);
+  } else {
+    lt = paddzero(Random(2));
   }
 
   smax = paddzero(max);
   smin = paddzero(Random(max/2) + 1);
 
-  // SN05M03 = 5 spawns but spawn between 3 and 5  
-  // SA05M03 spawn between 3 and 5 all at once
-  // The parameter on the SD flag is a delay in minutes from the time the creature would 
-  // normally have been spawned.
-  // The optional Mm subflag will set a minimum delay in minutes, in which case the n
-  //parameter sets a maximum delay before respawning and the respawn will occur randomly
-  //between minimum m minutes and maximum n minutes
-  string wpname = "SP_SN" + smax + "_SA"+ smax +"M"+ smin +"_SD10M05_PC03_SG_" + "LT" + lt + "_RS" + rs + "_RW";
+ if (type != NESS_PLACEABLE) {
+   wpname = "SP_SN" + smax + "_SA"+ smax +"M"+ smin +"_SD10M05_PC03_SG_" + "LT" + lt + "_RS" + rs + "_RW";
+  } else {
+   wpname = "SP_PL";
+  }
   return wpname;
 }
 
@@ -53,8 +58,8 @@ location GetRandomLocationfromArea(object oArea) {
   float fAngle = IntToFloat(Random(360));
   location lLoc;
 
-  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.25f;
-  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.25f;
+  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.45f;
+  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.45f;
 
   lLoc = Location(oArea, Vector(fRandX, fRandY, 0.0f), fAngle);
 
@@ -92,11 +97,17 @@ string Area2Environment(object oArea)
 
   string aname = GetStringLowerCase(GetName(oArea));
   string sTilesetResref = GetTilesetResRef(oArea);
+
+  if ((FindSubString(aname, "cavern") != -1)) {
+        return "CAVES";
+  }
+
   // First try to deduce what to spawn by looking at the name of the area
   if ((FindSubString(aname, "forest") != -1) ||
       (FindSubString(aname, "marsh") != -1) ) {
     return "FOREST";
   }
+
   if ((FindSubString(aname, "city") != -1) ||
       (FindSubString(aname, "keep") != -1) ||
       (FindSubString(aname, "castle") != -1) ||
@@ -163,10 +174,37 @@ string Area2Environment(object oArea)
 // https://nwnlexicon.com/index.php/Tileset_resref
 string ChooseGroupbyTile(object oArea) 
 {
-  string sTilesetResref = GetTilesetResRef(oArea);
-  string aname = GetStringLowerCase(GetName(oArea));
-
   return  Area2Environment(oArea);
+}
+
+string ChooseResourcebyTile(object oArea) {
+  string env = ChooseGroupbyTile(oArea);
+  string resource = "";
+  int luck = d100(1);
+
+  if (env == "CAVES" || env == "CITY_EXTERIOR") {
+      if (luck > 60 ) {
+      resource = "minable";
+      } else {
+      resource = "deposit";
+      }
+  }
+
+  if (env == "FOREST" ) {
+      if (luck > 60 ) {
+     resource = "choppable";
+     } else {
+        resource = "plant";
+      }
+  }
+
+  string s = "select TemplateResRef from placeables" +
+    " where Tag like @cnr and LocName like @resource order by RANDOM()" +
+    " limit 1;";
+  sqlquery q = SqlPrepareQueryCampaign("dnd35", s);
+  SqlBindString(q, "@cnr", "%cnr%");
+  SqlBindString(q, "@resource", "%"+ resource + "%");
+  return SqlStep(q) ? SqlGetString(q, 0) : "";
 }
 
 void CreateNESSWaypoints()
@@ -181,25 +219,36 @@ void CreateNESSWaypoints()
   int i;
   int iAreaX;
   int how_many;
+  int luck;
+  string type = NESS_GROUP;
+
   while (GetIsObjectValid(oArea))
     {
       iAreaX = GetAreaSize(AREA_WIDTH, oArea);
-      if (iAreaX < 10) {
+
+      if (iAreaX <= 16) {
         how_many = d2(1);
-      } else if (iAreaX >= 10 && iAreaX <=  16 )  {
-        how_many = d2(1) + d2(1);
       } else {
-        how_many = d8(1);
+        how_many = d4(1);
       }
 
       for (i = 0; i < how_many; i++)
         {
-          chance = fix_chances(Random(100), 20);
-          loot_table = Random(4);
+          luck  = Random(100) + 1;
+          if (luck >=  70) {
+            type = NESS_PLACEABLE;
+            group_name = ChooseResourcebyTile(oArea);
+          } else {
+            type = NESS_GROUP;
+            chance = fix_chances(luck, 30);
+            loot_table = Random(4);
+            group_name = ChooseGroupbyTile(oArea);
+          }
+
           locl = GetRandomLocationfromArea(oArea);
-          NESS_wpname = GenerateNESSWaypointDataforGroup(chance, loot_table);
+          NESS_wpname = GenerateNESSWaypointDataforGroup(chance, loot_table, type);
           oWP = CreateNamedWaypoint(locl, NESS_wpname);
-          group_name = ChooseGroupbyTile(oArea);
+
           if (GetIsObjectValid(oWP))
             {
               Notice("Waypoint created at: " + GetName(oArea) + " Name: "

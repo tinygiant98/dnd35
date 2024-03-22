@@ -28,6 +28,7 @@ string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST
 {
   int min, max = 0;
   switch (pclvl) {
+  case 0:
   case 1:
   case 2:
   case 3:
@@ -93,13 +94,6 @@ string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST
   SqlBindInt(q, "@max", max);
   SqlBindString(q, "@environment", environment);
   return SqlStep(q) ? SqlGetString(q, 0) : "";
-}
-
-string GetTemplateByCR(int nCR, string sGroupType)
-{
-  string sRetTemplate;
-  sRetTemplate = GetCreatureFromEncounterTable(nCR, sGroupType);
-  return sRetTemplate;
 }
 
 // Convert a given EL equivalent and its encounter level,
