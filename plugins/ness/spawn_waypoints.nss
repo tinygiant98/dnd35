@@ -97,6 +97,10 @@ string Area2Environment(object oArea)
   string aname = GetStringLowerCase(GetName(oArea));
   string sTilesetResref = GetTilesetResRef(oArea);
 
+ if ((FindSubString(aname, "evenglari") != -1)) {
+    return "CRYPT";
+  }
+
   if ((FindSubString(aname, "cavern") != -1)) {
     return "CAVES";
   }
