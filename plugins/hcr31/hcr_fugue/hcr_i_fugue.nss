@@ -44,6 +44,7 @@ void fugue_OnAreaExit();
 void h2_SendPlayerToFugue(object oPC)
 {
     object oFugueWP = GetObjectByTag(H2_WP_FUGUE);
+
     SendMessageToPC(oPC, H2_TEXT_YOU_HAVE_DIED);
     ApplyEffectToObject(DURATION_TYPE_INSTANT, EffectResurrection(), oPC);
     ApplyEffectToObject(DURATION_TYPE_INSTANT, EffectHeal(GetMaxHitPoints(oPC)), oPC);

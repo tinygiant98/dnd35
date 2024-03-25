@@ -7,6 +7,7 @@
 #include "hcr_i_core"
 #include "core_i_constants"
 #include "core_c_config"
+#include "util_i_chat"
 
 // -----------------------------------------------------------------------------
 //                              Function Prototypes
@@ -241,6 +242,25 @@ void hcr_OnPlayerRestFinished()
 
     if (H2_EXPORT_CHARACTERS_INTERVAL > 0.0)
         ExportSingleCharacter(oPC);
+}
+
+// Chat Commands
+void hcr_OnPlayerChat()
+{
+    object oPC = GetPCChatSpeaker();
+
+    if (HasChatOption(oPC, "death,die"))
+    {
+        effect e = EffectDamage(GetCurrentHitPoints(oPC) + 20);
+        ApplyEffectToObject(DURATION_TYPE_INSTANT, e, oPC);
+        return;
+    }
+    else if (HasChatOption(oPC, "dying"))
+    {
+        effect e = EffectDamage(GetCurrentHitPoints(oPC) + 2);
+        ApplyEffectToObject(DURATION_TYPE_INSTANT, e, oPC);
+        return;
+    }
 }
 
 // ----- Timer Events -----

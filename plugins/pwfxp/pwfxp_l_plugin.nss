@@ -8,7 +8,7 @@ void OnLibraryLoad()
     {
         object oPlugin = CreatePlugin("pwfxp");
         SetName(oPlugin, "[Plugin] System :: PWFXP system");
-        SetDebugPrefix(HexColorString("[HCR]", COLOR_PINK), oPlugin);
+        SetDebugPrefix(HexColorString("[PWFXP]", COLOR_PINK), oPlugin);
         RegisterEventScript(oPlugin,CREATURE_EVENT_ON_DEATH, "pwfxp");
     }
 }
