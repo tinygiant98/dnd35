@@ -22,7 +22,7 @@ void OnLibraryLoad()
     object oPlugin = CreatePlugin("hcr2_htf");
     SetName(oPlugin, "[Plugin] HCR2 :: Hunger Thirst Fatigue System");
     SetDescription(oPlugin, "HCR2 HTF System");
-    SetDebugPrefix(HexColorString("[HCR2 HTF]", COLOR_GREEN_LIGHT));
+    SetDebugPrefix(HexColorString("[HCR2 HTF]", COLOR_GREEN_LIGHT), oPlugin);
 
 
     if (H2_USE_HUNGERTHIRST_SYSTEM)

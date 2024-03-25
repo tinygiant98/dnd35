@@ -23,7 +23,7 @@ void OnLibraryLoad()
     SetDescription(oPlugin,
         "This plugin controls basic functions of the HCR2-base persistent world system and " +
         "loads all HCR2 subsystems.");
-    SetDebugPrefix(HexColorString("[HCR2]", COLOR_BLUE_SLATE_MEDIUM));
+    SetDebugPrefix(HexColorString("[HCR2]", COLOR_BLUE_SLATE_MEDIUM), oPlugin);
     LoadLibrariesByPattern("hcr_l_*");
 
     // ----- Module Events -----

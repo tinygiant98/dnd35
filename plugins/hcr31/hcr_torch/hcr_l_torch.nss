@@ -22,7 +22,7 @@ void OnLibraryLoad()
     object oPlugin = CreatePlugin("hcr2_torch");
     SetName(oPlugin, "[Plugin] HCR2 :: Torch System");
     SetDescription(oPlugin, "HCR2 Torch System");
-    SetDebugPrefix(HexColorString("[HCR2 Torch]", COLOR_ORANGE));
+    SetDebugPrefix(HexColorString("[HCR2 Torch]", COLOR_ORANGE), oPlugin);
 
     // Module Events
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_SPELLHOOK,   "torch_OnSpellHook",   4.0);

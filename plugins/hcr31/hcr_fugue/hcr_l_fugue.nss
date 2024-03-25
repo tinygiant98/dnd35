@@ -19,7 +19,7 @@ void OnLibraryLoad()
     object oPlugin = CreatePlugin("hcr2_fugue");
     SetName(oPlugin, "[Plugin] HCR2 :: Fugue System");
     SetDescription(oPlugin, "HCR2 Fugue System");
-    SetDebugPrefix(HexColorString("[HCR2 Fugue]", COLOR_FUCHSIA));
+    SetDebugPrefix(HexColorString("[HCR2 Fugue]", COLOR_FUCHSIA), oPlugin);
 
     // Module Events
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_MODULE_LOAD,  "fugue_OnModuleLoad",  4.0);

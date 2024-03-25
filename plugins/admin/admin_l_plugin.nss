@@ -24,7 +24,7 @@ void OnLibraryLoad()
         SetName(oPlugin, "[Plugin] PW Administration");
         SetDescription(oPlugin,
             "This plugin controls all administrative functions for the pw.");
-        SetDebugPrefix(HexColorString("[Admin]", COLOR_BLUE_SLATE_MEDIUM));
+        SetDebugPrefix(HexColorString("[Admin]", COLOR_BLUE_SLATE_MEDIUM), oPlugin);
 
         // These are default bioware events in case other systems don't override them.
         RegisterEventScript(oPlugin, MODULE_EVENT_ON_ACQUIRE_ITEM,         "x2_mod_def_aqu",   2.0);

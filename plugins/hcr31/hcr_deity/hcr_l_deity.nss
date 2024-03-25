@@ -19,7 +19,7 @@ void OnLibraryLoad()
     object oPlugin = CreatePlugin("hcr2_deity");
     SetName(oPlugin, "[Plugin] HCR2 :: Deity System");
     SetDescription(oPlugin, "HCR2 Deity System");
-    SetDebugPrefix(HexColorString("[HCR2 Deity]", COLOR_RED_LIGHT));
+    SetDebugPrefix(HexColorString("[HCR2 Deity]", COLOR_RED_LIGHT), oPlugin);
 
     // Module Events
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_PLAYER_DEATH, "deity_OnPlayerDeath", 4.0);

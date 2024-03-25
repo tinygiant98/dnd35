@@ -19,7 +19,7 @@ void OnLibraryLoad()
     object oPlugin = CreatePlugin("hcr2_loot");
     SetName(oPlugin, "[Plugin] HCR2 :: Loot System");
     SetDescription(oPlugin, "HCR2 Loot System");
-    SetDebugPrefix(HexColorString("[HCR2 Loot]", COLOR_GREEN));
+    SetDebugPrefix(HexColorString("[HCR2 Loot]", COLOR_GREEN), oPlugin);
 
     // ----- Module Events -----
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_PLAYER_DYING, "loot_OnPlayerDying", 4.0);
