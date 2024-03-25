@@ -19,7 +19,7 @@ void OnLibraryLoad()
     object oPlugin = CreatePlugin("hcr2_corpse");
     SetName(oPlugin, "[Plugin] HCR2 :: Corpse Token System");
     SetDescription(oPlugin, "HCR2 Corpse Token System");
-    SetDebugPrefix(HexColorString("[HCR2 Corpse Token]", COLOR_BLUE_LIGHT));
+    SetDebugPrefix(HexColorString("[HCR2 Corpse Token]", COLOR_BLUE_LIGHT), oPlugin);
 
     // Module Events
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_CLIENT_ENTER, "corpse_OnClientEnter", 4.0);

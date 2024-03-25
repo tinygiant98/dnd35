@@ -19,7 +19,7 @@ void OnLibraryLoad()
     object oPlugin = CreatePlugin("hcr2_bleed");
     SetName(oPlugin, "[Plugin] HCR2 :: Bleed System");
     SetDescription(oPlugin, "HCR2 Bleed System");
-    SetDebugPrefix(HexColorString("[HCR2 Bleed]", COLOR_RED_LIGHT));
+    SetDebugPrefix(HexColorString("[HCR2 Bleed]", COLOR_RED_LIGHT), oPlugin);
 
     // Module Events
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_CLIENT_ENTER,        "bleed_OnClientEnter",       4.0);

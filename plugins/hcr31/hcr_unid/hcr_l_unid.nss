@@ -22,7 +22,7 @@ void OnLibraryLoad()
     object oPlugin = CreatePlugin("hcr2_unid");
     SetName(oPlugin, "[Plugin] HCR2 :: UnID System");
     SetDescription(oPlugin, "HCR2 UnID System");
-    SetDebugPrefix(HexColorString("[HCR2 UnID]", COLOR_YELLOW_LIGHT));
+    SetDebugPrefix(HexColorString("[HCR2 UnID]", COLOR_YELLOW_LIGHT), oPlugin);
 
     // Module Events
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_UNACQUIRE_ITEM, "unid_OnUnacquireItem");

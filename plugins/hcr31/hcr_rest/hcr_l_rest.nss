@@ -19,7 +19,7 @@ void OnLibraryLoad()
     object oPlugin = CreatePlugin("hcr2_rest");
     SetName(oPlugin, "[Plugin] HCR2 :: Rest System");
     SetDescription(oPlugin, "HCR2 Rest System");
-    SetDebugPrefix(HexColorString("[HCR2 Rest]", COLOR_GOLDENROD_LIGHT));
+    SetDebugPrefix(HexColorString("[HCR2 Rest]", COLOR_GOLDENROD_LIGHT), oPlugin);
 
     // ----- Module Events -----
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_PLAYER_REST_CANCELLED, "rest_OnPlayerRestCancelled", 4.0);
