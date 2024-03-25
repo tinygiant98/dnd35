@@ -1,9 +1,9 @@
 // -----------------------------------------------------------------------------
-//    File: pw_l_plugin.nss
+//    File: admin_l_plugin.nss
 //  System: Persistent World Administration (library)
 // -----------------------------------------------------------------------------
 // Description:
-//  Library functions for PW Subsystem
+//  Library functions for PW Administration
 // -----------------------------------------------------------------------------
 // Builder Use:
 //  None!  Leave me alone.
