@@ -4,6 +4,7 @@
 /// -----------------------------------------------------------------------------
 
 #include "util_i_library"
+#include "util_i_chat"
 #include "core_i_framework"
 #include "hcr_e_core"
 
@@ -39,6 +40,9 @@ void OnLibraryLoad()
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_PLAYER_REST_CANCELLED, "hcr_OnPlayerRestCancelled", 10.0);
     RegisterEventScript(oPlugin, MODULE_EVENT_ON_PLAYER_REST_FINISHED,  "hcr_OnPlayerRestFinished",  10.0);
 
+    // Chat Commands
+    RegisterEventScript(oPlugin, CHAT_PREFIX + "!hcr", "hcr_OnPlayerChat");
+
     // ----- Timer Events -----
     RegisterEventScript(oPlugin, H2_SAVE_LOCATION_ON_TIMER_EXPIRE, "hcr_SavePCLocation_OnTimerExpire", 10.0);
     RegisterEventScript(oPlugin, H2_EXPORT_CHAR_ON_TIMER_EXPIRE,   "hcr_ExportPCs_OnTimerExpire", 10.0);
@@ -56,6 +60,7 @@ void OnLibraryLoad()
     RegisterLibraryScript("hcr_OnPlayerRestStarted",    20);
     RegisterLibraryScript("hcr_OnPlayerRestCancelled",  21);
     RegisterLibraryScript("hcr_OnPlayerRestFinished",   22);
+    RegisterLibraryScript("hcr_OnPlayerChat",           23);
 
     // ----- Timer Events -----
     RegisterLibraryScript("hcr_SavePCLocation_OnTimerExpire", 14);
@@ -83,6 +88,7 @@ void OnLibraryScript(string sScript, int nEntry)
         case 20:  hcr_OnPlayerRestStarted();    break;
         case 21:  hcr_OnPlayerRestCancelled();  break;
         case 22:  hcr_OnPlayerRestFinished();   break;
+        case 23:  hcr_OnPlayerChat();           break;
 
         // ----- Timer Events -----
         case 14: hcr_SavePCLocation_OnTimerExpire(); break;
