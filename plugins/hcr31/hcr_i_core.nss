@@ -343,6 +343,9 @@ void h2_LimitPostRestHeal(object oPC, int postRestHealAmt);
 //  the server epoch.  The following five functions are not original to HCR2.
 void h2_SaveServerEpoch()
 {
+    Debug(HexColorString("hs_SaveServerEpoch", COLOR_ORANGE));
+    Debug("  system time = " + GetSystemTime());
+
     SetModuleString(H2_EPOCH, GetSystemTime());
 }
 
@@ -950,6 +953,9 @@ void h2_SavePCLocation(object oPC)
 
 void h2_RestoreSavedCalendar()
 {
+    Debug(HexColorString("h2_RestoredSavedCalendar", COLOR_ORANGE));
+    Debug("  server time = " + GetPersistentString(H2_SERVER_TIME, H2_VARIABLE_TAG));
+
     string sTime = GetPersistentString(H2_SERVER_TIME, H2_VARIABLE_TAG);
 
     if (sTime != "")
