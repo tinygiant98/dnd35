@@ -380,6 +380,11 @@ void _SetCalendar(string sTime, int nSetCalendar = TRUE, int nSetTime = TRUE)
 //  vectors, nVector is used to make a range correction.
 string _ValidateTime(string sTime, int nMode = MODE_SYSTEM, int nVector = VECTOR_TIME)
 {
+    Debug(HexColorString("_ValidateTime", COLOR_ORANGE));
+    Debug("  sTime = " + sTime);
+    Debug("  nMode = " + (nMode == MODE_SYSTEM ? "MODE_SYSTEM" : "MODE_GAME"));
+    Debug("  nVector = " + (nVector == VECTOR_TIME ? "VECTOR_TIME" : "VECTOR_DIFFERENCE"));
+
     string elements, debug = "_ValidateTime :: ";
 
     if (CountList(sTime) != SYSTEM_ELEMENTS)
@@ -486,12 +491,23 @@ float _GetConversionFactor(int nFrom, int nTo)
 //  comma-delimited string.
 string _CreateTimeVector(int nMode, int nVector, int nYear = -1, int nMonth = -1, int nDay = -1, int nHour = -1, int nMinute = -1, int nSecond = -1)
 {
+    Debug(HexColorString("_CreateTimeVector", COLOR_ORANGE));
+    Debug("  nMode = " + (nMode == MODE_SYSTEM ? "MODE_SYSTEM" : "MODE_GAME"));
+    Debug("  nVector = " + (nVector == VECTOR_TIME ? "VECTOR_TIME" : "VECTOR_DIFFERENCE"));
+    Debug("  data (entry) = " + IntToString(nYear) + "|" + IntToString(nMonth) + "|" +
+        IntToString(nDay) + "|" + IntToString(nHour) + "|" + IntToString(nMinute) +
+        "|" + IntToString(nSecond));
+
     if (nYear   == -1) nYear   = GetCalendarYear();
     if (nMonth  == -1) nMonth  = GetCalendarMonth();
     if (nDay    == -1) nDay    = GetCalendarDay();
     if (nHour   == -1) nHour   = GetTimeHour();
     if (nMinute == -1) nMinute = GetTimeMinute();
     if (nSecond == -1) nSecond = GetTimeSecond();
+
+    Debug("  data (after check)= " + IntToString(nYear) + "|" + IntToString(nMonth) + "|" +
+        IntToString(nDay) + "|" + IntToString(nHour) + "|" + IntToString(nMinute) +
+        "|" + IntToString(nSecond));
 
     string sTime;
     sTime = AddListItem(sTime, IntToString(nYear));
@@ -500,6 +516,8 @@ string _CreateTimeVector(int nMode, int nVector, int nYear = -1, int nMonth = -1
     sTime = AddListItem(sTime, IntToString(nHour));
     sTime = AddListItem(sTime, IntToString(nMinute));
     sTime = AddListItem(sTime, IntToString(nSecond));
+
+    Debug("  sTime = " + sTime);
     
     if ((sTime = _ValidateTime(sTime, nMode, nVector)) == TIME_INVALID)
         return TIME_INVALID;
@@ -1132,6 +1150,10 @@ string FormatSystemTime(string sFormat = DEFAULT_FORMAT, string sTime = TIME_INV
 
 string GetPrecisionSystemTime(int nPrecision = TIME_SECONDS, string sTime = TIME_INVALID)
 {
+    Debug(HexColorString("GetPrecisionSystemTime", COLOR_ORANGE));
+    Debug("  nPrecision = " + IntToString(nPrecision));
+    Debug("  sTime = " + sTime);
+
     if (sTime == TIME_INVALID || sTime == "")
         sTime = _CreateTimeVector(MODE_SYSTEM, VECTOR_TIME);
 
