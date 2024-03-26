@@ -80,6 +80,7 @@ void quest_OnPCPerception()
 
 void OnLibraryLoad()
 {
+/*
     if (!GetIfPluginExists("quest"))
     {
         object oPlugin = CreatePlugin("quest");
@@ -106,13 +107,14 @@ void OnLibraryLoad()
     RegisterLibraryScript("quest_OnAcquireItem", n++);
     RegisterLibraryScript("quest_OnUnacquireItem", n++);
     
-    int n = 100;
+    n += 100;
     RegisterLibraryScript("quest_OnCreatureDeath", n++);
     RegisterLibraryScript("quest_OnCreatureConversation", n++);
     RegisterLibraryScript("quest_OnPCPerception", n++);
 
-    int n = 200;
+    n += 200;
     RegisterLibraryScript("quest_OnTriggerEnter", n++);
+    */
 }
 
 void OnLibraryScript(string sScript, int nEntry)
