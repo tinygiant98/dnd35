@@ -1,3 +1,4 @@
+#include "util_i_csvlists"
 //
 // Spawn Groups
 //
@@ -20,80 +21,104 @@
 /* 45-47	                           CR 14 - CR 34 */
 /* 48-50	                           CR 15 - CR 36 */
 /* 51-53	                           CR 16 - CR 38 */
-/* 54-56	                          .CR 17 - CR 40 */
+/* 54-56	                           CR 17 - CR 40 */
 /* 57-59	                           CR 18 - CR 42 */
-/* 60	                             CR 19 - CR 44 */
+/* 60	                                 CR 19 - CR 44 */
+/* Environment could be one of the allowed environments or could be:
+- FOREST, CAVES, etc...
+- FOREST_COLUMN_<COLUMN VALUE TO SEARCH FOR> , for example : FOREST_TAG_cnr ; FOREST_FirstName_Rat
+*/
 
 string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST")
 {
   int min, max = 0;
-  switch (pclvl) {
-  case 0:
-  case 1:
-  case 2:
-  case 3:
-    min = 0;
-    max = 2;
-    break;
-  case 4:
-  case 5:
-  case 6:
-    min = 0;
-    max = 6;
-    break;
-  case 7:
-  case 8:
-  case 9:
-    min = 1;
-    max = 8;
-    break;
-  case 10:
-  case 11:
-  case 12:
-    min = 2;
-    max = 10;
-    break;
 
-  case 13:
-  case 14:
-  case 15:
-    min = 3;
-    max = 12;
-    break;
-  case 16:
-  case 17:
-  case 18:
-    min = 4;
-    max = 14;
-    break;
+  string ENVIRONMENTS = "CAVES,FOREST,RUINS,HAUNTED,CITY_EXTERIOR,CITY_INTERIOR,DUNGEON,CRYPT,DESERT,FROZEN,UNDERDARK,SEWER";
+  
+  string found = GetListItem(StringReplace(environment, "_", ","), 1 );
+  
+  if (found  == "") 
+  {
 
-  case 19:
-  case 20:
-    min = 5;
-    max = 16;
-    break;
-  case 21:
-  case 22:
-  case 23:
-    min = 6;
-    max = 18;
-    break;
-  default:
-    min = d10(1);
-    max = d20(1) + d20(1);
-    break;
+          switch (pclvl) 
+          {
+                  case 0:
+                  case 1:
+                  case 2:
+                  case 3:
+                                min = 0;
+                                max = d2(1);
+                                break;
+                  case 4:
+                  case 5:
+                  case 6:
+                                min = 0;
+                                max = d6(1);
+                                break;
+                  case 7:
+                  case 8:
+                  case 9:
+                                min = 1;
+                                max = d8(1);
+                                break;
+                  case 10:
+                  case 11:
+                  case 12:
+                                min = d10(1);
+                                max = 10;
+                                break;
+                  case 13:
+                  case 14:
+                  case 15:
+                                min = 3;
+                                max = 12;
+                                break;
+                  case 16:
+                  case 17:
+                  case 18:
+                                min = 4;
+                                max = 14;
+                                break;
+                  case 19:
+                  case 20:
+                                min = 5;
+                                max = 16;
+                                break;
+                  case 21:
+                  case 22:
+                  case 23:
+                                min = 6;
+                                max = 18;
+                                break;
+                  default:
+                                min = d10(1);
+                                max = d20(1) + d20(1);
+                                break;
+          }
+
+          string s = "SELECT TemplateResRef FROM Encounters " +
+            " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL >= @min and Encounters.LVL <= @max " +
+            " JOIN Environments ON Encounters.EnvironmentID = Environments.EnvironmentID " +
+            " WHERE Environments.Name = @environment ORDER BY RANDOM() LIMIT 1;";
+
+          sqlquery q = SqlPrepareQueryCampaign("dnd35", s);
+          SqlBindInt(q, "@min", min);
+          SqlBindInt(q, "@max", max);
+          SqlBindString(q, "@environment", environment);
+          return SqlStep(q) ? SqlGetString(q, 0) : "";
+  } else {
+  
+          string s = "SELECT TemplateResRef FROM Encounters " +
+            " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Creatures.@col like @val " +
+            "ORDER BY RANDOM() LIMIT 1;";
+          string col = GetListItem(StringReplace(environment, "_", ","), 1 );
+          string val = GetListItem(StringReplace(environment, "_", ","), 2 ); 
+          sqlquery q = SqlPrepareQueryCampaign("dnd35", s);
+          SqlBindString(q, "@col", col);
+          SqlBindString(q, "@val", val + "%");
+          return SqlStep(q) ? SqlGetString(q, 0) : "";
   }
 
-  string s = "SELECT TemplateResRef FROM Encounters " +
-    " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL >= @min and Encounters.LVL <= @max " +
-    " JOIN Environments ON Encounters.EnvironmentID = Environments.EnvironmentID " +
-    " WHERE Environments.Name = @environment ORDER BY RANDOM() LIMIT 1;";
-
-  sqlquery q = SqlPrepareQueryCampaign("dnd35", s);
-  SqlBindInt(q, "@min", min);
-  SqlBindInt(q, "@max", max);
-  SqlBindString(q, "@environment", environment);
-  return SqlStep(q) ? SqlGetString(q, 0) : "";
 }
 
 // Convert a given EL equivalent and its encounter level,
