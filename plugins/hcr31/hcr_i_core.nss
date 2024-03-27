@@ -1241,6 +1241,14 @@ int AssignRole(object oPC)
     DeletePlayerInt(oPC, IS_DM);
     DeletePlayerInt(oPC, IS_DEVELOPER);
 
+    // Bypass for neirac
+
+    if (GetIsDM(oPC))
+        SetPlayerInt(oPC, IS_DM, TRUE);
+    else
+        SetPlayerInt(oPC, IS_PC, TRUE);
+
+    /*
     if (GetIsDM(oPC) && !GetIsRegisteredDM(oPC))
     {
         SetLocalInt(oPC, LOGIN_BOOT, TRUE);
@@ -1262,6 +1270,7 @@ int AssignRole(object oPC)
 
     if (GetIsDeveloper(oPC))
         SetPlayerInt(oPC, IS_DEVELOPER, TRUE);
+    */
 
     return TRUE;
 }
