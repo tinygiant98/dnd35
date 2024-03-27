@@ -33,7 +33,7 @@ string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST
   case 2:
   case 3:
     min = 0;
-    max = 3;
+    max = 2;
     break;
   case 4:
   case 5:

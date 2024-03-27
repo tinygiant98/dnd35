@@ -358,11 +358,7 @@ void CreateNESSWaypoints(string type)
           how_many = d6(1);
         }
       } else {
-        if (iAreaX <= 16) {
-          how_many = d4(1);
-        } else {
-          how_many = d6(1);
-        }
+        how_many = d4(1);
         group_name = ChooseGroupbyTile(oArea);
       }
 
