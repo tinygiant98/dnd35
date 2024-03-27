@@ -253,12 +253,20 @@ void hcr_OnPlayerChat()
     {
         effect e = EffectDamage(GetCurrentHitPoints(oPC) + 20);
         ApplyEffectToObject(DURATION_TYPE_INSTANT, e, oPC);
+        SendChatResult("Death damage applied", oPC, FLAG_INFO);
         return;
     }
     else if (HasChatOption(oPC, "dying"))
     {
         effect e = EffectDamage(GetCurrentHitPoints(oPC) + 2);
         ApplyEffectToObject(DURATION_TYPE_INSTANT, e, oPC);
+        SendChatResult("Dying damage applied", oPC, FLAG_INFO);
+        return;
+    }
+    else if (HasChatOption(oPC, "state"))
+    {
+        string s = h2_debug_TranslateState(GetPlayerInt(oPC, H2_PLAYER_STATE));
+        Notice("Current player state = " + s);
         return;
     }
 }

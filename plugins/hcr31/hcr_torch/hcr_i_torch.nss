@@ -130,7 +130,7 @@ void h2_EquippedLightSource(int bLantern)
     float percentRemaining = (IntToFloat(burnLeft) / IntToFloat(burncount)) * 100.0;
     SendMessageToPC(oPC, H2_TEXT_REMAINING_BURN + FloatToString(percentRemaining, 5, 1));
     
-    int timerID = CreateTimer(oLight, TORCH_EVENT_ON_TIMER_EXPIRE, IntToFloat(burnLeft), 1, 0.0);
+    int timerID = CreateTimer(oLight, TORCH_EVENT_ON_TIMER_EXPIRE, IntToFloat(burnLeft), 1, 0.0, CORE_HOOK_TIMERS);
     StartTimer(timerID, FALSE);
     SetLocalInt(oLight, H2_LIGHT_TIMERID, timerID);
     SetLocalObject(oLight, H2_EQUIPPINGPC, oPC);
