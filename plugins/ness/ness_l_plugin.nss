@@ -17,11 +17,13 @@ void OnLibraryLoad()
         object oPlugin = CreatePlugin("ness");
         SetName(oPlugin, "[Plugin] System :: NESS Spawning System");
         SetDebugPrefix(HexColorString("[NESS]", COLOR_RED), oPlugin);
+        SetDebugLevel(DEBUG_LEVEL_ERROR, oPlugin);
+
         RegisterEventScript(oPlugin, AREA_EVENT_ON_ENTER, "spawn_smpl_onent");
         RegisterEventScript(oPlugin, MODULE_EVENT_ON_MODULE_LOAD, "ness_OnModuleLoad");
   
     }
-     int n = 0;
+    int n = 0;
     RegisterLibraryScript("ness_OnModuleLoad", n++);
 }
 

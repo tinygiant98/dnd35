@@ -373,14 +373,12 @@ void CreateNESSWaypoints(string type)
 
           if (GetIsObjectValid(oWP))
             {
-              Notice("Waypoint created at: " + GetName(oArea) + " Name: "
+              Debug("Waypoint created at: " + GetName(oArea) + " Name: "
                      + NESS_wpname + " tag:" + group_name);
               SetTag(oWP,group_name);
-              Debug(ObjectToString(oWP));
                 
             } else {
             CriticalError("Waypoint could not be created at : " + GetName(oArea));
-            CriticalError(ObjectToString(oWP));
           }
         }       
       oArea = GetNextArea();

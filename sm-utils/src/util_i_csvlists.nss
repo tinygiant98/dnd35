@@ -178,14 +178,8 @@ string JsonToList(json jList, int bNormalize = TRUE);
 
 string NormalizeList(string sList, int bRemoveEmpty = TRUE)
 {
-    PrintString("NormalizeList");
-    PrintString("  sList = " + sList);
-    PrintString("  bRemoveEmpty = " + (bRemoveEmpty ? "TRUE" : "FALSE"));
-
     string sRegex = "(?:[\\s]*,[\\s]*)" + (bRemoveEmpty ? "+" : "");
-    PrintString("  ...sRegex = " + sRegex);
     sList = RegExpReplace(sRegex, sList, ",");
-    PrintString("  ...sList (post-regex) = " + sList);
     return TrimString(bRemoveEmpty ? RegExpReplace("^[\\s]*,|,[\\s]*$", sList, "") : sList);
 }
 
@@ -199,18 +193,8 @@ int CountList(string sList)
 
 string AddListItem(string sList, string sListItem, int bAddUnique = FALSE)
 {
-    PrintString("AddListItem");
-    PrintString("  sList = " + sList);
-    PrintString("  sListItem = " + sListItem);
-    PrintString("  bAddUnique = " + (bAddUnique ? "TRUE" : "FALSE"));
-
     sList = NormalizeList(sList);
-
-    PrintString("  ...sList (post-normalize) = " + sList);
-
     sListItem = TrimString(sListItem);
-
-    PrintString("  ...sListItem (post-trim) = " + sListItem);
 
     if (bAddUnique && HasListItem(sList, sListItem))
         return sList;

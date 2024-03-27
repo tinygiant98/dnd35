@@ -87,7 +87,7 @@ void h2_BeginPlayerBleeding(object oPC)
 {
     SetPlayerInt(oPC, H2_LAST_HIT_POINTS, GetCurrentHitPoints(oPC));
     
-    int nTimer = CreateTimer(oPC, BLEED_EVENT_ON_TIMER_EXPIRE, H2_BLEED_INTERVAL);
+    int nTimer = CreateTimer(oPC, BLEED_EVENT_ON_TIMER_EXPIRE, H2_BLEED_INTERVAL, 0, 0.0, CORE_HOOK_TIMERS);
     SetLocalInt(oPC, H2_BLEED_TIMER_ID, nTimer);
     StartTimer(nTimer, FALSE);
 }

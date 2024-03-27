@@ -343,9 +343,6 @@ void h2_LimitPostRestHeal(object oPC, int postRestHealAmt);
 //  the server epoch.  The following five functions are not original to HCR2.
 void h2_SaveServerEpoch()
 {
-    Debug(HexColorString("hs_SaveServerEpoch", COLOR_ORANGE));
-    Debug("  system time = " + GetSystemTime());
-
     SetModuleString(H2_EPOCH, GetSystemTime());
 }
 
@@ -953,9 +950,6 @@ void h2_SavePCLocation(object oPC)
 
 void h2_RestoreSavedCalendar()
 {
-    Debug(HexColorString("h2_RestoredSavedCalendar", COLOR_ORANGE));
-    Debug("  server time = " + GetPersistentString(H2_SERVER_TIME, H2_VARIABLE_TAG));
-
     string sTime = GetPersistentString(H2_SERVER_TIME, H2_VARIABLE_TAG);
 
     if (sTime != "")
@@ -988,7 +982,7 @@ void h2_StartCharExportTimer()
 {
     if (H2_EXPORT_CHARACTERS_INTERVAL > 0.0)
     {
-        int nTimerID = CreateTimer(MODULE, H2_EXPORT_CHAR_ON_TIMER_EXPIRE, H2_EXPORT_CHARACTERS_INTERVAL);
+        int nTimerID = CreateTimer(MODULE, H2_EXPORT_CHAR_ON_TIMER_EXPIRE, H2_EXPORT_CHARACTERS_INTERVAL, 0, 0.0, CORE_HOOK_TIMERS);
         SetModuleInt(H2_EXPORT_CHAR_TIMER_ID, nTimerID);
         StartTimer(nTimerID, TRUE);
     }
@@ -998,7 +992,7 @@ void h2_StartSavePCLocationTimer()
 {
     if (H2_SAVE_PC_LOCATION_TIMER_INTERVAL > 0.0)
     {
-        int nTimerID = CreateTimer(MODULE, H2_SAVE_LOCATION_ON_TIMER_EXPIRE, H2_SAVE_PC_LOCATION_TIMER_INTERVAL);
+        int nTimerID = CreateTimer(MODULE, H2_SAVE_LOCATION_ON_TIMER_EXPIRE, H2_SAVE_PC_LOCATION_TIMER_INTERVAL, 0, 0.0, CORE_HOOK_TIMERS);
         SetModuleInt(H2_SAVE_LOCATION_TIMER_ID, nTimerID);
         StartTimer(nTimerID, TRUE);
     }
@@ -1233,6 +1227,17 @@ void h2_LimitPostRestHeal(object oPC, int postRestHealAmt)
         effect eDamage = EffectDamage(nDam, DAMAGE_TYPE_MAGICAL, DAMAGE_POWER_NORMAL);
         ApplyEffectToObject(DURATION_TYPE_INSTANT, eDamage, oPC);
     }
+}
+
+string h2_debug_TranslateState(int n)
+{
+    return n == H2_PLAYER_STATE_ALIVE      ? "ALIVE"      :
+           n == H2_PLAYER_STATE_DYING      ? "DYING"      :
+           n == H2_PLAYER_STATE_DEAD       ? "DEAD"       :
+           n == H2_PLAYER_STATE_STABLE     ? "STABLE"     :
+           n == H2_PLAYER_STATE_RECOVERING ? "RECOVERING" :
+           n == H2_PLAYER_STATE_RETIRED    ? "RETIRED"    :
+                                             "UKNOWN";
 }
 
 int AssignRole(object oPC)
