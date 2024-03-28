@@ -157499,7 +157499,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SG_SN04M01_SA02M01_NOD_PC01_TR20D39_RS50_LT00",
+            "0": "SP_SG_NOD_SN6M3_SR4M2_SD16M10_LT0_PC1_RS50",
             "id": 14817
           }
         },
@@ -157561,7 +157561,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SG_SN02M01_SA02M01_NOD_PC01_TR20D39_RS70_LT00",
+            "0": "SP_SG_NOD_SN6M3_SR4M2_SD16M10_LT0_PC1_RS50",
             "id": 14817
           }
         },
@@ -157587,7 +157587,7 @@
         },
         "XPosition": {
           "type": "float",
-          "value": 81.724
+          "value": 88.7779
         },
         "YOrientation": {
           "type": "float",
@@ -157595,7 +157595,7 @@
         },
         "YPosition": {
           "type": "float",
-          "value": 32.3931
+          "value": 28.6201
         },
         "ZPosition": {
           "type": "float",
