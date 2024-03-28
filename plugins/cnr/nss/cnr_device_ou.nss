@@ -14,25 +14,36 @@
 //
 /////////////////////////////////////////////////////////
 #include "cnr_recipe_utils"
+#include "util_i_debug"
 
 /////////////////////////////////////////////////////////
 void TestIfRecipesHaveBeenCollected(object oUser)
 {
+  Debug(HexColorString("    TestIfRecipesHaveBeenCollected", COLOR_ORANGE));
+  Debug("      object_self = " + GetTag(OBJECT_SELF));
+
   int nStackCount = CnrGetStackCount(oUser);
+  Debug("      nStackCount = " + IntToString(nStackCount));
   if (nStackCount > 0)
   {
     AssignCommand(OBJECT_SELF, TestIfRecipesHaveBeenCollected(oUser));
   }
   else
   {
-    ActionStartConversation(oUser, "", TRUE);
+    Debug("      ...all prerequisites met, starting conversation");
+    Debug("      ...nCnrMenuPage = " + IntToString(GetLocalInt(oUser, "nCnrMenuPage")));
+    Debug("      ...sCnrCurrentMenu = " + GetLocalString(oUser, "sCnrCurrentMenu"));
+    ActionStartConversation(oUser, "", TRUE, FALSE);
   }
 }
 
 /////////////////////////////////////////////////////////
 void TestIfRecipesHaveBeenInitialized(object oUser)
 {
+  Debug(HexColorString("  TestIsRecipesHaveBeenInitialized", COLOR_ORANGE));
+
   int nStackCount = CnrGetStackCount(oUser);
+  Debug("    nStackCount = " + IntToString(nStackCount));
   if (nStackCount > 0)
   {
     AssignCommand(OBJECT_SELF, TestIfRecipesHaveBeenInitialized(oUser));
@@ -43,6 +54,8 @@ void TestIfRecipesHaveBeenInitialized(object oUser)
     // OnOpen, OnUsed, OnDisturbed, OnClose, OnUsed.
     if (GetLocalInt(OBJECT_SELF, "bCnrDisturbed") != TRUE)
     {
+      Notice("    Contents have not been disturbed; skipping");
+      Debug("    ^^^^^^^^^^^ This is dumb");
       // Skip if the contents have not been altered.
       return;
     }
@@ -62,10 +75,14 @@ void TestIfRecipesHaveBeenInitialized(object oUser)
       return;
     }
 
+    Debug("    ...tools found = " + IntToString(CnrRecipeDeviceToolsArePresent(oUser, OBJECT_SELF)));
+
     if (CnrRecipeDeviceToolsArePresent(oUser, OBJECT_SELF))
     {
       SetLocalInt(oUser, "nCnrMenuPage", 0);
       SetLocalString(oUser , "sCnrCurrentMenu", GetTag(OBJECT_SELF));
+
+      Debug("    ...collecting recipes");
 
       // this call is asynchronous - it uses stack helpers to avoid TMI
       CnrCollectDeviceRecipes(oUser, OBJECT_SELF, TRUE);
@@ -81,12 +98,18 @@ void TestIfRecipesHaveBeenInitialized(object oUser)
 /////////////////////////////////////////////////////////
 void main()
 {
+
   object oUser = GetLastUsedBy();
+ 
+  Debug(HexColorString("cnr_device_ou", COLOR_ORANGE));
+  Debug("  oUser = " + GetName(oUser));
+ 
   if (!GetIsPC(oUser))
   {
     return;
   }
 
+  Debug("  ...initializing device recipes");
   // this call is asynchronous - it uses stack helpers to avoid TMI
   CnrInitializeDeviceRecipes(oUser, OBJECT_SELF);
 
