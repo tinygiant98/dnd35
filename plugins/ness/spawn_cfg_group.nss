@@ -110,7 +110,7 @@ Notice("[NESS] Min CR " + IntToString(min) + " Max CR " + IntToString(max));
   } else {
          string col = GetListItem(StringReplace(environment, "_", ","), 1 );
          string val = GetListItem(StringReplace(environment, "_", ","), 2 ); 
-         Notice("[NESS] Template  area spawning " + );
+         Notice("[NESS] Template  area spawning " );
           string s = "SELECT TemplateResRef FROM Encounters " +
             " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL >= @min and Encounters.LVL <= @max and Creatures." + col + 
             " like @val " +   "ORDER BY RANDOM() LIMIT 1;";
