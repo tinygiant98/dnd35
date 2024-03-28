@@ -33,7 +33,8 @@ void TestIfRecipesHaveBeenCollected(object oUser)
     Debug("      ...all prerequisites met, starting conversation");
     Debug("      ...nCnrMenuPage = " + IntToString(GetLocalInt(oUser, "nCnrMenuPage")));
     Debug("      ...sCnrCurrentMenu = " + GetLocalString(oUser, "sCnrCurrentMenu"));
-    ActionStartConversation(oUser, "", TRUE, FALSE);
+    BeginConversation("", oUser);
+    //ActionStartConversation(oUser, "", TRUE, FALSE);
   }
 }
 
@@ -47,6 +48,7 @@ void TestIfRecipesHaveBeenInitialized(object oUser)
   if (nStackCount > 0)
   {
     AssignCommand(OBJECT_SELF, TestIfRecipesHaveBeenInitialized(oUser));
+
   }
   else
   {

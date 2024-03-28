@@ -1798,7 +1798,8 @@ void CnrRecipeDisplayCraftingResult(object oPC, object oDevice, string sKeyToRec
     //SetCustomToken(22000, sResult);
     SetLocalString(oPC, "sCnrTokenText" + IntToString(22000), sResult);
     // Note: the custom token will be set in "cnr_ta_tok_22000".
-    ActionStartConversation(oPC, "cnr_c_craft_it", TRUE);
+    BeginConversation("cnr_c_craft_it", oPC);
+    //ActionStartConversation(oPC, "cnr_c_craft_it", TRUE);
   }
 }
 
