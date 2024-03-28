@@ -34,7 +34,8 @@
 string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST")
 {
   int min, max = 0;  
-  
+  string found = GetListItem(StringReplace(environment, "_", ","), 1);
+
           switch (pclvl) 
           {
                   case 0:
@@ -109,7 +110,7 @@ Notice("[NESS] Min CR " + IntToString(min) + " Max CR " + IntToString(max));
   } else {
          string col = GetListItem(StringReplace(environment, "_", ","), 1 );
          string val = GetListItem(StringReplace(environment, "_", ","), 2 ); 
-       Notice("[NESS] Template has metadata  spawning using it" );
+         Notice("[NESS] Template  area spawning " + );
           string s = "SELECT TemplateResRef FROM Encounters " +
             " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL >= @min and Encounters.LVL <= @max and Creatures." + col + 
             " like @val " +   "ORDER BY RANDOM() LIMIT 1;";
@@ -117,7 +118,7 @@ Notice("[NESS] Min CR " + IntToString(min) + " Max CR " + IntToString(max));
           SqlBindString(q, "@val", val + "%");
           SqlBindInt(q, "@min", min);
           SqlBindInt(q, "@max", max);
-         
+          PrintString(s);
           return SqlStep(q) ? SqlGetString(q, 0) : "";
   }
 

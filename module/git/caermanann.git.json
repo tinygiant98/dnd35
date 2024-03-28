@@ -2343,7 +2343,7 @@
         },
         "LinkedTo": {
           "type": "cexostring",
-          "value": "entryviejatumba"
+          "value": "entryviejatumbra"
         },
         "LinkedToFlags": {
           "type": "byte",
@@ -157561,7 +157561,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SG_SN04M01_SA02M01_NOD_PC01_TR20D39_RS70_LT00",
+            "0": "SP_SG_SN02M01_SA02M01_NOD_PC01_TR20D39_RS70_LT00",
             "id": 14817
           }
         },
@@ -157623,7 +157623,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SG_SN04M01_SA02M01_DO_PC01_TR20D39_RS90",
+            "0": "SP_SG_SN02M01_SA02M01_DO_PC01_TR20D39_RS90",
             "id": 14817
           }
         },
@@ -157685,7 +157685,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SG_SN04M01_SA02M01_DO_PC01_TR20D39",
+            "0": "SP_SG_SN02M01_SA02M01_DO_PC01_TR20D39",
             "id": 14817
           }
         },
@@ -157761,7 +157761,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "FOREST_Tag_goblin"
+          "value": "FOREST_FirstName_goblin"
         },
         "TemplateResRef": {
           "type": "resref",

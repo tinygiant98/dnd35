@@ -1253,29 +1253,6 @@ int AssignRole(object oPC)
     else
         SetPlayerInt(oPC, IS_PC, TRUE);
 
-    /*
-    if (GetIsDM(oPC) && !GetIsRegisteredDM(oPC))
-    {
-        SetLocalInt(oPC, LOGIN_BOOT, TRUE);
-        BootPC(oPC, "You are not a registered DM.  If you believe this is an " +
-                "error, contact server admin on discord or via email.");
-        
-        string sMessage = GetLocalString(oPC, PC_PLAYER_NAME) + " attempted to login as a DM, but is not " +
-                "on the registered DM list in env_dm.2da" +
-                "\n  Character  -> " + GetName(oPC) +
-                "\n  CD Key     -> " + GetLocalString(oPC, PC_CD_KEY) +
-                "\n  IP Address -> " + GetLocalString(oPC, PC_IP_ADDRESS);
-
-        //TODO add webhook event here
-
-        Warning(sMessage);
-        SendMessageToAllDMs(sMessage);
-        return FALSE;
-    }
-
-    if (GetIsDeveloper(oPC))
-        SetPlayerInt(oPC, IS_DEVELOPER, TRUE);
-    */
 
     return TRUE;
 }

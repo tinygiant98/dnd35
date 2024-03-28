@@ -59,11 +59,9 @@ void Fugue_Init()
     AddDialogNode(PAGE_MAIN, PAGE_RESPAWN_START, "Respawn to Module Starting Location");
     EnableDialogEnd("I don't want to talk to you any more.");
 
-    AddDialogPage(PAGE_RESPAWN_START, "This is the basic respawn option provided with the system.  The " +
-        "module builder has not customized this system yet.  Press 'Yes, I Want to Respawn!' to respawn " +
-        "to the module's start location.  No penalties will be applied.");
-    AddDialogNode(PAGE_RESPAWN_START, "", "Yes, I Want to Respawn!", "respawn_start");
-    EnableDialogBack("I don't want to respawn right now.", PAGE_RESPAWN_START);
+    AddDialogPage(PAGE_RESPAWN_START, "Estas en limbo, alguna vez estuviste vivo, quieres volver al mundo de los vivos?");
+    AddDialogNode(PAGE_RESPAWN_START, "", "SI, lo deseo!", "respawn_start");
+    EnableDialogBack("No, esperare que mis amigos me revivan.", PAGE_RESPAWN_START);
 
     ClearDialogHistory();
 }

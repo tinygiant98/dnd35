@@ -291,7 +291,7 @@ string ChooseResourcebyTile(object oArea) {
       resource = "deposit";
     }
   }
-
+/*
   if (env == "CITY_INTERIOR") {
     switch (d6(1)) {
       case 1 :
@@ -314,13 +314,18 @@ string ChooseResourcebyTile(object oArea) {
     break;
     }
   }
-
+*/
   if (env == "FOREST" ) {
-    if (luck > 60 ) {
-      resource = "choppable";
-    } else {
-      resource = "plant";
+    switch(Random(2) + 1) {
+      case 1:
+                 resource = "plant";
+                 break;
+      case 2: 
+                 resource = "choppable";
+                 break;
+     
     }
+    
   }
 
   string s = "select TemplateResRef from placeables" +

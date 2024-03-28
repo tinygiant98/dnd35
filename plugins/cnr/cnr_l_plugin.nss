@@ -74,56 +74,6 @@ void cnr_OnPlayerChat()
     }
 }
 
-void cnr_OnPlayerChat()
-{
-    object oPC = GetPCChatSpeaker();
-    if (HasChatKey(oPC, "device"))
-    {
-        string sDevice = GetChatKeyValue(oPC, "device");
-        object oDevice = CreateObject(OBJECT_TYPE_PLACEABLE, sDevice, GetLocation(oPC), FALSE);
-        
-        Notice("Device event scripts:");
-        int n = 9000;
-        for (n; n <= 9015; n++)
-        {
-            string s = GetEventScript(oDevice, n);
-            if (s != "")
-            {
-                string sEvent = GetConstantName("EVENT_SCRIPT_PLACEABLE_", JsonInt(n), TRUE);
-                Debug("  " + sEvent + ": " + HexColorString(s, COLOR_BLUE_LIGHT));
-            }
-        }
-        
-        //HookObjectEvents(oDevice, TRUE, TRUE);
-        return;
-    }
-    else if (HasChatKey(oPC, "item"))
-    {
-        int nQty = 1;
-        string sItem = GetChatKeyValue(oPC, "item");
-        if (HasChatKey(oPC, "qty"))
-            nQty = GetChatKeyValueInt(oPC, "qty");
-
-        int n; for (n; n < nQty; n++)
-             CreateItemOnObject(sItem, oPC);
-        
-        return;
-    }
-    else if (HasChatKey(oPC, "clear"))
-    {   
-        int n;
-        string sDevice = GetChatKeyValue(oPC, "clear");
-        object oDevice = GetNearestObjectByTag(sDevice, oPC, ++n);
-        while (GetIsObjectValid(oDevice))
-        {
-            DestroyObject(oDevice);
-            oDevice = GetNearestObjectByTag(sDevice, oPC, ++n);
-        }
-        
-        return;
-    }
-}
-
 void OnLibraryLoad()
 {
     if (!GetIfPluginExists("cnr"))
