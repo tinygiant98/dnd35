@@ -1874,7 +1874,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SN05M03_SA05M03_SD12M10_PC03_SG_LT01_RS60",
+            "0": "SP_SG_SN05M03_SA05M03_SD12M10_PC03_SG_LT01_RS60",
             "id": 14817
           }
         },
@@ -1888,7 +1888,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "scaled_forest"
+          "value": "FOREST_Tag_cnr"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -1936,7 +1936,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SN08M01_SA06M01_SR03M01_SD18M14_NOD_PC01_LT00_TR20D39_RS20",
+            "0": "SP_SG_SN08M01_SA06M01_SR03M01_SD18M14_NOD_PC01_LT00_TR20D39_RS20",
             "id": 14817
           }
         },
@@ -1950,7 +1950,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "cnrablkbear"
+          "value": "FOREST_FIRSTNAME_bear"
         },
         "TemplateResRef": {
           "type": "resref",

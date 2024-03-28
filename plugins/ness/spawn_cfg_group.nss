@@ -1,4 +1,5 @@
 #include "util_i_csvlists"
+#include "util_i_debug"
 //
 // Spawn Groups
 //
@@ -28,14 +29,12 @@
 - FOREST, CAVES, etc...
 - FOREST_COLUMN_<COLUMN VALUE TO SEARCH FOR> , for example : FOREST_TAG_cnr ; FOREST_FirstName_Rat
 */
-
+ const string ENVIRONMENTS = "CAVES,FOREST,RUINS,HAUNTED,CITY_EXTERIOR,CITY_INTERIOR,DUNGEON,CRYPT,DESERT,FROZEN,UNDERDARK,SEWER";         
+ const string  FLAGS = "Tag,FirstName";
 string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST")
 {
   int min, max = 0;  
-  string found = GetListItem(StringReplace(environment, "_", ","), 1);
   
- 
-
           switch (pclvl) 
           {
                   case 0:
@@ -91,9 +90,12 @@ string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST
                                 max = d20(1) + d20(1);
                                 break;
           }
-
- if (found  == "" ||  found == "INTERIOR" || found == "EXTERIOR") 
+ int isarea = FindListItem(ENVIRONMENTS, environment);
+ Notice( "[NESS] Environment :" + environment + " isarea? " + IntToString(isarea));
+Notice("[NESS] Min CR " + IntToString(min) + " Max CR " + IntToString(max));
+ if (isarea != -1)  
   {
+    Notice("[NESS] Template is known area spawning from Table"  );
           string s = "SELECT TemplateResRef FROM Encounters " +
             " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL >= @min and Encounters.LVL <= @max " +
             " JOIN Environments ON Encounters.EnvironmentID = Environments.EnvironmentID " +
@@ -107,15 +109,15 @@ string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST
   } else {
          string col = GetListItem(StringReplace(environment, "_", ","), 1 );
          string val = GetListItem(StringReplace(environment, "_", ","), 2 ); 
-       
+       Notice("[NESS] Template has metadata  spawning using it" );
           string s = "SELECT TemplateResRef FROM Encounters " +
-            " JOIN Creatures ON Encounters.CreatureID = Creatures.id and and Encounters.LVL >= @min and Encounters.LVL <= @max and Creatures." + col + 
-            " like @val " +
-            "ORDER BY RANDOM() LIMIT 1;";
+            " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL >= @min and Encounters.LVL <= @max and Creatures." + col + 
+            " like @val " +   "ORDER BY RANDOM() LIMIT 1;";
           sqlquery q = SqlPrepareQueryCampaign("dnd35", s);
           SqlBindString(q, "@val", val + "%");
           SqlBindInt(q, "@min", min);
           SqlBindInt(q, "@max", max);
+         
           return SqlStep(q) ? SqlGetString(q, 0) : "";
   }
 

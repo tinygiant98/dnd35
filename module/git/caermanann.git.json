@@ -156196,6 +156196,131 @@
                       "type": "float",
                       "value": -1.0
                     }
+                  },
+                  {
+                    "__struct_id": 2,
+                    "AddCost": {
+                      "type": "dword",
+                      "value": 0
+                    },
+                    "BaseItem": {
+                      "type": "int",
+                      "value": 2
+                    },
+                    "Charges": {
+                      "type": "byte",
+                      "value": 0
+                    },
+                    "Cost": {
+                      "type": "dword",
+                      "value": 20
+                    },
+                    "Cursed": {
+                      "type": "byte",
+                      "value": 0
+                    },
+                    "DescIdentified": {
+                      "type": "cexolocstring",
+                      "value": {
+                        "0": "This tool is designed to break rock."
+                      }
+                    },
+                    "Description": {
+                      "type": "cexolocstring",
+                      "value": {
+                        "0": "This tool is designed to break rock."
+                      }
+                    },
+                    "Identified": {
+                      "type": "byte",
+                      "value": 1
+                    },
+                    "Infinite": {
+                      "type": "byte",
+                      "value": 1
+                    },
+                    "LocalizedName": {
+                      "type": "cexolocstring",
+                      "value": {
+                        "0": "Miner's Pickaxe"
+                      }
+                    },
+                    "ModelPart1": {
+                      "type": "byte",
+                      "value": 62
+                    },
+                    "ModelPart2": {
+                      "type": "byte",
+                      "value": 23
+                    },
+                    "ModelPart3": {
+                      "type": "byte",
+                      "value": 32
+                    },
+                    "Plot": {
+                      "type": "byte",
+                      "value": 0
+                    },
+                    "PropertiesList": {
+                      "type": "list",
+                      "value": []
+                    },
+                    "Repos_PosX": {
+                      "type": "word",
+                      "value": 2
+                    },
+                    "Repos_Posy": {
+                      "type": "word",
+                      "value": 0
+                    },
+                    "StackSize": {
+                      "type": "word",
+                      "value": 1
+                    },
+                    "Stolen": {
+                      "type": "byte",
+                      "value": 0
+                    },
+                    "Tag": {
+                      "type": "cexostring",
+                      "value": "cnrMinersPickaxe"
+                    },
+                    "TemplateResRef": {
+                      "type": "resref",
+                      "value": "cnrminerspickaxe"
+                    },
+                    "xModelPart1": {
+                      "type": "word",
+                      "value": 62
+                    },
+                    "xModelPart2": {
+                      "type": "word",
+                      "value": 23
+                    },
+                    "xModelPart3": {
+                      "type": "word",
+                      "value": 32
+                    },
+                    "XOrientation": {
+                      "type": "float",
+                      "value": 0.0
+                    },
+                    "XPosition": {
+                      "type": "float",
+                      "value": -1.0
+                    },
+                    "YOrientation": {
+                      "type": "float",
+                      "value": 1.0
+                    },
+                    "YPosition": {
+                      "type": "float",
+                      "value": -1.0
+                    },
+                    "ZPosition": {
+                      "type": "float",
+                      "value": -1.0
+                    }
                   }
                 ]
               }
@@ -157374,7 +157499,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SN04M01_SA02M01_NOD_PC01_TR20D39_RS90_LT00",
+            "0": "SP_SG_SN04M01_SA02M01_NOD_PC01_TR20D39_RS50_LT00",
             "id": 14817
           }
         },
@@ -157436,7 +157561,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SN04M01_SA02M01_NOD_PC01_TR20D39_RS40_LT00",
+            "0": "SP_SG_SN04M01_SA02M01_NOD_PC01_TR20D39_RS70_LT00",
             "id": 14817
           }
         },
@@ -157462,7 +157587,7 @@
         },
         "XPosition": {
           "type": "float",
-          "value": 91.1534
+          "value": 81.724
         },
         "YOrientation": {
           "type": "float",
@@ -157470,7 +157595,7 @@
         },
         "YPosition": {
           "type": "float",
-          "value": 40.9073
+          "value": 32.3931
         },
         "ZPosition": {
           "type": "float",
@@ -157498,7 +157623,7 @@
         "LocalizedName": {
           "type": "cexolocstring",
           "value": {
-            "0": "SP_SN04M01_SA02M01_DO_PC01_TR20D39_RS90",
+            "0": "SP_SG_SN04M01_SA02M01_DO_PC01_TR20D39_RS90",
             "id": 14817
           }
         },
@@ -157512,7 +157637,7 @@
         },
         "Tag": {
           "type": "cexostring",
-          "value": "FOREST_TAG_cnr"
+          "value": "FOREST_Tag_cnr"
         },
         "TemplateResRef": {
           "type": "resref",
@@ -157537,6 +157662,130 @@
         "ZPosition": {
           "type": "float",
           "value": 0.0
+        }
+      },
+      {
+        "__struct_id": 5,
+        "Appearance": {
+          "type": "byte",
+          "value": 1
+        },
+        "Description": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "HasMapNote": {
+          "type": "byte",
+          "value": 0
+        },
+        "LinkedTo": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "LocalizedName": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "SP_SG_SN04M01_SA02M01_DO_PC01_TR20D39",
+            "id": 14817
+          }
+        },
+        "MapNote": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "MapNoteEnabled": {
+          "type": "byte",
+          "value": 1
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "FOREST_Tag_cnr"
+        },
+        "TemplateResRef": {
+          "type": "resref",
+          "value": "nw_waypoint001"
+        },
+        "XOrientation": {
+          "type": "float",
+          "value": -0.0
+        },
+        "XPosition": {
+          "type": "float",
+          "value": 152.7472
+        },
+        "YOrientation": {
+          "type": "float",
+          "value": 1.0
+        },
+        "YPosition": {
+          "type": "float",
+          "value": 131.8951
+        },
+        "ZPosition": {
+          "type": "float",
+          "value": 0.0078
+        }
+      },
+      {
+        "__struct_id": 5,
+        "Appearance": {
+          "type": "byte",
+          "value": 1
+        },
+        "Description": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "HasMapNote": {
+          "type": "byte",
+          "value": 0
+        },
+        "LinkedTo": {
+          "type": "cexostring",
+          "value": ""
+        },
+        "LocalizedName": {
+          "type": "cexolocstring",
+          "value": {
+            "0": "SP_SG_SN04M01_SA02M01_DO_PC01_TR20D39_RS90",
+            "id": 14817
+          }
+        },
+        "MapNote": {
+          "type": "cexolocstring",
+          "value": {}
+        },
+        "MapNoteEnabled": {
+          "type": "byte",
+          "value": 1
+        },
+        "Tag": {
+          "type": "cexostring",
+          "value": "FOREST_Tag_goblin"
+        },
+        "TemplateResRef": {
+          "type": "resref",
+          "value": "nw_waypoint001"
+        },
+        "XOrientation": {
+          "type": "float",
+          "value": 0.0
+        },
+        "XPosition": {
+          "type": "float",
+          "value": 139.0078
+        },
+        "YOrientation": {
+          "type": "float",
+          "value": 1.0
+        },
+        "YPosition": {
+          "type": "float",
+          "value": 8.1076
+        },
+        "ZPosition": {
+          "type": "float",
+          "value": -0.0
         }
       }
     ]

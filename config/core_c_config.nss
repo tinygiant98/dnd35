@@ -33,7 +33,7 @@
 /// - DEBUG_LOG_DM: debug messages are sent to all online DMs
 /// - DEBUG_LOG_PC: debug messages are sent to the first online PC
 /// - DEBUG_LOG_ALL: debug messages are sent to the log files, DMs, and first PC
-int DEBUG_LOGGING = DEBUG_LOG_ALL;
+int DEBUG_LOGGING = DEBUG_LOG_FILE;
 
 /// This is the level of debug messages to generate. This can be overriden to
 /// debug specific objects or events (see below).
@@ -65,7 +65,7 @@ int DEBUG_LOGGING = DEBUG_LOG_ALL;
 /// - DEBUG_LEVEL_WARNING: indicates unexpected behavior may occur
 /// - DEBUG_LEVEL_NOTICE: information to track the flow of functions
 /// - DEBUG_LEVEL_DEBUG: data dumps used for debugging
-const int DEFAULT_DEBUG_LEVEL = DEBUG_LEVEL_DEBUG;
+const int DEFAULT_DEBUG_LEVEL = DEBUG_LEVEL_NOTICE;
 
 /// This controls the level of debug messages to generate on heartbeat events.
 /// This can be used to prevent the excessive generation of debug messages that
