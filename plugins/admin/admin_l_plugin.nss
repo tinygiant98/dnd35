@@ -11,6 +11,22 @@
 
 #include "util_i_library"
 #include "core_i_framework"
+#include "util_i_chat"
+
+void admin_OnPlayerChat()
+{
+    object oPC = GetPCChatSpeaker();
+    if (HasChatKey(oPC, "debug"))
+    {
+        int nLevel = GetChatKeyValueInt(oPC, "debug");
+        SetLocalInt(GetModule(), "DEBUG_LEVEL", nLevel);
+
+        nLevel = GetLocalInt(GetModule(), "DEBUG_LEVEL");
+        SendChatResult("Debug level set to " + IntToString(nLevel), oPC, FLAG_INFO);
+
+        return;
+    }
+}
 
 // -----------------------------------------------------------------------------
 //                               Library Dispatch
@@ -52,10 +68,14 @@ void OnLibraryLoad()
         RegisterEventScript(oPlugin, CREATURE_EVENT_ON_SPAWN,              "nw_c2_default9",   EVENT_PRIORITY_DEFAULT);
         RegisterEventScript(oPlugin, CREATURE_EVENT_ON_SPELL_CAST_AT,      "nw_c2_defaultb",   EVENT_PRIORITY_DEFAULT);
         RegisterEventScript(oPlugin, CREATURE_EVENT_ON_USER_DEFINED,       "nw_c2_defaultd",   EVENT_PRIORITY_DEFAULT);
+
+        RegisterEventScript(oPlugin, CHAT_PREFIX + "!admin", "admin_OnPlayerChat");
+        RegisterLibraryScript("admin_OnPlayerChat", 1);
     }
 }
 
 void OnLibraryScript(string sScript, int nEntry)
 {
+    if (nEntry == 1) admin_OnPlayerChat();
 
 }
