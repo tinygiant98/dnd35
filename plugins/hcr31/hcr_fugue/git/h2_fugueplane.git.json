@@ -62,7 +62,7 @@
         },
         "ChallengeRating": {
           "type": "float",
-          "value": 2.0
+          "value": 3.0
         },
         "ClassList": {
           "type": "list",
@@ -105,9 +105,10 @@
           "value": ""
         },
         "Description": {
-          "id": 103814,
           "type": "cexolocstring",
-          "value": {}
+          "value": {
+            "id": 103814
+          }
         },
         "Dex": {
           "type": "byte",
@@ -155,9 +156,10 @@
                 "value": 0
               },
               "LocalizedName": {
-                "id": 13268,
                 "type": "cexolocstring",
-                "value": {}
+                "value": {
+                  "id": 13268
+                }
               },
               "ModelPart1": {
                 "type": "byte",
@@ -218,6 +220,10 @@
               "TemplateResRef": {
                 "type": "resref",
                 "value": "nw_it_crewpsp008"
+              },
+              "xModelPart1": {
+                "type": "word",
+                "value": 1
               },
               "XOrientation": {
                 "type": "float",
@@ -275,9 +281,10 @@
                 "value": 0
               },
               "LocalizedName": {
-                "id": 13268,
                 "type": "cexolocstring",
-                "value": {}
+                "value": {
+                  "id": 13268
+                }
               },
               "ModelPart1": {
                 "type": "byte",
@@ -339,6 +346,10 @@
                 "type": "resref",
                 "value": "nw_it_crewpsp008"
               },
+              "xModelPart1": {
+                "type": "word",
+                "value": 1
+              },
               "XOrientation": {
                 "type": "float",
                 "value": 0.0
@@ -395,9 +406,10 @@
                 "value": 0
               },
               "LocalizedName": {
-                "id": 13195,
                 "type": "cexolocstring",
-                "value": {}
+                "value": {
+                  "id": 13195
+                }
               },
               "ModelPart1": {
                 "type": "byte",
@@ -738,6 +750,10 @@
                 "type": "resref",
                 "value": "nw_it_creitemun4"
               },
+              "xModelPart1": {
+                "type": "word",
+                "value": 1
+              },
               "XOrientation": {
                 "type": "float",
                 "value": 0.0
@@ -792,10 +808,10 @@
           ]
         },
         "FirstName": {
-          "id": 12798,
           "type": "cexolocstring",
           "value": {
-            "0": "The Fugue Lord"
+            "0": "The Fugue Lord",
+            "id": 12798
           }
         },
         "fortbonus": {
@@ -820,7 +836,7 @@
         },
         "Interruptable": {
           "type": "byte",
-          "value": 1
+          "value": 0
         },
         "IsImmortal": {
           "type": "byte",

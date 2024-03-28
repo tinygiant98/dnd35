@@ -31,14 +31,10 @@
 
 string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST")
 {
-  int min, max = 0;
-
-  string ENVIRONMENTS = "CAVES,FOREST,RUINS,HAUNTED,CITY_EXTERIOR,CITY_INTERIOR,DUNGEON,CRYPT,DESERT,FROZEN,UNDERDARK,SEWER";
+  int min, max = 0;  
+  string found = GetListItem(StringReplace(environment, "_", ","), 1);
   
-  string found = GetListItem(StringReplace(environment, "_", ","), 1 );
-  
-  if (found  == "") 
-  {
+ 
 
           switch (pclvl) 
           {
@@ -96,6 +92,8 @@ string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST
                                 break;
           }
 
+ if (found  == "" ||  found == "INTERIOR" || found == "EXTERIOR") 
+  {
           string s = "SELECT TemplateResRef FROM Encounters " +
             " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Encounters.LVL >= @min and Encounters.LVL <= @max " +
             " JOIN Environments ON Encounters.EnvironmentID = Environments.EnvironmentID " +
@@ -107,15 +105,17 @@ string GetCreatureFromEncounterTable(int pclvl = 1, string environment = "FOREST
           SqlBindString(q, "@environment", environment);
           return SqlStep(q) ? SqlGetString(q, 0) : "";
   } else {
-  
+         string col = GetListItem(StringReplace(environment, "_", ","), 1 );
+         string val = GetListItem(StringReplace(environment, "_", ","), 2 ); 
+       
           string s = "SELECT TemplateResRef FROM Encounters " +
-            " JOIN Creatures ON Encounters.CreatureID = Creatures.id and Creatures.@col like @val " +
+            " JOIN Creatures ON Encounters.CreatureID = Creatures.id and and Encounters.LVL >= @min and Encounters.LVL <= @max and Creatures." + col + 
+            " like @val " +
             "ORDER BY RANDOM() LIMIT 1;";
-          string col = GetListItem(StringReplace(environment, "_", ","), 1 );
-          string val = GetListItem(StringReplace(environment, "_", ","), 2 ); 
           sqlquery q = SqlPrepareQueryCampaign("dnd35", s);
-          SqlBindString(q, "@col", col);
           SqlBindString(q, "@val", val + "%");
+          SqlBindInt(q, "@min", min);
+          SqlBindInt(q, "@max", max);
           return SqlStep(q) ? SqlGetString(q, 0) : "";
   }
 

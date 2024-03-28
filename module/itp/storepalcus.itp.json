@@ -32,6 +32,17 @@
                     "__struct_id": 0,
                     "NAME": {
                       "type": "cexostring",
+                      "value": "cnr"
+                    },
+                    "RESREF": {
+                      "type": "resref",
+                      "value": "cnr001"
+                    }
+                  },
+                  {
+                    "__struct_id": 0,
+                    "NAME": {
+                      "type": "cexostring",
                       "value": "Newbie Merchant"
                     },
                     "RESREF": {

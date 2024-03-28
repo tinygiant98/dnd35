@@ -58,8 +58,8 @@ location GetRandomLocationfromArea(object oArea) {
   float fAngle = IntToFloat(Random(360));
   location lLoc;
 
-  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.55f;
-  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.55f;
+  float fRandX = IntToFloat(Random(iAreaX * 10)) + (IntToFloat(Random(90)) / 100) + 0.75f;
+  float fRandY = IntToFloat(Random(iAreaY * 10)) + (IntToFloat(Random(90)) / 100) + 0.75f;
 
   lLoc = Location(oArea, Vector(fRandX, fRandY, 0.0f), fAngle);
 
@@ -284,7 +284,7 @@ string ChooseResourcebyTile(object oArea) {
   string resource = "";
   int luck = d100(1);
 
-  if (env == "CAVES" || env == "CITY_EXTERIOR") {
+  if (env == "CAVES") {
     if (luck > 60 ) {
       resource = "minable";
     } else {
@@ -364,7 +364,7 @@ void CreateNESSWaypoints(string type)
 
       for (i = 0; i < how_many; i++)
         {
-          chance = fix_chances(luck, 30);
+          chance = fix_chances(luck, 70);
           loot_table = Random(4);
 
           locl = GetRandomLocationfromArea(oArea);
