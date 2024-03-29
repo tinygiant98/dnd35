@@ -33,7 +33,7 @@
 /// - DEBUG_LOG_DM: debug messages are sent to all online DMs
 /// - DEBUG_LOG_PC: debug messages are sent to the first online PC
 /// - DEBUG_LOG_ALL: debug messages are sent to the log files, DMs, and first PC
-int DEBUG_LOGGING = DEBUG_LOG_FILE;
+int DEBUG_LOGGING = DEBUG_LOG_NONE;
 
 /// This is the level of debug messages to generate. This can be overriden to
 /// debug specific objects or events (see below).
